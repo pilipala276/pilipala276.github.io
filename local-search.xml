@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>车队笔记</title>
+    <link href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/"/>
+    <url>/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<h4 id="2022-05-02"><a href="#2022-05-02" class="headerlink" title="2022-05-02"></a>2022-05-02</h4><p>mdc主从机配置(电脑当从机)<br><code>sudo gedit .bashrc</code>添加<code>export ROS_HOSTNAME=192.168.1.181#自己的ip地址</code>,<code>export ROS_MASTER_URI=http://mdchost:11311</code><br><code>sudo gedit /etc/hosts</code>添加<code>192.168.1.6 mdchost</code>,<code>192.168.1.154.nvidia</code><br>不用的时候把<code> .bashrc</code>里面的注释掉才能正常使用ROS</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>车队</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022-05-02&#39;s Blog</title>
     <link href="/2022-5-2/"/>
     <url>/2022-5-2/</url>

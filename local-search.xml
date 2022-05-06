@@ -4,6 +4,58 @@
   
   
   <entry>
+    <title>2022-05-05&#39;s Blog</title>
+    <link href="/2022-05-05/"/>
+    <url>/2022-05-05/</url>
+    
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><p>[x]更改Foc原理图，重画PCB，完成元件采购</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Daily_blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>FOC</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022-05-04&#39;s Blog</title>
+    <link href="/2022-05-04/"/>
+    <url>/2022-05-04/</url>
+    
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><input checked="" disabled="" type="checkbox"> 学习pyqt<br>1号师兄让标些数据，标烦了就想着整个图形界面，结果今天把数据标完才有功夫把图形界面整出来:mask:<br>Reference linking:<br><a href="https://blog.csdn.net/sinat_28371057/article/details/112914782">https://blog.csdn.net/sinat_28371057/article/details/112914782</a><br><a href="https://blog.csdn.net/qq_45208848/article/details/123634761">https://blog.csdn.net/qq_45208848/article/details/123634761</a></li></ul><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>markdown 中也可以使用emoji表情<br><a href="https://www.webpagefx.com/tools/emoji-cheat-sheet/">https://www.webpagefx.com/tools/emoji-cheat-sheet/</a></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Daily_blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>pyqt</tag>
+      
+      <tag>markdown</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>车队笔记</title>
     <link href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/"/>
     <url>/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/</url>
@@ -72,7 +124,7 @@
     
     <tags>
       
-      <tag>pyQt</tag>
+      <tag>pyqt</tag>
       
     </tags>
     

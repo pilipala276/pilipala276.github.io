@@ -4,11 +4,63 @@
   
   
   <entry>
+    <title>2022-05-09&#39;s Blog</title>
+    <link href="/2022-05-09/"/>
+    <url>/2022-05-09/</url>
+    
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><input checked="" disabled="" type="checkbox"> 写师兄控制部分代码注释，并配置Vscode实现方便的代码注释方式<br>Reference linking:<br><a href="https://blog.csdn.net/angry_rooster/article/details/118560317">https://blog.csdn.net/angry_rooster/article/details/118560317</a><br><a href="https://blog.csdn.net/lilyheart1/article/details/106896408">https://blog.csdn.net/lilyheart1/article/details/106896408</a><br><a href="https://blog.csdn.net/u014205023/article/details/105442431">https://blog.csdn.net/u014205023/article/details/105442431</a></li><li><input checked="" disabled="" type="checkbox"> 基本完成FOC电路板的焊接工作</li></ul><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>Vscode中可以使用snippets建立各种文件的代码模板<br>ubuntu打开文件夹显示<code>.XXX</code>文件或文件夹的方法’Ctrl+H’</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Daily_blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>vscode</tag>
+      
+      <tag>ubuntu</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022-05-08&#39;s Blog</title>
+    <link href="/2022-05-08/"/>
+    <url>/2022-05-08/</url>
+    
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><input checked="" disabled="" type="checkbox"> 看师兄代码的控制部分<br>Reference linking:<br><a href="https://gitlab.com/meTroyChan/scutaracing_driverless_2021.git">https://gitlab.com/meTroyChan/scutaracing_driverless_2021.git</a></li></ul><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>markdown中可以使用<code>[](#标题)</code>实现页内跳转<br>markdown中的换行符<code>&amp;nbsp;</code>或<code>&lt;/br&gt;</code>实现换行，<code>&amp;emsp;</code>实现空格</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Daily_blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>markdown</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022-05-05&#39;s Blog</title>
     <link href="/2022-05-05/"/>
     <url>/2022-05-05/</url>
     
-    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><p>[x]更改Foc原理图，重画PCB，完成元件采购<br>Reference linking:<br><a href="https://github.com/pilipala276/FOC---">https://github.com/pilipala276/FOC---</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><input checked="" disabled="" type="checkbox"> 更改Foc原理图，重画PCB，完成元件采购<br>Reference linking:<br><a href="https://github.com/pilipala276/FOC---">https://github.com/pilipala276/FOC---</a></li></ul>]]></content>
     
     
     <categories>

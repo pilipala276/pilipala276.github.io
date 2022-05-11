@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>2022-05-011&#39;s Blog</title>
+    <link href="/2022-05-11/"/>
+    <url>/2022-05-11/</url>
+    
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><input checked="" disabled="" type="checkbox"> 完成fssim仿真环境的配置<br>Reference linking:<br><a href="https://github.com/AMZ-Driverless/fssim/tree/melodic-devel">https://github.com/AMZ-Driverless/fssim/tree/melodic-devel</a><br><a href="https://github.com/AMZ-Driverless/fsd_skeleton/tree/melodic-devel">https://github.com/AMZ-Driverless/fsd_skeleton/tree/melodic-devel</a></li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Daily_blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>fssim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022-05-09&#39;s Blog</title>
     <link href="/2022-05-09/"/>
     <url>/2022-05-09/</url>
@@ -23,6 +48,8 @@
       <tag>vscode</tag>
       
       <tag>ubuntu</tag>
+      
+      <tag>foc</tag>
       
     </tags>
     
@@ -72,7 +99,7 @@
     
     <tags>
       
-      <tag>FOC</tag>
+      <tag>foc</tag>
       
     </tags>
     

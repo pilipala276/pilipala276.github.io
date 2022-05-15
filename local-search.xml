@@ -54,6 +54,33 @@
   
   
   <entry>
+    <title>车队笔记</title>
+    <link href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/"/>
+    <url>/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/</url>
+    
+    <content type="html"><![CDATA[<h4 id="2022-05-02"><a href="#2022-05-02" class="headerlink" title="2022-05-02"></a>2022-05-02</h4><p>mdc主从机配置(电脑当从机)<br><code>sudo gedit .bashrc</code>添加<code>export ROS_HOSTNAME=192.168.1.181#自己的ip地址</code>,<code>export ROS_MASTER_URI=http://mdchost:11311</code><br><code>sudo gedit /etc/hosts</code>添加<code>192.168.1.6 mdchost</code>,<code>192.168.1.154.nvidia</code><br>不用的时候把<code> .bashrc</code>里面的注释掉才能正常使用ROS</p><h4 id="2022-05-11"><a href="#2022-05-11" class="headerlink" title="2022-05-11"></a>2022-05-11</h4><p>fssim仿真环境的配置<br>把<a href="https://github.com/AMZ-Driverless/fssim/tree/melodic-devel">https://github.com/AMZ-Driverless/fssim/tree/melodic-devel</a> 和 <a href="https://github.com/AMZ-Driverless/fsd_skeleton/tree/melodic-devel">https://github.com/AMZ-Driverless/fsd_skeleton/tree/melodic-devel</a> 下载压缩包后解压到一个创建的工作空间下，例如<code>~/fssim/src</code><br>然后分别在<code>~/fssim/src/fsd_skeleton-melodic-devel</code> 和 <code>~/fssim/srcfssim-melodic-devel</code>下执行<code>./update*.sh</code><br>接着在<code>~/fssim</code>下执行<code>catkin build</code><br>再到<code>fsd_skeleton-melodic-devel</code>下面<code>source fsd_skeleton-melodic-devel</code><br>然后在<code>~/fssim</code>下执行<code>source devel/setup.bash</code>，现在可以执行<code>roslaunch fssim auto_fssim.launch </code><br>等到rviz打开后启动另一个终端在<code>~/fssim</code>下执行<code>source devel/setup.bash</code>后执行<code>roslaunch control_meta trackdrive.launch</code>,小车应该就能自动寻线了</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>车队</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>主从机</tag>
+      
+      <tag>fssim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022-05-11&#39;s Blog</title>
     <link href="/2022-05-11/"/>
     <url>/2022-05-11/</url>
@@ -179,33 +206,6 @@
       <tag>pyqt</tag>
       
       <tag>markdown</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>车队笔记</title>
-    <link href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/"/>
-    <url>/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/</url>
-    
-    <content type="html"><![CDATA[<h4 id="2022-05-02"><a href="#2022-05-02" class="headerlink" title="2022-05-02"></a>2022-05-02</h4><p>mdc主从机配置(电脑当从机)<br><code>sudo gedit .bashrc</code>添加<code>export ROS_HOSTNAME=192.168.1.181#自己的ip地址</code>,<code>export ROS_MASTER_URI=http://mdchost:11311</code><br><code>sudo gedit /etc/hosts</code>添加<code>192.168.1.6 mdchost</code>,<code>192.168.1.154.nvidia</code><br>不用的时候把<code> .bashrc</code>里面的注释掉才能正常使用ROS</p><h4 id="2022-05-11"><a href="#2022-05-11" class="headerlink" title="2022-05-11"></a>2022-05-11</h4><p>fssim仿真环境的配置<br>把<a href="https://github.com/AMZ-Driverless/fssim/tree/melodic-devel">https://github.com/AMZ-Driverless/fssim/tree/melodic-devel</a> 和 <a href="https://github.com/AMZ-Driverless/fsd_skeleton/tree/melodic-devel">https://github.com/AMZ-Driverless/fsd_skeleton/tree/melodic-devel</a> 下载压缩包后解压到一个创建的工作空间下，例如<code>~/fssim/src</code><br>然后分别在<code>~/fssim/src/fsd_skeleton-melodic-devel</code> 和 <code>~/fssim/srcfssim-melodic-devel</code>下执行<code>./update*.sh</code><br>接着在<code>~/fssim</code>下执行<code>catkin build</code><br>再到<code>fsd_skeleton-melodic-devel</code>下面<code>source fsd_skeleton-melodic-devel</code><br>然后在<code>~/fssim</code>下执行<code>source devel/setup.bash</code>，现在可以执行<code>roslaunch fssim auto_fssim.launch </code><br>等到rviz打开后启动另一个终端在<code>~/fssim</code>下执行<code>source devel/setup.bash</code>后执行<code>roslaunch control_meta trackdrive.launch</code>,小车应该就能自动寻线了</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>车队</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>主从机</tag>
-      
-      <tag>fssim</tag>
       
     </tags>
     

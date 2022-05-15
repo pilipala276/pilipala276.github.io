@@ -4,6 +4,56 @@
   
   
   <entry>
+    <title>2022-05-014&#39;s Blog</title>
+    <link href="/2022-05-14/"/>
+    <url>/2022-05-14/</url>
+    
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><input checked="" disabled="" type="checkbox"> 更换测试电路板的电压转换模块，与PWM控制电压<br>目前正常，坐等电机</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>Daily_blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>foc</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>2022-05-012&#39;s Blog</title>
+    <link href="/2022-05-12/"/>
+    <url>/2022-05-12/</url>
+    
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><input checked="" disabled="" type="checkbox"> 更换5V转3V芯片，测试电路板的电压转换模块<br>  VBUS转12V电压转换部分有个二极管买错了,烧掉了</li></ul><h2 id="Tips"><a href="#Tips" class="headerlink" title="Tips"></a>Tips</h2><p>bilbil网页视频可以通过在?后t&#x3D;xxx,指定时间点例如<code>https://www.bilibili.com/video/BV1di4y1y7au?t=366</code></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Daily_blog</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>foc</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>2022-05-011&#39;s Blog</title>
     <link href="/2022-05-11/"/>
     <url>/2022-05-11/</url>
@@ -47,11 +97,11 @@
     
     <tags>
       
-      <tag>foc</tag>
-      
       <tag>vscode</tag>
       
       <tag>ubuntu</tag>
+      
+      <tag>foc</tag>
       
     </tags>
     

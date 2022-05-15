@@ -8,7 +8,7 @@
     <link href="/2022-05-14/"/>
     <url>/2022-05-14/</url>
     
-    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><input checked="" disabled="" type="checkbox"> 更换二极管，测试的电压转换模块，与PWM控制电压<br>目前正常，坐等电机</li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ul><li><p><input checked="" disabled="" type="checkbox"> 更换二极管，测试的电压转换模块，与PWM控制电压<br>目前正常，坐等电机</p></li><li><p><input checked="" disabled="" type="checkbox"> 将博客文件迁移到移动硬盘上<br>直接复制粘贴，两个系统都能使用</p></li></ul>]]></content>
     
     
     <categories>

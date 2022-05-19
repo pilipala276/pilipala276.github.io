@@ -1,863 +1,188 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
-  <link rel="icon" href="/img/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Pilipala276">
-  <meta name="keywords" content="">
-  
-    <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Pilipala276's Blog</title><meta name="author" content="Pilipala276"><meta name="copyright" content="Pilipala276"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Pilipala276&#39;s Blog">
 <meta property="og:url" content="https://pilipala276.github.io/index.html">
 <meta property="og:site_name" content="Pilipala276&#39;s Blog">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="Pilipala276">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pilipala276.github.io/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Pilipala276\'s Blog',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2022-05-19 14:51:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-  
-  <title>Pilipala276&#39;s Blog</title>
-
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-<!-- 自定义样式保持在最底部 -->
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"pilipala276.github.io","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 6.1.0"></head>
-
-
-<body>
-  <header style="height: 100vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>Pilipala276</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/I%20am%20a%20caiji.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Welcome to Pilipala276&#39;s blog">
-              
-            </span>
-
-            
-          </div>
-
-          
-            <div class="scroll-down-bar">
-              <i class="iconfont icon-arrowdown"></i>
-            </div>
-          
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    
-      <div class="container nopadding-x-md">
-        <div class="py-5" id="board"
-          style=margin-top:0>
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-14/" target="_self">
-          <img src="/../image/2022-05-14.png" srcset="/img/loading.gif" lazyload alt="2022-05-14&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-14/" target="_self">
-          2022-05-14&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-14/" target="_self">
-          
-          TODO   更换二极管，测试的电压转换模块，与PWM控制电压目前正常，坐等电机    将博客文件迁移到移动硬盘上直接复制粘贴，两个系统都能使用
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-14 16:31" pubdate>
-              2022-05-14
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/foc/">foc</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-12/" target="_self">
-          <img src="/../image/2022-05-12.png" srcset="/img/loading.gif" lazyload alt="2022-05-12&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-12/" target="_self">
-          2022-05-12&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-12/" target="_self">
-          
-          TODO  更换5V转3V芯片，测试电路板的电压转换模块  VBUS转12V电压转换部分有个二极管买错了,烧掉了  Tipsbilbil网页视频可以通过在?后t&#x3D;xxx,指定时间点例如https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;BV1di4y1y7au?t&#x3D;366
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-12 15:24" pubdate>
-              2022-05-12
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/foc/">foc</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/" target="_self">
-          <img src="/../image/SCUTRacing.png" srcset="/img/loading.gif" lazyload alt="车队笔记">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/" target="_self">
-          车队笔记
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/" target="_self">
-          
-          2022-05-02mdc主从机配置(电脑当从机)sudo gedit .bashrc添加export ROS_HOSTNAME&#x3D;192.168.1.181#自己的ip地址,export ROS_MASTER_URI&#x3D;http:&#x2F;&#x2F;mdchost:11311sudo gedit &#x2F;etc&#x2F;hosts添加192.168.1.6 mdchost,192.168.1.154.nvidia不用的时候把 .
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-11 18:34" pubdate>
-              2022-05-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/%E8%BD%A6%E9%98%9F/">车队</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E4%B8%BB%E4%BB%8E%E6%9C%BA/">主从机</a>
-            
-              <a href="/tags/fssim/">fssim</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-11/" target="_self">
-          <img src="/../image/2022-05-11.png" srcset="/img/loading.gif" lazyload alt="2022-05-11&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-11/" target="_self">
-          2022-05-11&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-11/" target="_self">
-          
-          TODO   完成fssim仿真环境的配置Reference linking:https:&#x2F;&#x2F;github.com&#x2F;AMZ-Driverless&#x2F;fssim&#x2F;tree&#x2F;melodic-develhttps:&#x2F;&#x2F;github.com&#x2F;AMZ-Driverless&#x2F;fsd_skeleton&#x2F;tree&#x2F;melodic-devel     完成FOC电路板的焊接收尾工作，测试电路板的电压转换模块5V转3.
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-11 13:52" pubdate>
-              2022-05-11
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/foc/">foc</a>
-            
-              <a href="/tags/fssim/">fssim</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-09/" target="_self">
-          <img src="/../image/2022-05-09.jpeg" srcset="/img/loading.gif" lazyload alt="2022-05-09&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-09/" target="_self">
-          2022-05-09&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-09/" target="_self">
-          
-          TODO  写师兄控制部分代码注释，并配置Vscode实现方便的代码注释方式Reference linking:https:&#x2F;&#x2F;blog.csdn.net&#x2F;angry_rooster&#x2F;article&#x2F;details&#x2F;118560317https:&#x2F;&#x2F;blog.csdn.net&#x2F;lilyheart1&#x2F;article&#x2F;details&#x2F;106896408https:&#x2F;&#x2F;blog.csdn.net&#x2F;u01
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-09 12:10" pubdate>
-              2022-05-09
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/foc/">foc</a>
-            
-              <a href="/tags/vscode/">vscode</a>
-            
-              <a href="/tags/ubuntu/">ubuntu</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-08/" target="_self">
-          <img src="/../image/2022-05-08.jpeg" srcset="/img/loading.gif" lazyload alt="2022-05-08&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-08/" target="_self">
-          2022-05-08&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-08/" target="_self">
-          
-          TODO  看师兄代码的控制部分Reference linking:https:&#x2F;&#x2F;gitlab.com&#x2F;meTroyChan&#x2F;scutaracing_driverless_2021.git  Tipsmarkdown中可以使用[](#标题)实现页内跳转markdown中的换行符&amp;nbsp;或&lt;&#x2F;br&gt;实现换行，&amp;emsp;实现空格
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-08 23:14" pubdate>
-              2022-05-08
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/markdown/">markdown</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-05/" target="_self">
-          <img src="/../image/2022-05-05.jpg" srcset="/img/loading.gif" lazyload alt="2022-05-05&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-05/" target="_self">
-          2022-05-05&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-05/" target="_self">
-          
-          TODO  更改Foc原理图，重画PCB，完成元件采购Reference linking:https:&#x2F;&#x2F;github.com&#x2F;pilipala276&#x2F;FOC---
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-05 21:34" pubdate>
-              2022-05-05
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/foc/">foc</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-04/" target="_self">
-          <img src="/../image/2022-05-04.webp" srcset="/img/loading.gif" lazyload alt="2022-05-04&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-04/" target="_self">
-          2022-05-04&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-04/" target="_self">
-          
-          TODO  学习pyqt1号师兄让标些数据，标烦了就想着整个图形界面，结果今天把数据标完才有功夫把图形界面整出来:mask:Reference linking:https:&#x2F;&#x2F;blog.csdn.net&#x2F;sinat_28371057&#x2F;article&#x2F;details&#x2F;112914782https:&#x2F;&#x2F;blog.csdn.net&#x2F;qq_45208848&#x2F;article&#x2F;details&#x2F;12363476
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-04 21:58" pubdate>
-              2022-05-04
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/pyqt/">pyqt</a>
-            
-              <a href="/tags/markdown/">markdown</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-02/" target="_self">
-          <img src="/../image/2022-05-02.webp" srcset="/img/loading.gif" lazyload alt="2022-05-02&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-02/" target="_self">
-          2022-05-02&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-02/" target="_self">
-          
-          Welcome to pilipala276!TODO  配置主从机Reference linking:https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_43707303&#x2F;article&#x2F;details&#x2F;86496335  Tipsgit clone https:&#x2F;&#x2F;github.com&#x2F;pilipala276&#x2F;pilipala276.github.io.git可以替换为git clone
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-02 00:51" pubdate>
-              2022-05-02
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E4%B8%BB%E4%BB%8E%E6%9C%BA/">主从机</a>
-            
-              <a href="/tags/git/">git</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022-05-01/" target="_self">
-          <img src="/../image/2022-05-01.webp" srcset="/img/loading.gif" lazyload alt="2022-05-01&#39;s Blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022-05-01/" target="_self">
-          2022-05-01&#39;s Blog
-        </a>
-      </h1>
-
-      <p class="index-excerpt">
-        <a href="/2022-05-01/" target="_self">
-          
-          Welcome to pilipala276!TODO  学习pyqtReference linking:https:&#x2F;&#x2F;blog.csdn.net&#x2F;ayiya_Oese&#x2F;article&#x2F;details&#x2F;116299610https:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;c37c5b1c9a5ehttps:&#x2F;&#x2F;www.jianshu.com&#x2F;p&#x2F;6118e29e3051https:&#x2F;&#x2F;blog.
-        </a>
-      </p>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-01 00:51" pubdate>
-              2022-05-01
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-category"></i>
-            
-              <a href="/categories/Daily-blog/">Daily_blog</a>
-            
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/pyqt/">pyqt</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
-    </span>
-  </nav>
-
-
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-    
-
-    
-  </main>
-
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
-  
-
-  
-
-  
-</footer>
-
-
-  <!-- SCRIPTS -->
-  
-  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
     })
-  </script>
-
-
-<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
-<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-<!-- Plugins -->
-
-
-  <script  src="/js/local-search.js" ></script>
-
-
-
   
-    <script  src="/js/img-lazyload.js" ></script>
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/source/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/source/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/source/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('/img/caiji.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Pilipala276's Blog</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Pilipala276's Blog</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left"><a href="/2022-05-19/" title="2022-05-19's Blog"><img class="post_bg" src="/../image/2022-05-19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-19's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-19/" title="2022-05-19's Blog">2022-05-19's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-19T06:27:07.000Z" title="发表于 2022-05-19 14:27:07">2022-05-19</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content"></div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022-05-14/" title="2022-05-14's Blog"><img class="post_bg" src="/../image/2022-05-14.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-14's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-14/" title="2022-05-14's Blog">2022-05-14's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-14T08:31:32.000Z" title="发表于 2022-05-14 16:31:32">2022-05-14</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content">TODO
+ 
+更换二极管，测试的电压转换模块，与PWM控制电压目前正常，坐等电机
+
+ 
+将博客文件迁移到移动硬盘上直接复制粘贴，两个系统都能使用
 
 
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022-05-12/" title="2022-05-12's Blog"><img class="post_bg" src="/../image/2022-05-12.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-12's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-12/" title="2022-05-12's Blog">2022-05-12's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-12T07:24:32.000Z" title="发表于 2022-05-12 15:24:32">2022-05-12</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content">TODO
+ 更换5V转3V芯片，测试电路板的电压转换模块  VBUS转12V电压转换部分有个二极管买错了,烧掉了
 
-  
+Tipsbilbil网页视频可以通过在?后t&#x3D;xxx,指定时间点例如https://www.bilibili.com/video/BV1di4y1y7au?t=366
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/" title="车队笔记"><img class="post_bg" src="/../image/SCUTRacing.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="车队笔记"></a></div><div class="recent-post-info"><a class="article-title" href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/" title="车队笔记">车队笔记</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-11T10:34:46.000Z" title="发表于 2022-05-11 18:34:46">2022-05-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/%E8%BD%A6%E9%98%9F/">车队</a></span></div><div class="content">2022-05-02mdc主从机配置(电脑当从机)sudo gedit .bashrc添加export ROS_HOSTNAME=192.168.1.181#自己的ip地址,export ROS_MASTER_URI=http://mdchost:11311sudo gedit /etc/hosts添加192.168.1.6 mdchost,192.168.1.154.nvidia不用的时候把 .bashrc里面的注释掉才能正常使用ROS
+2022-05-11fssim仿真环境的配置把https://github.com/AMZ-Driverless/fssim/tree/melodic-devel 和 https://github.com/AMZ-Driverless/fsd_skeleton/tree/melodic-devel 下载压缩包后解压到一个创建的工作空间下，例如~/fssim/src然后分别在~/fssim/src/fsd_skeleton-melodic-devel 和 ~/fssim/srcfssim-melodic-devel下执行./update*.sh接着在~ ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022-05-11/" title="2022-05-11's Blog"><img class="post_bg" src="/../image/2022-05-11.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-11's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-11/" title="2022-05-11's Blog">2022-05-11's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-11T05:52:29.000Z" title="发表于 2022-05-11 13:52:29">2022-05-11</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content">TODO
+ 
+完成fssim仿真环境的配置Reference linking:https://github.com/AMZ-Driverless/fssim/tree/melodic-develhttps://github.com/AMZ-Driverless/fsd_skeleton/tree/melodic-devel 
 
-
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-        typing(title);
-      
-    })(window, document);
-  </script>
+ 
+完成FOC电路板的焊接收尾工作，测试电路板的电压转换模块5V转3.3V有问题，应该使用AMS1117-3.3V，AMS1117-ADJ的话是可调电压的，但需要加外围电阻，在设计的电路图中没有Reference linking:https://www.semiee.com/file/Hotchip/Hotchip-AMS1117-ADJ.pdfhttps://www.semiee.com/file/Hotchip/Hotchip-AMS1117-3.3V.pdf
 
 
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022-05-09/" title="2022-05-09's Blog"><img class="post_bg" src="/../image/2022-05-09.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-09's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-09/" title="2022-05-09's Blog">2022-05-09's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-09T04:10:11.000Z" title="发表于 2022-05-09 12:10:11">2022-05-09</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content">TODO
+ 写师兄控制部分代码注释，并配置Vscode实现方便的代码注释方式Reference linking:https://blog.csdn.net/angry_rooster/article/details/118560317https://blog.csdn.net/lilyheart1/article/details/106896408https://blog.csdn.net/u014205023/article/details/105442431
+ 基本完成FOC电路板的焊接工作还有几个元器件没到
 
+TipsVscode中可以使用snippets建立各种文件的代码模板ubuntu打开文件夹显示’.XXX’文件或文件夹的方法Ctrl+H
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022-05-08/" title="2022-05-08's Blog"><img class="post_bg" src="/../image/2022-05-08.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-08's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-08/" title="2022-05-08's Blog">2022-05-08's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-08T15:14:05.000Z" title="发表于 2022-05-08 23:14:05">2022-05-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content">TODO
+ 看师兄代码的控制部分Reference linking:https://gitlab.com/meTroyChan/scutaracing_driverless_2021.git
 
+Tipsmarkdown中可以使用[](#标题)实现页内跳转markdown中的换行符&amp;nbsp;或&lt;/br&gt;实现换行，&amp;emsp;实现空格
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022-05-05/" title="2022-05-05's Blog"><img class="post_bg" src="/../image/2022-05-05.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-05's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-05/" title="2022-05-05's Blog">2022-05-05's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-05T13:34:24.000Z" title="发表于 2022-05-05 21:34:24">2022-05-05</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content">TODO
+ 更改Foc原理图，重画PCB，完成元件采购Reference linking:https://github.com/pilipala276/FOC---
 
+</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/2022-05-04/" title="2022-05-04's Blog"><img class="post_bg" src="/../image/2022-05-04.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-04's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-04/" title="2022-05-04's Blog">2022-05-04's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-04T13:58:39.000Z" title="发表于 2022-05-04 21:58:39">2022-05-04</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content">TODO
+ 学习pyqt1号师兄让标些数据，标烦了就想着整个图形界面，结果今天把数据标完才有功夫把图形界面整出来:mask:Reference linking:https://blog.csdn.net/sinat_28371057/article/details/112914782https://blog.csdn.net/qq_45208848/article/details/123634761
 
+Tipsmarkdown 中也可以使用emoji表情https://www.webpagefx.com/tools/emoji-cheat-sheet/
+</div></div></div><div class="recent-post-item"><div class="post_cover right"><a href="/2022-05-02/" title="2022-05-02's Blog"><img class="post_bg" src="/../image/2022-05-02.webp" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-02's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/2022-05-02/" title="2022-05-02's Blog">2022-05-02's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2022-05-01T16:51:52.000Z" title="发表于 2022-05-02 00:51:52">2022-05-02</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/source/categories/Daily-blog/">Daily_blog</a></span></div><div class="content">Welcome to pilipala276!TODO
+ 配置主从机Reference linking:https://blog.csdn.net/weixin_43707303/article/details/86496335
 
-
-
-
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
-<script  src="/js/boot.js" ></script>
-
-
-</body>
-</html>
+Tipsgit clone https://github.com/pilipala276/pilipala276.github.io.git可以替换为git clone https://gitclone.com/github.com/pilipala276/pilipala276.github.io.gitUbuntu下Alt+Tab+方向键实现各个窗口下的切换
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/page/2/#content-inner">2</a><a class="extend next" rel="next" href="/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pilipala276</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/source/archives/"><div class="headline">文章</div><div class="length-num">12</div></a><a href="/source/tags/"><div class="headline">标签</div><div class="length-num">12</div></a><a href="/source/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pilipala276"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022-05-19/" title="2022-05-19's Blog"><img src="/../image/2022-05-19.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-19's Blog"/></a><div class="content"><a class="title" href="/2022-05-19/" title="2022-05-19's Blog">2022-05-19's Blog</a><time datetime="2022-05-19T06:27:07.000Z" title="发表于 2022-05-19 14:27:07">2022-05-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022-05-14/" title="2022-05-14's Blog"><img src="/../image/2022-05-14.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-14's Blog"/></a><div class="content"><a class="title" href="/2022-05-14/" title="2022-05-14's Blog">2022-05-14's Blog</a><time datetime="2022-05-14T08:31:32.000Z" title="发表于 2022-05-14 16:31:32">2022-05-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022-05-12/" title="2022-05-12's Blog"><img src="/../image/2022-05-12.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-12's Blog"/></a><div class="content"><a class="title" href="/2022-05-12/" title="2022-05-12's Blog">2022-05-12's Blog</a><time datetime="2022-05-12T07:24:32.000Z" title="发表于 2022-05-12 15:24:32">2022-05-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/" title="车队笔记"><img src="/../image/SCUTRacing.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="车队笔记"/></a><div class="content"><a class="title" href="/%E8%BD%A6%E9%98%9F%E7%AC%94%E8%AE%B0/" title="车队笔记">车队笔记</a><time datetime="2022-05-11T10:34:46.000Z" title="发表于 2022-05-11 18:34:46">2022-05-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022-05-11/" title="2022-05-11's Blog"><img src="/../image/2022-05-11.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-05-11's Blog"/></a><div class="content"><a class="title" href="/2022-05-11/" title="2022-05-11's Blog">2022-05-11's Blog</a><time datetime="2022-05-11T05:52:29.000Z" title="发表于 2022-05-11 13:52:29">2022-05-11</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/source/categories/Daily-blog/"><span class="card-category-list-name">Daily_blog</span><span class="card-category-list-count">11</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/source/categories/%E8%BD%A6%E9%98%9F/"><span class="card-category-list-name">车队</span><span class="card-category-list-count">1</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/source/tags/Hexo/" style="font-size: 1.1em; color: #999">Hexo</a> <a href="/source/tags/ROS/" style="font-size: 1.1em; color: #999">ROS</a> <a href="/source/tags/foc/" style="font-size: 1.5em; color: #99a9bf">foc</a> <a href="/source/tags/fssim/" style="font-size: 1.3em; color: #99a1ac">fssim</a> <a href="/source/tags/git/" style="font-size: 1.1em; color: #999">git</a> <a href="/source/tags/hexo/" style="font-size: 1.1em; color: #999">hexo</a> <a href="/source/tags/markdown/" style="font-size: 1.3em; color: #99a1ac">markdown</a> <a href="/source/tags/pyqt/" style="font-size: 1.3em; color: #99a1ac">pyqt</a> <a href="/source/tags/ubuntu/" style="font-size: 1.1em; color: #999">ubuntu</a> <a href="/source/tags/vscode/" style="font-size: 1.1em; color: #999">vscode</a> <a href="/source/tags/%E4%B8%BB%E4%BB%8E%E6%9C%BA/" style="font-size: 1.3em; color: #99a1ac">主从机</a> <a href="/source/tags/%E5%8F%8C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.1em; color: #999">双系统</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/source/archives/2022/05/"><span class="card-archive-list-date">五月 2022</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/source/archives/2022/04/"><span class="card-archive-list-date">四月 2022</span><span class="card-archive-list-count">1</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">12</div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2022-05-19T06:51:08.042Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Pilipala276</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

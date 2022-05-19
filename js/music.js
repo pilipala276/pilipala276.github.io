@@ -8,6 +8,6 @@ const ap = new APlayer({
         artist: '卦者灵风',
         url: '../music/范进中举_卦者灵风.m4a',
         cover: '../img/范进中举_卦者灵风.jpg',	
-    }, 
+    },
 	]
 });

@@ -147,7 +147,7 @@
 <p>进入while循环，一直<code>controllerHandle.run()</code>   详见<a href="#controller_handle.cpp">controller_handle.cpp</a>  </p>
 <h4 id="controller-handle-cpp"><a href="#controller-handle-cpp" class="headerlink" title="controller_handle.cpp"></a>controller_handle.cpp</h4><p>主要作用：创造了<code>ns_controller</code>命名空间下的<code>ControllerHandle</code>类，主要面向外部和controller</p>
 <p>构造函数：加载参数（加载话题名称，主要是接收的其他部分的还有发布到其他部分的）,订阅话题（主要订阅其他部分的话题发布的用于控制的数据）,创建发布话题</p>
-<p><code>ControllerHandle::run()</code>：执行<code>controller_.runAlgorithm();</code>详见<a href="#controller.cpp">controller_handle.cpp</a> ， 发布控制命令</p>
+<p><code>ControllerHandle::run()</code>：执行<code>controller_.runAlgorithm();</code>详见<a href="#controller.cpp">controller.cpp</a> ， 发布控制命令</p>
 <p>其他回调函数：将订阅到参数传给<code>controller_</code></p>
 <h4 id="controller-cpp"><a href="#controller-cpp" class="headerlink" title="controller.cpp"></a>controller.cpp</h4><p>主要作用：创造了<code>ns_controller</code>命名空间下的<code>Controller</code>类，主要面向具体控制算法</p>
 <p>构造函数：加载参数（加载控制算法需要的参数），初始化（将加载的参数传给控制算法_controller）</p>

@@ -162,7 +162,7 @@ $$
 
 #### MPC算法
 
-##### 运动学模型
+运动学模型
 
 ![](../image/SCUTRacing/scutaracing_driverless_2021_img/运动学模型.png)
 
@@ -194,7 +194,7 @@ V_r\\
 \end{cases}
 $$
 
-##### 线性化
+线性化
 
 $$
 令\overset{.}{\xi}=f(\xi,u) \\
@@ -233,7 +233,7 @@ sin\varphi_r&0 \\
 \right]
 $$
 
-##### 离散化
+离散化
 
 $$
 \overset{.}{\overset{\sim}{\xi}}=\frac{\overset{\sim}{\xi}(k+1)-\overset{\sim}{\xi}(k)}{T}=A\overset{\sim}{\xi}(k)+B\overset{\sim}{u}(k) \\
@@ -250,7 +250,7 @@ Tsin\varphi_r&0 \\
 \end{matrix}\right]
 $$
 
-##### 预测
+预测
 
 $$
 \begin{cases}
@@ -263,7 +263,7 @@ $$
 写为矩阵形式Y=\Psi\xi(k)+\theta U(k)
 $$
 
-##### 控制律
+控制律
 
 $$
 Y=\Psi\xi(k)+\theta U(k) \\
@@ -283,7 +283,7 @@ $$
 
 #### Ribbon算法
 
-##### 运动学模型
+运动学模型
 
 后轮到预瞄点
 $$
@@ -302,7 +302,7 @@ cos\delta=\frac{R}{R'},sin\delta=\frac{L}{R'}
 R=\frac{l_d'/2+Lcos\theta'}{sin\theta'}
 $$
 
-##### Ribbon算法核心思想
+Ribbon算法核心思想
 根据路径上前一段的左右边界得到一个转角范围，再根据更远的一段路径得到另一个转角范围，和上一个取交集，再重复此操作直到无法取交集
 
 

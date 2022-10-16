@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>程序员的自我修养_俞甲子_石凡_潘爱民 | Pilipala276's Blog</title><meta name="keywords" content="计算机,编译,链接"><meta name="author" content="Pilipala276"><meta name="copyright" content="Pilipala276"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="《程序员的自我修养》- 俞甲子 石凡 潘爱民导读本书将详细描述现在流行的Windows和Linux操作系统下各自的可执行 文件、目标文件格式；普通C&#x2F;C++程序代码如何被编译成目标文件及程序在目标文件中如何存储；目标文件如何被链接器链接到一起，并且形成可执行文件；目标文件在链接时符号处理、重定位和地址分配如何进行；可执行文件如何被装载并且执行；可执行文件与进程的虚拟空间之间如何映射；什么">
+<meta property="og:type" content="article">
+<meta property="og:title" content="程序员的自我修养_俞甲子_石凡_潘爱民">
+<meta property="og:url" content="https://pilipala276.github.io/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91/index.html">
+<meta property="og:site_name" content="Pilipala276&#39;s Blog">
+<meta property="og:description" content="《程序员的自我修养》- 俞甲子 石凡 潘爱民导读本书将详细描述现在流行的Windows和Linux操作系统下各自的可执行 文件、目标文件格式；普通C&#x2F;C++程序代码如何被编译成目标文件及程序在目标文件中如何存储；目标文件如何被链接器链接到一起，并且形成可执行文件；目标文件在链接时符号处理、重定位和地址分配如何进行；可执行文件如何被装载并且执行；可执行文件与进程的虚拟空间之间如何映射；什么">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pilipala276.github.io/image/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91.png">
+<meta property="article:published_time" content="2022-08-19T09:02:42.000Z">
+<meta property="article:modified_time" content="2022-10-05T09:55:25.727Z">
+<meta property="article:author" content="Pilipala276">
+<meta property="article:tag" content="计算机">
+<meta property="article:tag" content="编译">
+<meta property="article:tag" content="链接">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pilipala276.github.io/image/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pilipala276.github.io/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '程序员的自我修养_俞甲子_石凡_潘爱民',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-05 17:55:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/../img/deadcells.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../image/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Pilipala276's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">程序员的自我修养_俞甲子_石凡_潘爱民</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-19T09:02:42.000Z" title="发表于 2022-08-19 17:02:42">2022-08-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-05T09:55:25.727Z" title="更新于 2022-10-05 17:55:25">2022-10-05</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Read/">Read</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="《程序员的自我修养》-俞甲子-石凡-潘爱民"><a href="#《程序员的自我修养》-俞甲子-石凡-潘爱民" class="headerlink" title="《程序员的自我修养》- 俞甲子 石凡 潘爱民"></a>《程序员的自我修养》- 俞甲子 石凡 潘爱民</h1><h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p>本书将详细描述<br>现在流行的Windows和Linux操作系统下各自的可执行 文件、目标文件格式；<br>普通C&#x2F;C++程序代码如何被编译成目标文件及程序在目标文件中如何存储；<br>目标文件如何被链接器链接到一起，并且形成可执行文件；<br>目标文件在链接时符号处理、重定位和地址分配如何进行；<br>可执行文件如何被装载并且执行；可执行文件与进程的虚拟空间之间如何映射；<br>什么是动态链接，为什么要进行动态链接；<br>Windows和Linux如何进行动态链接及动态链接时的相关问题；<br>什么是堆，什么是栈；<br>函数调用惯例；<br>运行库，Glibc和MSVC CRT的实现分析；系统调用与API；最后我们自己还实现了一个Mini CRT。</p>
+<h2 id="第一部分-简介"><a href="#第一部分-简介" class="headerlink" title="第一部分 简介"></a>第一部分 简介</h2><h3 id="第一章-温故而知新"><a href="#第一章-温故而知新" class="headerlink" title="第一章 温故而知新"></a>第一章 温故而知新</h3><h4 id="1-1-从Hello-World说起"><a href="#1-1-从Hello-World说起" class="headerlink" title="1.1 从Hello World说起"></a>1.1 从Hello World说起</h4><p>一段Hello World程序计算机需要做那些事</p>
+<h4 id="1-2-万变不离其宗"><a href="#1-2-万变不离其宗" class="headerlink" title="1.2 万变不离其宗"></a>1.2 万变不离其宗</h4><p>桥接芯片来方方便内存与CPU的同行</p>
+<p>CPU工艺提高到物理极限后采用多核的方式提高速度，也对程序员提出额更高的要求</p>
+<h4 id="1-3-站的高看得远"><a href="#1-3-站的高看得远" class="headerlink" title="1.3 站的高看得远"></a>1.3 站的高看得远</h4><p>“Any problem in computer science can be solved by another layer of indirection.”</p>
+<p>层之间通信需要接口，只要遵循这个接口，任何一个层都可以被修改或替代</p>
+<h4 id="1-4-操作系统做什么"><a href="#1-4-操作系统做什么" class="headerlink" title="1.4 操作系统做什么"></a>1.4 操作系统做什么</h4><p>多任务系统不让CPU打盹，操作系统接管硬件资源，所有应用程序通过进程的方式运行在比操作系统更低的级别</p>
+<p>操作系统也负责硬件驱动，具体来说就是提供一系列的接口与框架，凡是按照这个接口和框架开发的驱动程序都能在这个操作系统上使用</p>
+<h4 id="1-5-内存不够怎么办"><a href="#1-5-内存不够怎么办" class="headerlink" title="1.5 内存不够怎么办"></a>1.5 内存不够怎么办</h4><p>如果直接将整段程序应用载入物理内存，那么，会面临三个问题：<br>内存地址没有隔离，有可能会被恶意程序修改<br>内存使用效率低，切换另一个程序容易内存不足然后需要暂停一个程序到磁盘再读要用的程序到内存<br>程序运行的地址不确定，程序编写麻烦</p>
+<p>虚拟地址实现进程隔离，程序运行时只需要考虑虚拟地址<br>分页，将硬件地址空间分为固定大小的页，将进程的虚拟地址按页分割，只需要将常用的数据与代码片段按页放入内存，提高了内存的使用效率</p>
+<h4 id="1-6-众人拾柴火焰高"><a href="#1-6-众人拾柴火焰高" class="headerlink" title="1.6 众人拾柴火焰高"></a>1.6 众人拾柴火焰高</h4><p>线程(Thread)称为轻量级进程(LWP)，是程序执行流的最小单元。一个标准的线程由线程ID、当前指 令指针(PC)、寄存器集合和堆栈组成。</p>
+<p>线程可以并发进行，但需要合理的调度，不同操作系统实现线程的方式也不同,一般线程拥有运行，等待，就绪三种状态，等待时间长的I&#x2F;O密集型线程优先级高于等待时间短的CPU密集型线程能够避免饿死(Starvation)现象的发生</p>
+<p>线程安全<br>简单指令一般通过原子操作实现线程安全<br>复杂场合下使用锁来确保线程的同步<br>同时也需要注意CPU内部的动态调度对线程安全的影响</p>
+<h2 id="第二部分-静态链接"><a href="#第二部分-静态链接" class="headerlink" title="第二部分 静态链接"></a>第二部分 静态链接</h2><h3 id="第二章-编译和链接"><a href="#第二章-编译和链接" class="headerlink" title="第二章 编译和链接"></a>第二章 编译和链接</h3><h4 id="2-1-被隐藏了的过程"><a href="#2-1-被隐藏了的过程" class="headerlink" title="2.1 被隐藏了的过程"></a>2.1 被隐藏了的过程</h4><p>集成开发环境(IDE)向我们隐藏了什么？<br>预处理-编译-汇编-链接(合在一起即为，构建build)<br>预处理就是处理”#”开头的预编译指令，残生.i文件(C语言是.i)<br>编译是将预处理后的文件进行一系列语法，词法，语义分析及优化产生.s汇编代码文件<br>汇编就是将汇编代码文件变为机器可以执行的指令，及根据指令对照表一一翻译，产生.o目标文件<br>链接.o文件形成最终的可执行文件</p>
+<h4 id="2-2-编译器做了什么"><a href="#2-2-编译器做了什么" class="headerlink" title="2.2 编译器做了什么"></a>2.2 编译器做了什么</h4><p>编译过程：扫描(词法分析)-语法分析-语义分析-源代码优化-代码生成-目标代码优化</p>
+<p>中间代码使得编译器可以分为前端和后端，编译器前端负责产生机器无关的中间代码，编译器后端将中间代码转换成目标机器代码</p>
+<p>目标代码中有变量定义在其他模块怎么办？定义在其他模块的全局变量和函数在最终运行时的绝对地址都要在最终链接的时候才能确定</p>
+<h4 id="2-4-模块拼装–静态链接"><a href="#2-4-模块拼装–静态链接" class="headerlink" title="2.4 模块拼装–静态链接"></a>2.4 模块拼装–静态链接</h4><p>链接过程包括地址和空间分配，符号决议，重定向等步骤</p>
+<p>库其实是一组目标文 件的包，就是一些最常用的代码编译成目标文件后打包存放。</p>
+<h3 id="第三章-目标文件里有什么"><a href="#第三章-目标文件里有什么" class="headerlink" title="第三章 目标文件里有什么"></a>第三章 目标文件里有什么</h3><h4 id="3-1-目标文件的格式"><a href="#3-1-目标文件的格式" class="headerlink" title="3.1 目标文件的格式"></a>3.1 目标文件的格式</h4><p>可执行文件，目标文件，动态链接库，静态链接文件都按照可执行文件来存储的，Windows下是PE-COFF，Linux下是ELF，他们都是原先Unix下COFF格式的变种<br>COFF主要是在目标文件中引入了“段”的概念</p>
+<h4 id="3-2-目标文件是什么样的"><a href="#3-2-目标文件是什么样的" class="headerlink" title="3.2  目标文件是什么样的"></a>3.2  目标文件是什么样的</h4><p>ELF文件结构：文件头，代码段.text(.code)，已初始化的变量.data，未初始化的变量.bss</p>
+<h4 id="3-3-挖掘SimpleSection-o"><a href="#3-3-挖掘SimpleSection-o" class="headerlink" title="3.3 挖掘SimpleSection.o"></a>3.3 挖掘SimpleSection.o</h4><p>我们可以使用binutils 的工具objdump来查看object内部的结构</p>
+<h4 id="3-4-ELF文件结构描述"><a href="#3-4-ELF文件结构描述" class="headerlink" title="3.4 ELF文件结构描述"></a>3.4 ELF文件结构描述</h4><p>ELF目标文件格式的最前部是ELF文件头(ELF Header)，它包含了描 述整个文件的基本属性，比如ELF文件版本、目标机器型号、程序入口地址等</p>
+<p>段表是ELF文件中除了文件头以外最重要的结构，它描述了ELF的各个段的信息，比如每个段的段 名、段的长度、在文件中的偏移、读写权限及段的其他属性<br>段表的结构比较简单，它是一个以”Elf32_Shdr<br>“结构体为元素的数组。数组元素的个数等于段的个数，每个”Elf32_Shdr”结构体对应一个段</p>
+<h4 id="3-5-连接的接口——符号"><a href="#3-5-连接的接口——符号" class="headerlink" title="3.5 连接的接口——符号"></a>3.5 连接的接口——符号</h4><p>在链接中，我们将函数和变量统称为符号(Symbol)，函数名或变量名就是符号名(Symbol Name)</p>
+<p>ELF文件中的符号表往往是文件中的一个段，段名一般叫“.symtab”。符号表的结构很简单，它是一个Elf32_Sym结构（32位ELF文件）的数组，每个Elf32_Sym结构对应一个符号。</p>
+<p>我们引入一个术语叫做函数签名(Function Signature)，函数签名包含了一个函数的信息，包括函数名、它的参数 类型、它所在的类和名称空间及其他信息。编译器在将C++源代码编译成目标文件时，会将函数和变量的名字进行修饰，形成符号名，也就是说，C++的源代码编译后的目标文件中所使用的符号名是相应的函数和变量的修饰后名称,能够支持函数重载。签名和名称修饰机制不光被使用到函数上，C++中的全局变量和静态变 量也有同样的机制</p>
+<p>编译器默认函数和初始化了的全局变量为强符号，未初始化的全局变量为弱符号。我们也可以通过GCC的 <code>__attribute__((weak))</code>来定义任何一个强符号为弱符号。链接器在对待强符号与弱符号时是不同的，对于强符号一定要定义，且不能被多次定义。弱符号则不用<br>由此，可以将强符号转为弱符号实现程序的裁剪与组合。</p>
+<h4 id="3-6-调试信息"><a href="#3-6-调试信息" class="headerlink" title="3.6 调试信息"></a>3.6 调试信息</h4><p>编译前可以加上调试信息，如在GCC编译时加上“-g”参数，编译器就会在产生的目标文件里面加上调试信息，会形成带有调试信息的目标文件用于调试</p>
+<h3 id="第四章-静态链接"><a href="#第四章-静态链接" class="headerlink" title="第四章 静态链接"></a>第四章 静态链接</h3><h4 id="4-1-空间与地址分配"><a href="#4-1-空间与地址分配" class="headerlink" title="4.1 空间与地址分配"></a>4.1 空间与地址分配</h4><p>链接的过程整体分为两步<br>第一步 空间与地址分配<br>扫描所有的输入目标文件，并且获得它们的各个段的长度、属性和位置，并且将输入目标文件中的符号表中所有的符号定义和符号引用收集起来，统一放到一个全局符号表。这一步中，链接器将能够获得所有输入目标文件的段长度，并且将它们合并(在链接时，一般会选用相似段合并)，计算出输出文件中各个段合并后的长度与位置，并建立映射关系。<br>第二步 符号解析与重定位<br>使用上面第一步中收集到的所有信息，读取输入文件中段的数据、重定位信息，并且进行符号解析与重定位、调整代码中的地址等</p>
+<p>链接的核心在第二步</p>
+<p>链接后才会有对应的虚拟地址，链接前的目标文件虚拟地址为0</p>
+<h4 id="4-2-符号解析与重定位"><a href="#4-2-符号解析与重定位" class="headerlink" title="4.2 符号解析与重定位"></a>4.2 符号解析与重定位</h4><p>在链接前，目标文件中需要引用的符号地址会被赋0，链接后才会修正该地址</p>
+<p>对于可重定位的ELF文件来说，它必须包含有重定位表，用来描述如何修改相应的段里的内容。每个要被重定位的地方叫一个重定位入口，重定位入口的偏移（Offset）表示该入口在要被重定位的段中的位置，对于32位的Intel x86系列处理器来说，重定位表的结构也很简单，它是 一个Elf32_Rel结构的数组，每个数组元素对应一个重定位入口</p>
+<p>当链接器须要对某个符号的引用进行重定位时，它就要确定这个符号的目标地址。这时候链接器就会去查找由所有输入目标文件的符号表 组成的全局符号表，找到相应的符号后进行重定位</p>
+<h4 id="4-3-COMMON块"><a href="#4-3-COMMON块" class="headerlink" title="4.3 COMMON块"></a>4.3 COMMON块</h4><p>当有多个弱符号，链接时，会以输入文件中最大的那个为准分配空间，Fortran把这种空间叫COMMON块<br>编译后未初始化的局部变量大小已知，放到BSS段，未初始化的全局变量要到链接后才能确定，放到BSS段</p>
+<h4 id="4-4-C-相关问题"><a href="#4-4-C-相关问题" class="headerlink" title="4.4 C++相关问题"></a>4.4 C++相关问题</h4><p>C++的一些语言特性使之必须由编译器和链接器共同支持才能完成工作。最主要的有两个方面，一个是C++的重复代码消除，还有一个就是全局构造与析构。</p>
+<p>模板（Templates）、外部内联函数（Extern Inline Function）和虚函数表（Virtual Function Table）都有可能在不同的编译单元里生成相同的代码。重复代码消除一般做法是保存在一个单独的段里面，也引生出了函数级别链接，即把函数放在一个单独的段，但会减慢编译链接的过程</p>
+<p>在Linux下EFI文件定义了两种特殊的段，<code>.init</code>和<code>.fini</code>它们分别在main函数前后执行，完成初始化和退出工作，C++的全局构造函数和析构函数可以由此实现</p>
+<p>我们把符号修饰标准、变量内 存布局、函数调用方式等这些跟可执行代码二进制兼容性相关的内容称 为ABI（Application Binary Interface）。<br>API往往是指源代码级别的接口，比如我们可以说POSIX是一个API标准、Windows所规定的 应用程序接口是一个API；而ABI是指二进制层面的接口，ABI的兼容程度比API要更为严格</p>
+<h4 id="4-5-静态库链接"><a href="#4-5-静态库链接" class="headerlink" title="4.5 静态库链接"></a>4.5 静态库链接</h4><p>一种语言的开发环境往往会带有语言库，例如libc.a就是c语言的库，它是由许多个目标文件放在一起压缩成的，这些目标文件之间相互依赖。把自己的c语言文件编译成目标文件后由ld链接器完成链接</p>
+<h4 id="4-6-链接过程控制"><a href="#4-6-链接过程控制" class="headerlink" title="4.6 链接过程控制"></a>4.6 链接过程控制</h4><p>绝大部分情况，我们使用链接器提供的默认链接跪着链接即可，但对于一些特殊要求的程序(操作系统内核，BIOS，引导程序等)需要特殊的链接过程</p>
+<p>链接器一般提供三种方式控制链接，命令行链接，将链接指令存放在目标文件，使用连接控制脚本</p>
+<p>一个通过ld链接器控制链接的例子<br>写一个链接脚本TinyHelloWorld.lds来链接</p>
+<h4 id="4-7-BFD库"><a href="#4-7-BFD库" class="headerlink" title="4.7 BFD库"></a>4.7 BFD库</h4><p>由于不同处理器，不同软件平台的差异，编译链接后的目标文件也有所不同，BFD库希望通过一种统一的接口来处理不同的目标文件格式。<br>现在GCC（更具体地讲是GNU 汇编器GAS， GNU Assembler）、链接 器ld、调试器GDB及binutils的其他工具都通过BFD库来处理目标文件， 而不是直接操作目标文件<br>这样做最大的好处是将编译器和链接器本身同具体的目标文件格式隔离开来，一旦我们须要支持一种新的目标文件 格式，只须要在BFD库里面添加一种格式就可以了，而不须要修改编译器和链接器</p>
+<h3 id="第五章-Windows-PE-x2F-COFF"><a href="#第五章-Windows-PE-x2F-COFF" class="headerlink" title="第五章 Windows PE&#x2F;COFF"></a>第五章 Windows PE&#x2F;COFF</h3><h4 id="5-1-5-1-Windows的二进制文件格式PE-x2F-COFF"><a href="#5-1-5-1-Windows的二进制文件格式PE-x2F-COFF" class="headerlink" title="5.1 5.1 Windows的二进制文件格式PE&#x2F;COFF"></a>5.1 5.1 Windows的二进制文件格式PE&#x2F;COFF</h4><p>PE&#x2F;COFF跟ELF很类似，都是段结构</p>
+<h4 id="5-2-PE的前身——COFF"><a href="#5-2-PE的前身——COFF" class="headerlink" title="5.2 PE的前身——COFF"></a>5.2 PE的前身——COFF</h4><p>“Microsoft Visual C++”的编译环境包括编译器“cl”，链接器“link”， 可执行文件查看器“dumpbin”等</p>
+<p>COFF文件结构几乎与ELF一样</p>
+<h4 id="5-3-链接指示信息"><a href="#5-3-链接指示信息" class="headerlink" title="5.3 链接指示信息"></a>5.3 链接指示信息</h4><p>.drectve段包含链接信息</p>
+<h4 id="5-4-调试信息"><a href="#5-4-调试信息" class="headerlink" title="5.4 调试信息"></a>5.4 调试信息</h4><p>.debug段包含调试信息</p>
+<h4 id="5-5-大家都有符号表"><a href="#5-5-大家都有符号表" class="headerlink" title="5.5 大家都有符号表"></a>5.5 大家都有符号表</h4><p>COFF 文件的符号表包含的内容几乎跟ELF文件的符号表一样，主要就是符号 名、符号的类型、所在的位置</p>
+<h4 id="5-6-Windows下的ELF——PE"><a href="#5-6-Windows下的ELF——PE" class="headerlink" title="5.6 Windows下的ELF——PE"></a>5.6 Windows下的ELF——PE</h4><p>PE文件中“ Image DOS Header<br>”和“ DOS Stub ”这两个结构就是为了兼容DOS系统而设计的，因为早期的Windows依靠DOS运行</p>
+<p>在Windows系统装载PE可执行文件时，往往须要很快地找到一些装载所须要的数据结构，比如导入表、导出表、资源、重定位表等。这些常用的数据的位置和长度都被保存在了一个叫数据目录（Data Directory），主要跟装载和DLL动态库有关</p>
+<h2 id="第三部分-装载与动态链接"><a href="#第三部分-装载与动态链接" class="headerlink" title="第三部分 装载与动态链接"></a>第三部分 装载与动态链接</h2><h3 id="第六章-可执行文件的装载与进程"><a href="#第六章-可执行文件的装载与进程" class="headerlink" title="第六章 可执行文件的装载与进程"></a>第六章 可执行文件的装载与进程</h3><h4 id="6-1-进程虚拟地址空间"><a href="#6-1-进程虚拟地址空间" class="headerlink" title="6.1 进程虚拟地址空间"></a>6.1 进程虚拟地址空间</h4><p>可执行文件只有装载到内存以后才能被CPU执行</p>
+<p>程序（或者狭义上讲可执行文件）是一个静态的概念，它就是一些预先编译好的指令和数据集合的一个文件；进程则是一个动态的概念，它是程序运行时的一个过程</p>
+<p>进程只能使用那些操作系统分配给进程的地址，如果访问未经允许的空间，那么操作系统就会捕获到这些访问，将进程的这种访问当作非法操作，强制结束进程</p>
+<h4 id="6-2-装载的方式"><a href="#6-2-装载的方式" class="headerlink" title="6.2 装载的方式"></a>6.2 装载的方式</h4><p>装载的方式有<br>静态装载，即将程序运行需要的全部数据和指令都装入内存<br>动态装载，将程序常用的部分装载到内存，不常用的用到的时候在装载，一般有覆盖装入和页映射</p>
+<p>覆盖装入在没有发明虚拟存储之前使用比较广泛，快被淘汰了</p>
+<p>页映射是虚拟存储机制的一部分，它随着虚拟存储的发明而诞生<br>管理页映射的装载管理器就是现代的操作系统的存储管理器。目前几乎所有的主流操作系统都是按照这种方式装载可执行文件的</p>
+<h4 id="6-3-从操作系统的角度看可执行文件的装载"><a href="#6-3-从操作系统的角度看可执行文件的装载" class="headerlink" title="6.3 从操作系统的角度看可执行文件的装载"></a>6.3 从操作系统的角度看可执行文件的装载</h4><p><strong>大致过程可能是这样<br>操作系统创建进程，进程有自己的虚拟地址，可执行文件装载一部分到物理内存，开始执行，进程会按照虚拟内存执行，在Linux下执行时会有一个页目录来表示虚拟内存到物理内存的映射，发生页错误时，操作系统将查询虚拟内存区域，找到缺页，将缺页读取到物理内存，再设置缺页的虚拟页和物理页的映射关系，进程继续执行</strong></p>
+<p>页目录(Page Directory)：虚拟内存到物理内存<br>虚拟内存区域(VAM)：可执行文件到虚拟内存</p>
+<h4 id="6-4-进程虚存空间分布"><a href="#6-4-进程虚存空间分布" class="headerlink" title="6.4 进程虚存空间分布"></a>6.4 进程虚存空间分布</h4><p>如果按链接时的段Section来装载，很容易造成空间浪费，很简单有效的方法是，将相同权限的段一起装载，即装载时当成一个段Segment，映射后也只会有一个相对应的VMA<br>在ELF可执行文件中的体现是有一个专门的数据结构叫做程序头表来保存Segment信息</p>
+<p>进程的堆和栈一般也是以VMA的形式存在的</p>
+<p>人们貌似并不满足于Segment节省的空间，而实现了类似的取巧办法，即将各个段的接壤部分共享一个物理页面，然后将物理页面分多次映射到虚拟地址</p>
+<p>进程的初始化信息一般保存在在进程虚拟空间的栈中，例如初始化参数，环境变量等信息</p>
+<h4 id="6-5-Linux内核装载ELF过程简介"><a href="#6-5-Linux内核装载ELF过程简介" class="headerlink" title="6.5 Linux内核装载ELF过程简介"></a>6.5 Linux内核装载ELF过程简介</h4><p>bash进程会调用<code>fork()</code>创建一个新进程，然后新的进程调用<code>execve()</code>，开始装载工作</p>
+<h4 id="6-6-Windows-PE的装载"><a href="#6-6-Windows-PE的装载" class="headerlink" title="6.6 Windows PE的装载"></a>6.6 Windows PE的装载</h4><p>PE文件没有Unix的取巧办法，即所有段的其实地址都是页的倍数；也没有Segment和Section之分，因为它的段本来就比较少。好处是映射方便，坏处是会浪费一些内存空间</p>
+<p>PE被设计为可以装载到任何地址，而装载到不同地址时只会改变基地址(Base Address),其他的则使用相对虚拟地址(RVA)，是相对基地址而言的</p>
+<h3 id="第七章-动态链接"><a href="#第七章-动态链接" class="headerlink" title="第七章 动态链接"></a>第七章 动态链接</h3><h4 id="7-1-为什么要动态链接"><a href="#7-1-为什么要动态链接" class="headerlink" title="7.1 为什么要动态链接"></a>7.1 为什么要动态链接</h4><p>静态链接会带来空间浪费(每个可执行文件都有重复的内容)与程序更新困难的问题(新发布的库迫使重新链接形成可执行文件，即使是很小的更新)</p>
+<p>动态链接的基本思想就是运行时才链接</p>
+<p>动态链接除了能节省内存，方便版本升级，还能加强程序的兼容性，如可以在不同平台运行时动态链接不同的库<br>动态链接也会有麻烦，比如模块更新后新模块接口必须与旧模块一致，装载时链接会有性能损失</p>
+<h4 id="7-2-简单的动态链接例子"><a href="#7-2-简单的动态链接例子" class="headerlink" title="7.2 简单的动态链接例子"></a>7.2 简单的动态链接例子</h4><p>动态链接编译成共享对象文件(DSO)，Linux下是.so</p>
+<p>程序和动态链接库编译，因为程序需要知道动态链接库在哪，以及知道符号的引用是静态符号还是动态符号，但是不会对动态符号进行地址重定位，会留到装载时进行</p>
+<p>进程开始运行时会先把控制权交给链接器，链接器完成装载工作再把控制权交给程序</p>
+<p>动态链接模块的装载地址是无效地址，因为共享对象的最终装载地址在编译时是不确定的，装载器根据当前地址空间的空闲情况，动态分配一块足够大小的虚拟地址空间给相应的共享对象</p>
+<h4 id="7-3-地址无关代码"><a href="#7-3-地址无关代码" class="headerlink" title="7.3 地址无关代码"></a>7.3 地址无关代码</h4><p>早期采用静态共享库来为共享对象分配虚拟地址，即手工指定各个模块地址，弊病很大</p>
+<p>为了视线共享对象能在任意地址装载，首先想到的是重定位<br>共享对象的指令部分为了满足被多个进程共享，不能改变，不能采用装载时重定位的方法来解决，因为重定位会改变共享对象指令。数据部分可以有多个副本，可以采用装载时重定位的方法来解决<br>所以装载是重定位确实能解决共享对象分配虚拟地址的问题，只是指令部分还是无法共享，数据部分本来就需要多个副本，也就背离了动态链接节省内存的初衷了</p>
+<p>地址无关代码(PIC)，我们希望程序模块中共享的指令部分在装载时不需要因为装载地址的改变而改变，所以实现的基本想法就是把指令中那些需要被修改的部分分离出来，跟数据部分放在一起，这样指令部分就可以保持不变，而数据部分可以在每个进程中拥有一个副本<br>ELF的做法是在数据段里面建立一个指向这些变量的指针数组，也称全局偏移表(GOT)</p>
+<p>四种地址引用方式实现地址无关性<br>模块内部指令跳转：相对跳转<br>模块内部数据访问：相对地址访问<br>模块外部指令跳转：间接跳转(GOT)<br>模块外部数据访问：间接访问(GOT)</p>
+<p><strong>大概可能是这样，装载后，各个进程拥有GOT和数据副本，比如原来是指令要访问数据，只需要偏移指定量就可以了，但是由于不同进程都有数据副本，不可能共享数据的物理内存，所以每个进程就由GOT来指定偏移量帮助指令寻找数据，以此指令只需要在物理内存映射一次即可</strong></p>
+<p>在处理全局变量时，由于不知道该全局变量是不是跨模块调用，ELF共享库在编译时默认为跨模块调用的全局变量，如果是在其他模块，GOT会指向其他模块，如果不在其他模块，GOT会指向模块内的变量副本</p>
+<p>共享数据段，线程私有存储</p>
+<p>数据段的指针等的地址无关性是通过装载时重定位实现的</p>
+<h4 id="7-4-延迟绑定"><a href="#7-4-延迟绑定" class="headerlink" title="7.4 延迟绑定"></a>7.4 延迟绑定</h4><p>动态链接相对于静态链接，模块间调用需要经过GOT定位，而且每次程序开始执行都得链接<br>延迟绑定即当函数第一次被用到采取绑定，而不是一开始就全部链接</p>
+<p>细节上，ELF使用PLT的方法来实现，当函数被调用时，会通过PLT实现，如果是第一次调用，PLT需要实现延迟绑定，至少需要知道是哪个函数，放在哪个模块，需要把这些传给动态链接器来绑定，如果已经链接过了，PLT会跳转到函数地址<br>一般ELF把全局变量的引用地址放在.got中，把函数的引用地址放在.got.plt中</p>
+<h4 id="7-5-动态链接相关结构"><a href="#7-5-动态链接相关结构" class="headerlink" title="7.5 动态链接相关结构"></a>7.5 动态链接相关结构</h4><p>.interp段<br>动态链接器的位置</p>
+<p>.dynamic段<br>相当于静态链接时的文件头，这个段里面保存了动态链接器所需要的基本信息</p>
+<p>.dvnsvm<br>动态符号表,与.symtab不同，.dynsym只保存了与动态链接相关的符号，也有辅助的表.dynstr，.hash</p>
+<p>.rel.dyn与.rel.plt<br>动态重定向表，.rel.dyn是对数据引用的修正，.rel.plt是对函数引用的修正</p>
+<p>操作系统要传给动态连接器的参数保存在进程的堆栈中</p>
+<h4 id="7-6-动态连接的步骤和实现"><a href="#7-6-动态连接的步骤和实现" class="headerlink" title="7.6 动态连接的步骤和实现"></a>7.6 动态连接的步骤和实现</h4><p>动态链接基本上分三步：先是启动动态链接器本身，然后装载所有需要的共享对象，最后是重定位和初始化</p>
+<p>动态链接器也是共享对象，但是首先必须完成自己的链接工作，称为自举</p>
+<p>完成自举后，动态链接器开始把各个符号合并到一个全局符号表中<br>但是可能有一种情况，即符号名称相同，(称为全局符号介入问题)Linux下回忽略后加入的符号，因此得小心重名问题<br>如果调用模块内的函数，但该函数缺因为符号觉如被其他模块的函数覆盖，编译器就不能采用相对寻址了而需要GOT&#x2F;PLT<br>当然可以用<code>static</code>关键字保证函数为单元私有函数</p>
+<p>完成上述步骤后，链接器开始重新遍历可执行文件和共享对象的重定位表，将GOT&#x2F;PLT中每个需要重定位的位置进行修正<br>重定位完成后，如果共享对象有.init段，动态链接器也会优先完成.init的代码段完成初始化(但是可执行文件的.init不会由动态链接器完成)</p>
+<p>到此动态链接器的工作就完成了</p>
+<h4 id="7-7-显式运行时链接"><a href="#7-7-显式运行时链接" class="headerlink" title="7.7 显式运行时链接"></a>7.7 显式运行时链接</h4><p>显示运行时链接(有时候也叫做运行时加载)希望用到的时候再加载(有点像延迟绑定)，并且不用的时候再卸载。这种设计角度开发的共享对象被叫做动态装载库，动态链接器中也有相应的API</p>
+<p>卸载的过程和加载刚好相反，先执行”.finit”段代码，再将相应的符号从符号表去除，取消进程空间跟模块的映射关系，然后关闭该文件</p>
+<h3 id="第八章-Linux共享库的组织"><a href="#第八章-Linux共享库的组织" class="headerlink" title="第八章 Linux共享库的组织"></a>第八章 Linux共享库的组织</h3><p>共享库即共享对象</p>
+<h4 id="8-1-共享库版本"><a href="#8-1-共享库版本" class="headerlink" title="8.1 共享库版本"></a>8.1 共享库版本</h4><p>保持共享库的兼容性即保持共享库的原有接口不变，这里的接口指二进制层面的接口，即ABI</p>
+<p>解决兼容性问题也可以通过共享库版本的办法来解决</p>
+<p>Linux通过SO-NAME的命名机制来记录共享库的依赖关系，SO-NAME即共享库的文件名去掉次版本号和发布版本号<br>系统会将SO-NAME软链接到主版本号相同的新版本共享库</p>
+<h4 id="8-2-符号版本"><a href="#8-2-符号版本" class="headerlink" title="8.2 符号版本"></a>8.2 符号版本</h4><p>版本号比较低时一般有两种做法，一是发出个警告信息，继续运行，二是禁止运行</p>
+<p>在保守策略中，如果系统中只有低次版本号的共享库，那么这些程序就不能运行。我们可以把这个问题叫做次版本号交会问题</p>
+<p>符号版本机制，基本思路是让每个符号都有一个相关联的版本号</p>
+<h4 id="8-3-共享库系统路径"><a href="#8-3-共享库系统路径" class="headerlink" title="8.3 共享库系统路径"></a>8.3 共享库系统路径</h4><p>FHS(一种规定了一个系统中的系统文件应该如何存放的标准)</p>
+<p>&#x2F;lib，这个位置主要存放系统最关键和基础的共享库<br>&#x2F;usr&#x2F;lib，这个目录下主要保存的是一些非系统运行时所需要的关键性的 共享库，主要是一些开发时用到的共享库，这些共享库一般不会被用户的程序或shell脚本直接用到<br>&#x2F;usr&#x2F;local&#x2F;lib，这个目录用来放置一些跟操作系统本身并不十分相关的库，主要是一些第三方的应用程序的库</p>
+<h4 id="8-4-共享库的查找过程"><a href="#8-4-共享库的查找过程" class="headerlink" title="8.4 共享库的查找过程"></a>8.4 共享库的查找过程</h4><p>Linux系统中有一个叫做ldconfig的程序，用来为共享库目录下的各个共享库创建、删除或更新相应的SO-NAME<br>Linux下查找共享库时会优先查找etc&#x2F;ld.so.cache(ldconfig处理后的SO-NAME存放位置)</p>
+<h4 id="8-5-环境变量"><a href="#8-5-环境变量" class="headerlink" title="8.5 环境变量"></a>8.5 环境变量</h4><p>环境变量可以改变某个应用程序的共享库查找路径<br>为什么不要随意使用环境变量：<a target="_blank" rel="noopener" href="http://xahlee.org/UnixResource_dir/_/ldpath.html">http://xahlee.org/UnixResource_dir/_/ldpath.html</a><br>LD_DEBUG，这个变量可以打开动态链接器的调试功能</p>
+<h4 id="8-6-共享库的创建和安装"><a href="#8-6-共享库的创建和安装" class="headerlink" title="8.6 共享库的创建和安装"></a>8.6 共享库的创建和安装</h4><p>共享库的安装最简单办法就是复制到共享库目录再运行ldconfig，不过一般需要系统root权限<br>也可以建立相应的SO-NAME，并告诉编译器和程序如何查找该共享库</p>
+<p>共享库也可以是一定格式的链接脚本文件，把几个共享库组合起来，对用户来说就是一个新的共享库</p>
+<h3 id="第九章-Windows下的动态链接"><a href="#第九章-Windows下的动态链接" class="headerlink" title="第九章 Windows下的动态链接"></a>第九章 Windows下的动态链接</h3><h4 id="9-1-DLL简介"><a href="#9-1-DLL简介" class="headerlink" title="9.1 DLL简介"></a>9.1 DLL简介</h4><p>DLL的设计目的更强调模块化</p>
+<p>DLL的进程地址通过基地址和相对地址来管理</p>
+<p>DLL中有两个数据段，一个进程间共享，另一个私有</p>
+<p>ELF默认导出所有的全局符号，DLL则需要显式地告诉编译器我们要导出的符号<br>可以用 <code>_declspec(dllexport)</code>或采用模块定义(.def)文件声明，也可以再链接时使用<code>/EXPORT</code>参数</p>
+<h4 id="9-2-符号导出导入表"><a href="#9-2-符号导出导入表" class="headerlink" title="9.2 符号导出导入表"></a>9.2 符号导出导入表</h4><p>PE文件中导出的符号被存放在导出表，导出表结构(IMAGE_EXPORT_DIRECTORY)中，有三个数组存放导出符号的地址，符号名，名字序号(早期为节省内存并不是存放符号而是存放对应的序号，后来为了向后兼容还是得有序号，甚至可以没有函数名也得有序号)</p>
+<p>EXP文件，链接器扫描一次导出符号后将它存在EXP文件中，然后把这个文件当普通目标文件一样和其他输入目标文件链接</p>
+<p>DLL有导出重定向的机制，实现机制是导出表中该符号的地址(RVA)指向另一个符号</p>
+<p>导入表结构(IMAGE_IMPORT_DESCRIPTOR)中的FirsrThunk指向导入地址数组IAT</p>
+<p>Windows的动态链接是Windows内核的一部分，所以即时PE的导入表一般是只读的，它也能修改</p>
+<p>Windows下调用函数类似于GOT,即调用地址指向IAT,也是间接调用，但他的地址不是地址无关的</p>
+<p>编译器不区分导入函数和导出函数，在“__declspec”关键字引入之前，调用外部函数时链接器会将函数重定位到一段桩代码，但是链接器一般情况不会产生指令，这部分指令由LIB文件即导入库产生<br>具体来说就是在编译器产生导入库时会有两个符号的定义例如”foo”和”__imp__foo”，foo指向桩代码(然后指向__imp__foo？)，__imp__foo指向foo在IAT的位置，如果使用“__declspec”，会在foo前加上__imp__前缀(即跳过桩代码那步？貌似还有其他好处)</p>
+<h4 id="9-3-DLL优化"><a href="#9-3-DLL优化" class="headerlink" title="9.3 DLL优化"></a>9.3 DLL优化</h4><p>DLL在装载时如果目标地址被占用，由于DLL得代码段不是地址无关的，所以需要重定向，但这个重定向是相对简单的，只需要加上固定插值<br>但很明显，每个进程就得需要单独的代码副本，相对于PIC会更加的浪费内存,但它会更快，因为不用GOT跳转(进程间也不会争抢代码段_我猜的)</p>
+<p>DLL的默认基地址也是可以改变的，只要第一次重定位以后就可以将及地址改掉，因为每次程序运行要用的DLL是固定的，除了通过LoadLibrary()装载的以外<br>导入函数地址也是，这种DLL性能优化叫做DLL绑定，不过如果DLL更新或者基地址改变，就还是得重定向，对于第一种情况，链接器检查DLL的时间戳和校验核对要装载的DLL和绑定时的DLL版本是否相同</p>
+<h4 id="9-4-C-与动态链接"><a href="#9-4-C-与动态链接" class="headerlink" title="9.4 C++与动态链接"></a>9.4 C++与动态链接</h4><p>组件对象模型(COM),推荐阅读：《COM本质论》</p>
+<h4 id="9-5-DLL-HELL"><a href="#9-5-DLL-HELL" class="headerlink" title="9.5 DLL HELL"></a>9.5 DLL HELL</h4><p>预防DLL Hell的最简单方法就是不用DLL采用静态链接<br>第二种方法就是防止DLL覆盖，Windows文件保护能阻止未经授权的应用程序覆盖DLL<br>第三种办法是让每个程序拥有一份自己依赖的DLL，并且把不同的DLL放到该应用程序文件夹而不是系统文件夹</p>
+<h2 id="第四部分-库与运行库"><a href="#第四部分-库与运行库" class="headerlink" title="第四部分 库与运行库"></a>第四部分 库与运行库</h2><p>程序环境由三部分组成：内存，运行库，系统调用</p>
+<h3 id="第十章-内存"><a href="#第十章-内存" class="headerlink" title="第十章 内存"></a>第十章 内存</h3><h4 id="10-1-程序的内存布局"><a href="#10-1-程序的内存布局" class="headerlink" title="10.1 程序的内存布局"></a>10.1 程序的内存布局</h4><p>应用程序使用的内存空间一般有如下默认的区域：栈，堆，可执行文件映像，保留区，动态链接库映射区</p>
+<h4 id="10-2-栈与调用惯例"><a href="#10-2-栈与调用惯例" class="headerlink" title="10.2 栈与调用惯例"></a>10.2 栈与调用惯例</h4><p>栈保存了一个函数调用所需要的维护信息，这常常被称为堆栈帧（Stack Frame）或活动记录<br>堆栈帧一般包括：函数的返回地址和参数，临时变量，保存的上下文</p>
+<p>一个函数的活动记录用ebp和esp两个寄存器来划定范围，esp是栈顶指针，ebp寄存器是帧指针，不随函数执行而变化用来定位函数活动的各个数据，如返回地址和参数</p>
+<p>函数调用主要就是函数调用方和被调用方对函数如何调用有着统一的理解<br>两者的约定称为调用惯例<br>调用管理一般包括，栈的维护方式，名字修饰的策略</p>
+<p>函数返回值是一些简单的类型可以直接用寄存器eax返回，如果是比较大的，复杂的，一般采用下面的方式，在栈上开辟一片空间，将这片空间作为返回值的临时对象，并将临时对象的地址作为隐藏参数传递给函数，函数将数据拷贝给临时对象，并将该对象地址用eax传出。<br>如果再传给其他值得话，返回对象就被拷贝了两次，所以不要轻易返回大尺寸的对象</p>
+<h4 id="10-3-堆与内存管理"><a href="#10-3-堆与内存管理" class="headerlink" title="10.3 堆与内存管理"></a>10.3 堆与内存管理</h4><p>堆的分配算法有：空闲链表，位图，对象池<br>很多时候堆的分配采取多种算法复合的方式</p>
+<h3 id="第十一章-运行库"><a href="#第十一章-运行库" class="headerlink" title="第十一章 运行库"></a>第十一章 运行库</h3><h4 id="11-1-入口函数和程序初始化"><a href="#11-1-入口函数和程序初始化" class="headerlink" title="11.1 入口函数和程序初始化"></a>11.1 入口函数和程序初始化</h4><p>glibc的入口函数的基本思路：_start -&gt; __libc_start_main -&gt; exit<br>MSVC的入口函数的基本思路：初始化和OS有关的全局变量，初始化堆，初始化I&#x2F;O，获取命令行参数和环境变量，初始化C库的一些数据，调用main并记录返回值，检查错误并将main的返回值返回</p>
+<p>在操作系统层面上，文件操作也有类似于FILE的一个概念，在Linux 里，这叫做文件描述符（File Descriptor），而在Windows里，叫做句柄 （Handle）<br>当我们要访问文件时，必须从FILE结构转换到操作系统的句柄<br>I&#x2F;O初始化的职责：首先I&#x2F;O初始化函数需要在用户空间中建立stdin、stdout、stderr及其对应的FILE结构，使得程序进入main之后可以直接使用printf、scanf等函数<br>MSVC的I&#x2F;O初始化主要进行了如下几个工作：<br>建立打开文件表，如果能集成自父进程，那么从父进程中获取继承的句柄，初始化标准输入输出</p>
+<h4 id="11-2-C-x2F-C-运行库"><a href="#11-2-C-x2F-C-运行库" class="headerlink" title="11.2 C&#x2F;C++运行库"></a>11.2 C&#x2F;C++运行库</h4><p>C语言的标准库非常轻量，它仅 仅包含了数学函数、字符&#x2F;字符串处理，I&#x2F;O等基本方面</p>
+<p>不定参数函数一般使用cdecl调用惯例，因为cdecl是调用方负责清除堆栈，能够知道传入了多少参数<br>变长参数宏：参数也是不定的</p>
+<h4 id="11-3-运行库与多线程"><a href="#11-3-运行库与多线程" class="headerlink" title="11.3 运行库与多线程"></a>11.3 运行库与多线程</h4><p>MSVC CRT为了兼容多线程做出的改进:使用TLS(对异常处理的改进使用的该方法)，加锁。但是还是尽量不该原型，改实现，才能做到向后兼容</p>
+<p>线程局部存储(TLS)<br>windows下对于每个线程都会建立关于线程信息的结构，线程环境块(TEB)，这个结构里有线程堆栈地址，线程ID还有TLS数组等信息<br>TLS的使用分为隐式和显式</p>
+<h4 id="11-4-C-全局构造与析构"><a href="#11-4-C-全局构造与析构" class="headerlink" title="11.4 C++全局构造与析构"></a>11.4 C++全局构造与析构</h4><p><del>这本书所有有关C、C++的部分，对于我来说确实太深入了<br>比如说这部分，我只能大概知道它是想讲入口函数的构造和析构，然后很具体的分析了从哪个函数到哪个函数，在目标文件是怎么安排这部分内容的等等，但不太知道为什么这样做</del></p>
+<p>glibc的全局构造大概是这样的：<br><em>start传递进来的init函数指针指向__libc_csu_init函数，该函数调用了定义在crti.o中的_init()函数也就是.init段，具体来说是调用__do_global_ctors_aux函数这个函数来自于GCC提供的目标文件crtbegin.o(也就是GCC负责全局构造)，该函数中的__CTOR_LIST__就是全局对象的构造指针。<br>那么__CTOR_LIST__是怎么实现的呢？对于每个编译单元GCC都会生成一个用于构造&#x2F;析构全局对象的函数，_GLOBAL__I_Hw，它放在.ctors段中。然后链接时链接器把所有目标文件的.ctors段合在一起成为一个数组，并将这个数组的指针放到crtbegin.o的.ctors段中，并定义成符号__CTOR_LIST</em>_<br>当然真正的构造函数会更复杂</p>
+<p>MSVC CRT中的全局构造也类似：<br>MSVC的入口函数mainCRTStartup会调用一个函数_initterm，这个函数会接受两个指针而这两个指针构造函数指针数组的开始地址和结束地址，这两个指针放在.CRT$XCA段和.CRT$XCZ段<br>当编译的时候，每一个编译单元都会生成名为.CRT$XCU的段，在这个段中编译单元会加入自身的全局初始化函数。链接器链接的时候会将以名字按字母表排序使那两个指针是开始地址和结束地址</p>
+<h4 id="11-5-fread实现"><a href="#11-5-fread实现" class="headerlink" title="11.5 fread实现"></a>11.5 fread实现</h4><p>这一部分希望打通运行库函数fread到Windows系统的API的的ReadFile()函数之间的通路</p>
+<p>按理说直接调用就可以，但是还有很多东西需要处理，尤其是缓冲这部分，这部分我并未细读</p>
+<h3 id="第十二章-系统调用与API"><a href="#第十二章-系统调用与API" class="headerlink" title="第十二章 系统调用与API"></a>第十二章 系统调用与API</h3><h4 id="12-1-系统调用介绍"><a href="#12-1-系统调用介绍" class="headerlink" title="12.1 系统调用介绍"></a>12.1 系统调用介绍</h4><p>系统调用的弊端：操作系统提供的机构过于原始、各个操作系统之间调用不兼容</p>
+<p>运行库可以作为系统调用和程序之间的抽象层</p>
+<p>现代操作系统中通常有两种特权级别：用户模式和内核模式<br>在Linux下系统调用号通过eax寄存器传给int 0x80调用中断，中断服务调用对应的函数</p>
+<p>当用户调用某个系统调用的时候，实际是执行了以上一段汇编代码</p>
+<p>用户态和内核态使用的堆栈是不同的，由用户态切换到内核态还需要切换堆栈</p>
+<h4 id="12-3-Windows-API"><a href="#12-3-Windows-API" class="headerlink" title="12.3 Windows API"></a>12.3 Windows API</h4><p>Windows为什么要在系统调用与CRT之间加上一层API呢？因为硬件结构限制，导致系统调用并不是很稳定。例如Windows 2000能够兼容Windows NT和Windows 9x</p>
+<p>推荐阅读：《人月神话》</p>
+<h3 id="第十三章-运行库实现"><a href="#第十三章-运行库实现" class="headerlink" title="第十三章 运行库实现"></a>第十三章 运行库实现</h3><p>本章在于实现一个迷你的CRT，具备CRT得关健功能，入口函数，初始化，堆管理，基本IO甚至是C++的new&#x2F;delete，stream和string的支持</p>
+<p><del>这一章也未细读，因为太难了</del></p>
+<h4 id="13-1-C语言库"><a href="#13-1-C语言库" class="headerlink" title="13.1 C语言库"></a>13.1 C语言库</h4><p>这一节实现了CRT的入口函数，堆管理，文件操作，基本字符串操作还实现了printf</p>
+<h4 id="13-2-如何使用Mini-CRT"><a href="#13-2-如何使用Mini-CRT" class="headerlink" title="13.2 如何使用Mini CRT"></a>13.2 如何使用Mini CRT</h4><p>这一节是对上一节的测试</p>
+<h4 id="13-3-C-运行库实现"><a href="#13-3-C-运行库实现" class="headerlink" title="13.3 C++运行库实现"></a>13.3 C++运行库实现</h4><p>C++的模板的实现依赖于编译器和链接器</p>
+<p>这一节实现了new，delete，C++的构造析构，stram和string</p>
+<h4 id="13-4-如何使用Mini-CRT"><a href="#13-4-如何使用Mini-CRT" class="headerlink" title="13.4 如何使用Mini CRT++"></a>13.4 如何使用Mini CRT++</h4><p>这一节是对上一节的测试</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这本书从Windows和Linux出发描述了很多东西<br>一个C&#x2F;C++文件是如何被编译成目标文件，编译在这本书描述的还是比较少的<br>再和其他目标文件链接，链接时有很多重定位、地址分配等问题，链接又分为静态链接和动态链接，又牵扯到了库<br>再装载到进程来执行，进程地址的分配、映射关系，以及如何装载等问题</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io">Pilipala276</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91/">https://pilipala276.github.io/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pilipala276.github.io" target="_blank">Pilipala276's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/">计算机</a><a class="post-meta__tags" href="/tags/%E7%BC%96%E8%AF%91/">编译</a><a class="post-meta__tags" href="/tags/%E9%93%BE%E6%8E%A5/">链接</a></div><div class="post_share"><div class="social-share" data-image="/../image/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Daily_blog/2022-10-15/"><img class="prev-cover" src="/../image/Daily_blog/2022-10-15.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">2022-10-15's Blog</div></div></a></div><div class="next-post pull-right"><a href="/Daily_blog/2022-08-07/"><img class="next-cover" src="/../image/Daily_blog/2022-08-07.jpeg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2022-08-07's Blog</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/../img/deadcells.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pilipala276</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">27</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">27</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pilipala276"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E3%80%8A%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB%E3%80%8B-%E4%BF%9E%E7%94%B2%E5%AD%90-%E7%9F%B3%E5%87%A1-%E6%BD%98%E7%88%B1%E6%B0%91"><span class="toc-number">1.</span> <span class="toc-text">《程序员的自我修养》- 俞甲子 石凡 潘爱民</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E8%AF%BB"><span class="toc-number">1.1.</span> <span class="toc-text">导读</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.2.</span> <span class="toc-text">第一部分 简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0-%E6%B8%A9%E6%95%85%E8%80%8C%E7%9F%A5%E6%96%B0"><span class="toc-number">1.2.1.</span> <span class="toc-text">第一章 温故而知新</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E4%BB%8EHello-World%E8%AF%B4%E8%B5%B7"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.1 从Hello World说起</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E4%B8%87%E5%8F%98%E4%B8%8D%E7%A6%BB%E5%85%B6%E5%AE%97"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">1.2 万变不离其宗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-%E7%AB%99%E7%9A%84%E9%AB%98%E7%9C%8B%E5%BE%97%E8%BF%9C"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">1.3 站的高看得远</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E5%81%9A%E4%BB%80%E4%B9%88"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">1.4 操作系统做什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-5-%E5%86%85%E5%AD%98%E4%B8%8D%E5%A4%9F%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-number">1.2.1.5.</span> <span class="toc-text">1.5 内存不够怎么办</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-6-%E4%BC%97%E4%BA%BA%E6%8B%BE%E6%9F%B4%E7%81%AB%E7%84%B0%E9%AB%98"><span class="toc-number">1.2.1.6.</span> <span class="toc-text">1.6 众人拾柴火焰高</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86-%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.3.</span> <span class="toc-text">第二部分 静态链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E7%BC%96%E8%AF%91%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="toc-number">1.3.1.</span> <span class="toc-text">第二章 编译和链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%A2%AB%E9%9A%90%E8%97%8F%E4%BA%86%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">2.1 被隐藏了的过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E7%BC%96%E8%AF%91%E5%99%A8%E5%81%9A%E4%BA%86%E4%BB%80%E4%B9%88"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">2.2 编译器做了什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E6%A8%A1%E5%9D%97%E6%8B%BC%E8%A3%85%E2%80%93%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">2.4 模块拼装–静态链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E9%87%8C%E6%9C%89%E4%BB%80%E4%B9%88"><span class="toc-number">1.3.2.</span> <span class="toc-text">第三章 目标文件里有什么</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">3.1 目标文件的格式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E7%9B%AE%E6%A0%87%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">3.2  目标文件是什么样的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E6%8C%96%E6%8E%98SimpleSection-o"><span class="toc-number">1.3.2.3.</span> <span class="toc-text">3.3 挖掘SimpleSection.o</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-ELF%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.3.2.4.</span> <span class="toc-text">3.4 ELF文件结构描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%8E%A5%E5%8F%A3%E2%80%94%E2%80%94%E7%AC%A6%E5%8F%B7"><span class="toc-number">1.3.2.5.</span> <span class="toc-text">3.5 连接的接口——符号</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.2.6.</span> <span class="toc-text">3.6 调试信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.3.3.</span> <span class="toc-text">第四章 静态链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%A9%BA%E9%97%B4%E4%B8%8E%E5%9C%B0%E5%9D%80%E5%88%86%E9%85%8D"><span class="toc-number">1.3.3.1.</span> <span class="toc-text">4.1 空间与地址分配</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E7%AC%A6%E5%8F%B7%E8%A7%A3%E6%9E%90%E4%B8%8E%E9%87%8D%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.3.3.2.</span> <span class="toc-text">4.2 符号解析与重定位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-COMMON%E5%9D%97"><span class="toc-number">1.3.3.3.</span> <span class="toc-text">4.3 COMMON块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-C-%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.3.4.</span> <span class="toc-text">4.4 C++相关问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-%E9%9D%99%E6%80%81%E5%BA%93%E9%93%BE%E6%8E%A5"><span class="toc-number">1.3.3.5.</span> <span class="toc-text">4.5 静态库链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-%E9%93%BE%E6%8E%A5%E8%BF%87%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.3.6.</span> <span class="toc-text">4.6 链接过程控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-7-BFD%E5%BA%93"><span class="toc-number">1.3.3.7.</span> <span class="toc-text">4.7 BFD库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%94%E7%AB%A0-Windows-PE-x2F-COFF"><span class="toc-number">1.3.4.</span> <span class="toc-text">第五章 Windows PE&#x2F;COFF</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-5-1-Windows%E7%9A%84%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%96%87%E4%BB%B6%E6%A0%BC%E5%BC%8FPE-x2F-COFF"><span class="toc-number">1.3.4.1.</span> <span class="toc-text">5.1 5.1 Windows的二进制文件格式PE&#x2F;COFF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-PE%E7%9A%84%E5%89%8D%E8%BA%AB%E2%80%94%E2%80%94COFF"><span class="toc-number">1.3.4.2.</span> <span class="toc-text">5.2 PE的前身——COFF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E9%93%BE%E6%8E%A5%E6%8C%87%E7%A4%BA%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.4.3.</span> <span class="toc-text">5.3 链接指示信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E8%B0%83%E8%AF%95%E4%BF%A1%E6%81%AF"><span class="toc-number">1.3.4.4.</span> <span class="toc-text">5.4 调试信息</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-5-%E5%A4%A7%E5%AE%B6%E9%83%BD%E6%9C%89%E7%AC%A6%E5%8F%B7%E8%A1%A8"><span class="toc-number">1.3.4.5.</span> <span class="toc-text">5.5 大家都有符号表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-6-Windows%E4%B8%8B%E7%9A%84ELF%E2%80%94%E2%80%94PE"><span class="toc-number">1.3.4.6.</span> <span class="toc-text">5.6 Windows下的ELF——PE</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86-%E8%A3%85%E8%BD%BD%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.4.</span> <span class="toc-text">第三部分 装载与动态链接</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AD%E7%AB%A0-%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%9A%84%E8%A3%85%E8%BD%BD%E4%B8%8E%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.4.1.</span> <span class="toc-text">第六章 可执行文件的装载与进程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E8%BF%9B%E7%A8%8B%E8%99%9A%E6%8B%9F%E5%9C%B0%E5%9D%80%E7%A9%BA%E9%97%B4"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">6.1 进程虚拟地址空间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E8%A3%85%E8%BD%BD%E7%9A%84%E6%96%B9%E5%BC%8F"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">6.2 装载的方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-%E4%BB%8E%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%A7%92%E5%BA%A6%E7%9C%8B%E5%8F%AF%E6%89%A7%E8%A1%8C%E6%96%87%E4%BB%B6%E7%9A%84%E8%A3%85%E8%BD%BD"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">6.3 从操作系统的角度看可执行文件的装载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-%E8%BF%9B%E7%A8%8B%E8%99%9A%E5%AD%98%E7%A9%BA%E9%97%B4%E5%88%86%E5%B8%83"><span class="toc-number">1.4.1.4.</span> <span class="toc-text">6.4 进程虚存空间分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-5-Linux%E5%86%85%E6%A0%B8%E8%A3%85%E8%BD%BDELF%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B"><span class="toc-number">1.4.1.5.</span> <span class="toc-text">6.5 Linux内核装载ELF过程简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-6-Windows-PE%E7%9A%84%E8%A3%85%E8%BD%BD"><span class="toc-number">1.4.1.6.</span> <span class="toc-text">6.6 Windows PE的装载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%83%E7%AB%A0-%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.4.2.</span> <span class="toc-text">第七章 动态链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">7.1 为什么要动态链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E7%AE%80%E5%8D%95%E7%9A%84%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E4%BE%8B%E5%AD%90"><span class="toc-number">1.4.2.2.</span> <span class="toc-text">7.2 简单的动态链接例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-%E5%9C%B0%E5%9D%80%E6%97%A0%E5%85%B3%E4%BB%A3%E7%A0%81"><span class="toc-number">1.4.2.3.</span> <span class="toc-text">7.3 地址无关代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-4-%E5%BB%B6%E8%BF%9F%E7%BB%91%E5%AE%9A"><span class="toc-number">1.4.2.4.</span> <span class="toc-text">7.4 延迟绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-5-%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E7%9B%B8%E5%85%B3%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.2.5.</span> <span class="toc-text">7.5 动态链接相关结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-6-%E5%8A%A8%E6%80%81%E8%BF%9E%E6%8E%A5%E7%9A%84%E6%AD%A5%E9%AA%A4%E5%92%8C%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.4.2.6.</span> <span class="toc-text">7.6 动态连接的步骤和实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-7-%E6%98%BE%E5%BC%8F%E8%BF%90%E8%A1%8C%E6%97%B6%E9%93%BE%E6%8E%A5"><span class="toc-number">1.4.2.7.</span> <span class="toc-text">7.7 显式运行时链接</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%85%AB%E7%AB%A0-Linux%E5%85%B1%E4%BA%AB%E5%BA%93%E7%9A%84%E7%BB%84%E7%BB%87"><span class="toc-number">1.4.3.</span> <span class="toc-text">第八章 Linux共享库的组织</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E5%85%B1%E4%BA%AB%E5%BA%93%E7%89%88%E6%9C%AC"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">8.1 共享库版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E7%AC%A6%E5%8F%B7%E7%89%88%E6%9C%AC"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">8.2 符号版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-3-%E5%85%B1%E4%BA%AB%E5%BA%93%E7%B3%BB%E7%BB%9F%E8%B7%AF%E5%BE%84"><span class="toc-number">1.4.3.3.</span> <span class="toc-text">8.3 共享库系统路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-4-%E5%85%B1%E4%BA%AB%E5%BA%93%E7%9A%84%E6%9F%A5%E6%89%BE%E8%BF%87%E7%A8%8B"><span class="toc-number">1.4.3.4.</span> <span class="toc-text">8.4 共享库的查找过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-5-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-number">1.4.3.5.</span> <span class="toc-text">8.5 环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-6-%E5%85%B1%E4%BA%AB%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA%E5%92%8C%E5%AE%89%E8%A3%85"><span class="toc-number">1.4.3.6.</span> <span class="toc-text">8.6 共享库的创建和安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B9%9D%E7%AB%A0-Windows%E4%B8%8B%E7%9A%84%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.4.4.</span> <span class="toc-text">第九章 Windows下的动态链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-DLL%E7%AE%80%E4%BB%8B"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">9.1 DLL简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E7%AC%A6%E5%8F%B7%E5%AF%BC%E5%87%BA%E5%AF%BC%E5%85%A5%E8%A1%A8"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">9.2 符号导出导入表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-DLL%E4%BC%98%E5%8C%96"><span class="toc-number">1.4.4.3.</span> <span class="toc-text">9.3 DLL优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-4-C-%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5"><span class="toc-number">1.4.4.4.</span> <span class="toc-text">9.4 C++与动态链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-5-DLL-HELL"><span class="toc-number">1.4.4.5.</span> <span class="toc-text">9.5 DLL HELL</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86-%E5%BA%93%E4%B8%8E%E8%BF%90%E8%A1%8C%E5%BA%93"><span class="toc-number">1.5.</span> <span class="toc-text">第四部分 库与运行库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E7%AB%A0-%E5%86%85%E5%AD%98"><span class="toc-number">1.5.1.</span> <span class="toc-text">第十章 内存</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-%E7%A8%8B%E5%BA%8F%E7%9A%84%E5%86%85%E5%AD%98%E5%B8%83%E5%B1%80"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">10.1 程序的内存布局</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-%E6%A0%88%E4%B8%8E%E8%B0%83%E7%94%A8%E6%83%AF%E4%BE%8B"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">10.2 栈与调用惯例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-3-%E5%A0%86%E4%B8%8E%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">10.3 堆与内存管理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%80%E7%AB%A0-%E8%BF%90%E8%A1%8C%E5%BA%93"><span class="toc-number">1.5.2.</span> <span class="toc-text">第十一章 运行库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#11-1-%E5%85%A5%E5%8F%A3%E5%87%BD%E6%95%B0%E5%92%8C%E7%A8%8B%E5%BA%8F%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">11.1 入口函数和程序初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-2-C-x2F-C-%E8%BF%90%E8%A1%8C%E5%BA%93"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">11.2 C&#x2F;C++运行库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-3-%E8%BF%90%E8%A1%8C%E5%BA%93%E4%B8%8E%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="toc-number">1.5.2.3.</span> <span class="toc-text">11.3 运行库与多线程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-4-C-%E5%85%A8%E5%B1%80%E6%9E%84%E9%80%A0%E4%B8%8E%E6%9E%90%E6%9E%84"><span class="toc-number">1.5.2.4.</span> <span class="toc-text">11.4 C++全局构造与析构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-5-fread%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.5.2.5.</span> <span class="toc-text">11.5 fread实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%BA%8C%E7%AB%A0-%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E4%B8%8EAPI"><span class="toc-number">1.5.3.</span> <span class="toc-text">第十二章 系统调用与API</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#12-1-%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">12.1 系统调用介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-3-Windows-API"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">12.3 Windows API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E5%8D%81%E4%B8%89%E7%AB%A0-%E8%BF%90%E8%A1%8C%E5%BA%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.5.4.</span> <span class="toc-text">第十三章 运行库实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#13-1-C%E8%AF%AD%E8%A8%80%E5%BA%93"><span class="toc-number">1.5.4.1.</span> <span class="toc-text">13.1 C语言库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-2-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mini-CRT"><span class="toc-number">1.5.4.2.</span> <span class="toc-text">13.2 如何使用Mini CRT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-3-C-%E8%BF%90%E8%A1%8C%E5%BA%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.5.4.3.</span> <span class="toc-text">13.3 C++运行库实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-4-%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8Mini-CRT"><span class="toc-number">1.5.4.4.</span> <span class="toc-text">13.4 如何使用Mini CRT++</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.6.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2022-10-15/" title="2022-10-15's Blog"><img src="/../image/Daily_blog/2022-10-15.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-10-15's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2022-10-15/" title="2022-10-15's Blog">2022-10-15's Blog</a><time datetime="2022-10-15T13:24:42.000Z" title="发表于 2022-10-15 21:24:42">2022-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91/" title="程序员的自我修养_俞甲子_石凡_潘爱民"><img src="/../image/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="程序员的自我修养_俞甲子_石凡_潘爱民"/></a><div class="content"><a class="title" href="/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91/" title="程序员的自我修养_俞甲子_石凡_潘爱民">程序员的自我修养_俞甲子_石凡_潘爱民</a><time datetime="2022-08-19T09:02:42.000Z" title="发表于 2022-08-19 17:02:42">2022-08-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2022-08-07/" title="2022-08-07's Blog"><img src="/../image/Daily_blog/2022-08-07.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-08-07's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2022-08-07/" title="2022-08-07's Blog">2022-08-07's Blog</a><time datetime="2022-08-07T15:32:42.000Z" title="发表于 2022-08-07 23:32:42">2022-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2022-08-01/" title="2022-08-01's Blog"><img src="/../image/Daily_blog/2022-08-01.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-08-01's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2022-08-01/" title="2022-08-01's Blog">2022-08-01's Blog</a><time datetime="2022-08-01T06:56:42.000Z" title="发表于 2022-08-01 14:56:42">2022-08-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Read/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_%E5%94%90%E6%9C%94%E9%A3%9E/" title="计算机组成原理_唐朔飞"><img src="/../image/Read/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_%E5%94%90%E6%9C%94%E9%A3%9E.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="计算机组成原理_唐朔飞"/></a><div class="content"><a class="title" href="/Read/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86_%E5%94%90%E6%9C%94%E9%A3%9E/" title="计算机组成原理_唐朔飞">计算机组成原理_唐朔飞</a><time datetime="2022-07-22T15:14:42.000Z" title="发表于 2022-07-22 23:14:42">2022-07-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Pilipala276</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="7483684547" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>

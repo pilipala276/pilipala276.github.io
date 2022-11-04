@@ -30,6 +30,8 @@ type: "TheSkilltree"
   - [ ] 《动手学深度学习》
     - [ ] 看书
     - [ ] 看网课
+  - [ ] 神经网络量化学习
+  https://www.bilibili.com/video/BV1UR4y1X7Zf/  
 - [ ] 数据结构
   - [ ] 浙大陈越数据结构
 - [ ] 矩阵论
@@ -80,19 +82,22 @@ type: "TheSkilltree"
     - [x] 网课  
     https://www.bilibili.com/video/BV1Mb411e7re?spm_id_from=333.999.0.0
     - [x] 小车实操
+    - [x] 《单片机原理及应用教程》
   - [x] stm32   
     - [x] 网课   
     https://www.bilibili.com/video/BV1v5411E7mv
     https://www.bilibili.com/video/BV1q4411d7RX
     https://www.bilibili.com/video/BV15b4y1Z7Tk 
-- [x] 电路板绘制
-  - [x] AD学习   
-  https://www.bilibili.com/video/BV16t411N7RD?spm_id_from=333.999.0.0
+- [x] 电路板
+  - [x] AD学习
+    - [x] 网课    
+    https://www.bilibili.com/video/BV16t411N7RD?spm_id_from=333.999.0.0
+  - [x] 电工实习
 - [ ] 数字电路
 - [x] 模拟电路
   - [x] 大二下模电课
   - [x] 郑益慧模电课
-  - [x] 模电课本
+  - [x] 《模拟电子技术基础》
 
 ## 小项目
 - [x] OpenCV

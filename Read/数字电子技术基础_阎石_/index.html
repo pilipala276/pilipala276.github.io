@@ -1,0 +1,462 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>数字电子技术基础_阎石 | Pilipala276's Blog</title><meta name="keywords" content="数电"><meta name="author" content="Pilipala276"><meta name="copyright" content="Pilipala276"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="数字电子技术基础_阎石数制与码制数制几种常用数制：十进制，二进制，十六进制，八进制  进制间的转换：         二进制间的计算：反码，正数不变，负数除符号位各位取反补码，正数不变，负数反码+1 码制常用的编码：8421码，ASCII 逻辑代数基础逻辑代数基本运算基本运算：与$\cdot$，或+，非‘，异或⊕，同或⊙  基本公式      逻辑代数基本定理带入定理：在任何一个包含变量A的逻辑等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数字电子技术基础_阎石">
+<meta property="og:url" content="https://pilipala276.github.io/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3_/index.html">
+<meta property="og:site_name" content="Pilipala276&#39;s Blog">
+<meta property="og:description" content="数字电子技术基础_阎石数制与码制数制几种常用数制：十进制，二进制，十六进制，八进制  进制间的转换：         二进制间的计算：反码，正数不变，负数除符号位各位取反补码，正数不变，负数反码+1 码制常用的编码：8421码，ASCII 逻辑代数基础逻辑代数基本运算基本运算：与$\cdot$，或+，非‘，异或⊕，同或⊙  基本公式      逻辑代数基本定理带入定理：在任何一个包含变量A的逻辑等">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pilipala276.github.io/image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3.png">
+<meta property="article:published_time" content="2022-12-02T08:07:32.000Z">
+<meta property="article:modified_time" content="2022-12-15T06:42:11.090Z">
+<meta property="article:author" content="Pilipala276">
+<meta property="article:tag" content="数电">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pilipala276.github.io/image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pilipala276.github.io/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3_/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '数字电子技术基础_阎石',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-15 14:42:11'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/../img/deadcells.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Pilipala276's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">数字电子技术基础_阎石</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-12-02T08:07:32.000Z" title="发表于 2022-12-02 16:07:32">2022-12-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-15T06:42:11.090Z" title="更新于 2022-12-15 14:42:11">2022-12-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Read/">Read</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数字电子技术基础-阎石"><a href="#数字电子技术基础-阎石" class="headerlink" title="数字电子技术基础_阎石"></a>数字电子技术基础_阎石</h1><h1 id="数制与码制"><a href="#数制与码制" class="headerlink" title="数制与码制"></a>数制与码制</h1><h2 id="数制"><a href="#数制" class="headerlink" title="数制"></a>数制</h2><p>几种常用数制：十进制，二进制，十六进制，八进制</p>
+<ul>
+<li><p>进制间的转换：</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%201.png" alt="Untitled"></p>
+</li>
+</ul>
+<p>二进制间的计算：<br>反码，正数不变，负数除符号位各位取反<br>补码，正数不变，负数反码+1</p>
+<h2 id="码制"><a href="#码制" class="headerlink" title="码制"></a>码制</h2><p>常用的编码：8421码，ASCII</p>
+<h1 id="逻辑代数基础"><a href="#逻辑代数基础" class="headerlink" title="逻辑代数基础"></a>逻辑代数基础</h1><h2 id="逻辑代数基本运算"><a href="#逻辑代数基本运算" class="headerlink" title="逻辑代数基本运算"></a>逻辑代数基本运算</h2><p>基本运算：与$\cdot$，或+，非‘，异或⊕，同或⊙</p>
+<ul>
+<li><p>基本公式</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%202.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="逻辑代数基本定理"><a href="#逻辑代数基本定理" class="headerlink" title="逻辑代数基本定理"></a>逻辑代数基本定理</h2><p>带入定理：在任何一个包含变量A的逻辑等式中，若以另一个逻辑式代入式中所有A的位置，则等式仍然成立</p>
+<p>反演定理：对于任意一个逻辑式Y，将其中的与运算换成或运算，或运算换成与运算，0换成1，1换成0，原变量换成反变量，反变量换成原变量，得到的结果就是Y’</p>
+<p>对偶定理：对于任意一个逻辑式Y，将其中的与运算换成或运算，或运算换成与运算，0换成1，1换成0，得到的新的逻辑式就是$Y^{D}$，称为Y的对偶式。对等式两边都做对偶操作，等式仍然成立</p>
+<h2 id="逻辑函数"><a href="#逻辑函数" class="headerlink" title="逻辑函数"></a>逻辑函数</h2><p>逻辑函数一般化为最小项之和（积之和）或最大项之积（和之积）的形式，（体现在逻辑电路中即与门和或门的先后），这边引出了逻辑函数的化简</p>
+<p>公式法化简，利用上面的基本公式对函数进行化简</p>
+<ul>
+<li><p>卡诺图化简，利用卡诺图化简，</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%203.png" alt="Untitled"></p>
+</li>
+</ul>
+<p>奎恩—麦克拉斯基化简（Q-M法），上面的步骤并没有固定通用的步骤可循，所以并不适用于计算机辅助化简，有兴趣可以了解了解</p>
+<h1 id="门电路"><a href="#门电路" class="headerlink" title="门电路"></a><del>门电路</del></h1><h1 id="组合逻辑电路"><a href="#组合逻辑电路" class="headerlink" title="组合逻辑电路"></a>组合逻辑电路</h1><p>组合逻辑电路中，任何时刻的输出仅仅取决于该时刻的输入，与电路原来的状态无关</p>
+<h2 id="组合逻辑电路的分析"><a href="#组合逻辑电路的分析" class="headerlink" title="组合逻辑电路的分析"></a>组合逻辑电路的分析</h2><p>对组合逻辑电路的分析即得到该逻辑电路的逻辑函数，一般做法是从电路的输入到输出逐级写出逻辑函数式再化简，也可以用真值表的形式表示。当然也要分析电路的传输延迟时间等参数</p>
+<h2 id="组合逻辑电路的设计"><a href="#组合逻辑电路的设计" class="headerlink" title="组合逻辑电路的设计"></a>组合逻辑电路的设计</h2><p>逻辑抽象-》逻辑式-》选定器件类型-》将逻辑式化为适当的描述形式-》验证</p>
+<h2 id="常用的组合逻辑电路"><a href="#常用的组合逻辑电路" class="headerlink" title="常用的组合逻辑电路"></a>常用的组合逻辑电路</h2><p>编码器</p>
+<p>译码器</p>
+<p>数据选择器</p>
+<ul>
+<li><p>加法器</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%204.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="可编程逻辑器件"><a href="#可编程逻辑器件" class="headerlink" title="可编程逻辑器件"></a>可编程逻辑器件</h2><p>想了解的话可以学一学fpga</p>
+<h2 id="组合逻辑电路中的竞争-冒险"><a href="#组合逻辑电路中的竞争-冒险" class="headerlink" title="组合逻辑电路中的竞争-冒险"></a>组合逻辑电路中的竞争-冒险</h2><p>竞争冒险成因：<br>当输入信号发生改变时输出信号可能存在尖峰脉冲现象<br>两个输入信号同时取相反的逻辑电平跳变称为竞争，尖峰脉冲的情况在竞争时可能会出现</p>
+<p>竞争冒险检查：<br>如果输出端的逻辑函数能简化成$Y&#x3D;A+A’,Y&#x3D;AA’$，则可判定判定存在竞争冒险现象</p>
+<p>竞争冒险消除：<br>滤波电容，滤波电容能解决尖峰脉冲，但是会影响电平转换的时间，使波形变坏<br>修改逻辑设计<br>引入选通脉冲</p>
+<h1 id="半导体存储电路"><a href="#半导体存储电路" class="headerlink" title="半导体存储电路"></a>半导体存储电路</h1><h2 id="触发器"><a href="#触发器" class="headerlink" title="触发器"></a>触发器</h2><h3 id="触发器分类"><a href="#触发器分类" class="headerlink" title="触发器分类"></a>触发器分类</h3><ul>
+<li><p>SR触发器</p>
+<p>  特性方程：$Q’’&#x3D;S+R’Q,SR&#x3D;0$</p>
+</li>
+<li><p>D触发器</p>
+<p>  特性方程：$Q’’&#x3D;D$</p>
+</li>
+<li><p>JK触发器</p>
+<p>  特性方程：$Q’’&#x3D;JQ’+K’Q$</p>
+</li>
+<li><p>T触发器</p>
+<p>  特性方程：$Q’’&#x3D;TQ’+T’Q$</p>
+</li>
+</ul>
+<p>触发器分为电平触发，边沿触发，脉冲触发<br>目前生产的触发器有JK触发器与D触发器两大类，因为JK触发器的功能包含了SR触发器与T触发器的功能</p>
+<h3 id="触发器动态特性"><a href="#触发器动态特性" class="headerlink" title="触发器动态特性"></a>触发器动态特性</h3><p>建立时间$t_{su}$：输入信号应当先于时钟信号CLK到达的时间<br>保持时间$t_h$：时钟信号CLK到达后输入信号应当保持不变的时间<br>传输延迟时间$t_{pd}$：CLK动作沿到达开始知道触发器输出的新状态稳定建立所需要的时间</p>
+<p>最高时钟频率$f_{max}$：触发器在重复连续翻转的情况下时钟信号可以到达的最高频率</p>
+<h2 id="寄存器与存储器"><a href="#寄存器与存储器" class="headerlink" title="寄存器与存储器"></a>寄存器与存储器</h2><p>存储器分为只读存储器ROM，随机存储器RAM<br>随机存储器又有静态随机存储器SRAM，动态随机存储器DRAM<br>DRAM结构简单集成度高，SRAM更快</p>
+<ul>
+<li><p>存储器实现组合逻辑函数：</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%205.png" alt="Untitled"></p>
+</li>
+</ul>
+<h1 id="时序逻辑电路"><a href="#时序逻辑电路" class="headerlink" title="时序逻辑电路"></a>时序逻辑电路</h1><p>输出信号不仅取决于输入信号，还取决于电路原来的状态，具备这种逻辑功能特点的电路称为时序逻辑电路<br>时序逻辑电路又可根据时钟信号是否是同一个分为同步时序逻辑电路与异步时序逻辑电路</p>
+<p>异步时序逻辑电路的分析与应用可以自己了解了解</p>
+<h2 id="时序逻辑电路的分析"><a href="#时序逻辑电路的分析" class="headerlink" title="时序逻辑电路的分析"></a>时序逻辑电路的分析</h2><ul>
+<li><p>一般同步时序逻辑电路的分析步骤如下</p>
+<p>  写出每个触发器的驱动方程，即输入信号的逻辑函数</p>
+<p>  将得到的驱动方程带入相应的特性方程，得到每个触发器的状态方程，从而得到整个时序电路的状态方程组</p>
+<p>  根据逻辑图写出电路的输出方程</p>
+</li>
+<li><p>描述电路状态转换全部过程的方法有状态转换表，状态转换图，状态机流程图，时序图</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%206.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%207.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%208.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%209.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="常用的时序逻辑电路"><a href="#常用的时序逻辑电路" class="headerlink" title="常用的时序逻辑电路"></a>常用的时序逻辑电路</h2><p>移位寄存器</p>
+<p>计数器</p>
+<p>顺序脉冲发生器</p>
+<p>序列信号发生器</p>
+<h2 id="时许逻辑电路的设计方法"><a href="#时许逻辑电路的设计方法" class="headerlink" title="时许逻辑电路的设计方法"></a>时许逻辑电路的设计方法</h2><p>逻辑抽象</p>
+<p>状态化简</p>
+<p>状态分配</p>
+<p>选定触发器类型，求出电路的状态方程，驱动方程，输出方程</p>
+<p>画出逻辑图</p>
+<p>检查设计的电路能否自启动</p>
+<ul>
+<li><p>设计一个带有进位输出端的十三进制计数器</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2010.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2011.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2012.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2013.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2014.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2015.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2016.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="时序逻辑电路中的竞争冒险现象"><a href="#时序逻辑电路中的竞争冒险现象" class="headerlink" title="时序逻辑电路中的竞争冒险现象"></a>时序逻辑电路中的竞争冒险现象</h2><p>时序逻辑电路除了组合逻辑电路中存在的竞争冒险现象，还存在时序电路特有的竞争冒险现象</p>
+<p>当输入信号与时钟信号同时改变途径不同的路径到达同一触发器，便发生了竞争</p>
+<ul>
+<li><p>例子</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2017.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2018.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2019.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2020.png" alt="Untitled"></p>
+</li>
+</ul>
+<p>同步时序电路中，由于所有触发器都在同一时钟操作下动作，因此可以认为不存在竞争冒险现象，一般认为存储电路中的竞争冒险现象发生在异步时序电路中</p>
+<h1 id="脉冲波形的产生与整形电路"><a href="#脉冲波形的产生与整形电路" class="headerlink" title="脉冲波形的产生与整形电路"></a>脉冲波形的产生与整形电路</h1><h2 id="矩形波脉冲"><a href="#矩形波脉冲" class="headerlink" title="矩形波脉冲"></a>矩形波脉冲</h2><p>在时序电路中，作为时钟信号的矩形脉冲控制和协调着整个系统的工作，因为对它的特性有严格要求</p>
+<ul>
+<li><p>矩形脉冲波形的主要参数</p>
+<p>  脉冲周期$T$，<br>  脉冲幅度$V_m$，脉冲电压的最大变化幅度<br>  脉冲宽度$t_w$，脉冲上升沿到达0.5$V_m$起到脉冲下降沿到达0.5$V_m$的时间<br>  上升时间$t_r$，脉冲上升沿从0.1$V_m$到达0.9$V_m$所需要的时间<br>  下降时间$t_f$，脉冲下降沿从0.9$V_m$到达0.1$V_m$所需要的时间<br>  占空比$q$，脉冲宽度与脉冲周期的比值</p>
+</li>
+</ul>
+<h2 id="施密特触发电路"><a href="#施密特触发电路" class="headerlink" title="施密特触发电路"></a>施密特触发电路</h2><ul>
+<li><p>施密特触发原理的结构与工作原理</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2021.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2022.png" alt="Untitled"></p>
+</li>
+<li><p>TTL集成施密特触发电路7413</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2023.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2024.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2025.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2026.png" alt="Untitled"></p>
+</li>
+<li><p>门电路组成施密特触发电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2027.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2028.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2029.png" alt="Untitled"></p>
+</li>
+<li><p>施密特触发电路的应用</p>
+<p>  波形转换</p>
+<p>  脉冲整形</p>
+<p>  脉冲鉴幅</p>
+</li>
+</ul>
+<h2 id="单稳态触发电路"><a href="#单稳态触发电路" class="headerlink" title="单稳态触发电路"></a>单稳态触发电路</h2><ul>
+<li><p>微分型单稳态电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2030.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2031.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2032.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2033.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2034.png" alt="Untitled"></p>
+</li>
+<li><p>积分型单稳态电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2035.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2036.png" alt="Untitled"></p>
+</li>
+<li><p>集成单稳态电路74121</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2037.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2038.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2039.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="多谐振荡电路"><a href="#多谐振荡电路" class="headerlink" title="多谐振荡电路"></a>多谐振荡电路</h2><p>多谐振荡电路是一种自激震荡电路，产生矩形脉冲</p>
+<ul>
+<li><p>对称式多谐振荡电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2040.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2041.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2042.png" alt="Untitled"></p>
+</li>
+<li><p>非对称式多谐振荡电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2043.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2044.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2045.png" alt="Untitled"></p>
+</li>
+<li><p>环形振荡电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2046.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2047.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2048.png" alt="Untitled"></p>
+</li>
+<li><p>施密特触发电路构成多谐振荡电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2049.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2050.png" alt="Untitled"></p>
+</li>
+<li><p>石英晶体多谐振荡电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2051.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="555定时器及其应用"><a href="#555定时器及其应用" class="headerlink" title="555定时器及其应用"></a>555定时器及其应用</h2><ul>
+<li><p>555定时器电路结构</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2052.png" alt="Untitled"></p>
+</li>
+<li><p>555定时器接成施密特触发电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2053.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2054.png" alt="Untitled"></p>
+</li>
+<li><p>555定时器接成单稳态电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2055.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2056.png" alt="Untitled"></p>
+</li>
+<li><p>555定时器接成多稳态振荡电路</p>
+<p>  由施密特触发电路可以构成多谐振荡电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2057.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2058.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2059.png" alt="Untitled"></p>
+</li>
+</ul>
+<h1 id="数-x2F-模和模-x2F-数转换"><a href="#数-x2F-模和模-x2F-数转换" class="headerlink" title="数&#x2F;模和模&#x2F;数转换"></a>数&#x2F;模和模&#x2F;数转换</h1><h2 id="D-x2F-A转换器"><a href="#D-x2F-A转换器" class="headerlink" title="D&#x2F;A转换器"></a>D&#x2F;A转换器</h2><h3 id="电路结构与工作原理"><a href="#电路结构与工作原理" class="headerlink" title="电路结构与工作原理"></a>电路结构与工作原理</h3><ul>
+<li><p>权电阻网络D&#x2F;A转换器</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2060.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2061.png" alt="Untitled"></p>
+</li>
+<li><p>倒T形电阻网络D&#x2F;A转换器</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2062.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2063.png" alt="Untitled"></p>
+</li>
+<li><p>权电流型D&#x2F;A转换器</p>
+<p>  上面的权电阻型网络没有考虑开关的导通电阻与导通压降，可以采用权电流型D&#x2F;A转换器来解决</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2064.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2065.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2066.png" alt="Untitled"></p>
+</li>
+<li><p>有双极性输出的D&#x2F;A转换器</p>
+<p>  加上偏置电压，可以实现补码转换正负电压</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2067.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2068.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="转换精度与转换速度"><a href="#转换精度与转换速度" class="headerlink" title="转换精度与转换速度"></a>转换精度与转换速度</h3><p>常用分辨率与转换误差来描述转换精度</p>
+<p>D&#x2F;A转换器还要考虑转换速度</p>
+<h2 id="A-x2F-D转换器"><a href="#A-x2F-D转换器" class="headerlink" title="A&#x2F;D转换器"></a>A&#x2F;D转换器</h2><h3 id="电路结构和工作原理"><a href="#电路结构和工作原理" class="headerlink" title="电路结构和工作原理"></a>电路结构和工作原理</h3><ul>
+<li><p>取样保持电路</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2069.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2070.png" alt="Untitled"></p>
+</li>
+<li><p>并联比较型A&#x2F;D转换器</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2071.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2072.png" alt="Untitled"></p>
+</li>
+<li><p>逐次逼近型A&#x2F;D转换器</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2073.png" alt="Untitled"></p>
+</li>
+<li><p>双积分型A&#x2F;D转换器</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2074.png" alt="Untitled"></p>
+</li>
+<li><p>V-F变换型A&#x2F;D转换器</p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2075.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2076.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2077.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/Untitled%2078.png" alt="Untitled"></p>
+</li>
+</ul>
+<h3 id="转换精度与转换速度-1"><a href="#转换精度与转换速度-1" class="headerlink" title="转换精度与转换速度"></a>转换精度与转换速度</h3><p>常用分辨率与转换误差来描述转换精度</p>
+<p>A&#x2F;D转换器还要考虑转换速度</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io">Pilipala276</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3_/">https://pilipala276.github.io/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3_/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pilipala276.github.io" target="_blank">Pilipala276's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%95%B0%E7%94%B5/">数电</a></div><div class="post_share"><div class="social-share" data-image="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/Daily_blog/2022-11-12/"><img class="next-cover" src="/../image/Daily_blog/2022-11-12.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2022-11-12's Blog</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/../img/deadcells.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pilipala276</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">30</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">29</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pilipala276"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/418392988" target="_blank" title="Bilibili"><i class="fab fa-bilibili"></i></a><a class="social-icon" href="mailto:pilipala276@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80-%E9%98%8E%E7%9F%B3"><span class="toc-number">1.</span> <span class="toc-text">数字电子技术基础_阎石</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%88%B6%E4%B8%8E%E7%A0%81%E5%88%B6"><span class="toc-number">2.</span> <span class="toc-text">数制与码制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%88%B6"><span class="toc-number">2.1.</span> <span class="toc-text">数制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%81%E5%88%B6"><span class="toc-number">2.2.</span> <span class="toc-text">码制</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E7%A1%80"><span class="toc-number">3.</span> <span class="toc-text">逻辑代数基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E8%BF%90%E7%AE%97"><span class="toc-number">3.1.</span> <span class="toc-text">逻辑代数基本运算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E4%BB%A3%E6%95%B0%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86"><span class="toc-number">3.2.</span> <span class="toc-text">逻辑代数基本定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0"><span class="toc-number">3.3.</span> <span class="toc-text">逻辑函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%A8%E7%94%B5%E8%B7%AF"><span class="toc-number">4.</span> <span class="toc-text">门电路</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">5.</span> <span class="toc-text">组合逻辑电路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90"><span class="toc-number">5.1.</span> <span class="toc-text">组合逻辑电路的分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">5.2.</span> <span class="toc-text">组合逻辑电路的设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">5.3.</span> <span class="toc-text">常用的组合逻辑电路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E5%99%A8%E4%BB%B6"><span class="toc-number">5.4.</span> <span class="toc-text">可编程逻辑器件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E4%B8%AD%E7%9A%84%E7%AB%9E%E4%BA%89-%E5%86%92%E9%99%A9"><span class="toc-number">5.5.</span> <span class="toc-text">组合逻辑电路中的竞争-冒险</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%8A%E5%AF%BC%E4%BD%93%E5%AD%98%E5%82%A8%E7%94%B5%E8%B7%AF"><span class="toc-number">6.</span> <span class="toc-text">半导体存储电路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">6.1.</span> <span class="toc-text">触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E5%88%86%E7%B1%BB"><span class="toc-number">6.1.1.</span> <span class="toc-text">触发器分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E5%8A%A8%E6%80%81%E7%89%B9%E6%80%A7"><span class="toc-number">6.1.2.</span> <span class="toc-text">触发器动态特性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%84%E5%AD%98%E5%99%A8%E4%B8%8E%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">6.2.</span> <span class="toc-text">寄存器与存储器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">7.</span> <span class="toc-text">时序逻辑电路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90"><span class="toc-number">7.1.</span> <span class="toc-text">时序逻辑电路的分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF"><span class="toc-number">7.2.</span> <span class="toc-text">常用的时序逻辑电路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E8%AE%B8%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">7.3.</span> <span class="toc-text">时许逻辑电路的设计方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E4%B8%AD%E7%9A%84%E7%AB%9E%E4%BA%89%E5%86%92%E9%99%A9%E7%8E%B0%E8%B1%A1"><span class="toc-number">7.4.</span> <span class="toc-text">时序逻辑电路中的竞争冒险现象</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%84%89%E5%86%B2%E6%B3%A2%E5%BD%A2%E7%9A%84%E4%BA%A7%E7%94%9F%E4%B8%8E%E6%95%B4%E5%BD%A2%E7%94%B5%E8%B7%AF"><span class="toc-number">8.</span> <span class="toc-text">脉冲波形的产生与整形电路</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E5%BD%A2%E6%B3%A2%E8%84%89%E5%86%B2"><span class="toc-number">8.1.</span> <span class="toc-text">矩形波脉冲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%BD%E5%AF%86%E7%89%B9%E8%A7%A6%E5%8F%91%E7%94%B5%E8%B7%AF"><span class="toc-number">8.2.</span> <span class="toc-text">施密特触发电路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E7%A8%B3%E6%80%81%E8%A7%A6%E5%8F%91%E7%94%B5%E8%B7%AF"><span class="toc-number">8.3.</span> <span class="toc-text">单稳态触发电路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%B0%90%E6%8C%AF%E8%8D%A1%E7%94%B5%E8%B7%AF"><span class="toc-number">8.4.</span> <span class="toc-text">多谐振荡电路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#555%E5%AE%9A%E6%97%B6%E5%99%A8%E5%8F%8A%E5%85%B6%E5%BA%94%E7%94%A8"><span class="toc-number">8.5.</span> <span class="toc-text">555定时器及其应用</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0-x2F-%E6%A8%A1%E5%92%8C%E6%A8%A1-x2F-%E6%95%B0%E8%BD%AC%E6%8D%A2"><span class="toc-number">9.</span> <span class="toc-text">数&#x2F;模和模&#x2F;数转换</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#D-x2F-A%E8%BD%AC%E6%8D%A2%E5%99%A8"><span class="toc-number">9.1.</span> <span class="toc-text">D&#x2F;A转换器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E7%BB%93%E6%9E%84%E4%B8%8E%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">9.1.1.</span> <span class="toc-text">电路结构与工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E7%B2%BE%E5%BA%A6%E4%B8%8E%E8%BD%AC%E6%8D%A2%E9%80%9F%E5%BA%A6"><span class="toc-number">9.1.2.</span> <span class="toc-text">转换精度与转换速度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-x2F-D%E8%BD%AC%E6%8D%A2%E5%99%A8"><span class="toc-number">9.2.</span> <span class="toc-text">A&#x2F;D转换器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E8%B7%AF%E7%BB%93%E6%9E%84%E5%92%8C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">9.2.1.</span> <span class="toc-text">电路结构和工作原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E7%B2%BE%E5%BA%A6%E4%B8%8E%E8%BD%AC%E6%8D%A2%E9%80%9F%E5%BA%A6-1"><span class="toc-number">9.2.2.</span> <span class="toc-text">转换精度与转换速度</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3_/" title="数字电子技术基础_阎石"><img src="/../image/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数字电子技术基础_阎石"/></a><div class="content"><a class="title" href="/Read/%E6%95%B0%E5%AD%97%E7%94%B5%E5%AD%90%E6%8A%80%E6%9C%AF%E5%9F%BA%E7%A1%80_%E9%98%8E%E7%9F%B3_/" title="数字电子技术基础_阎石">数字电子技术基础_阎石</a><time datetime="2022-12-02T08:07:32.000Z" title="发表于 2022-12-02 16:07:32">2022-12-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2022-11-12/" title="2022-11-12's Blog"><img src="/../image/Daily_blog/2022-11-12.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-11-12's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2022-11-12/" title="2022-11-12's Blog">2022-11-12's Blog</a><time datetime="2022-11-12T12:32:42.000Z" title="发表于 2022-11-12 20:32:42">2022-11-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2022-10-30/" title="2022-10-30's Blog"><img src="/../image/Daily_blog/2022-10-30.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-10-30's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2022-10-30/" title="2022-10-30's Blog">2022-10-30's Blog</a><time datetime="2022-10-30T12:32:42.000Z" title="发表于 2022-10-30 20:32:42">2022-10-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2022-10-15/" title="2022-10-15's Blog"><img src="/../image/Daily_blog/2022-10-15.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022-10-15's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2022-10-15/" title="2022-10-15's Blog">2022-10-15's Blog</a><time datetime="2022-10-15T13:24:42.000Z" title="发表于 2022-10-15 21:24:42">2022-10-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91/" title="程序员的自我修养_俞甲子_石凡_潘爱民"><img src="/../image/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="程序员的自我修养_俞甲子_石凡_潘爱民"/></a><div class="content"><a class="title" href="/Read/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB_%E4%BF%9E%E7%94%B2%E5%AD%90_%E7%9F%B3%E5%87%A1_%E6%BD%98%E7%88%B1%E6%B0%91/" title="程序员的自我修养_俞甲子_石凡_潘爱民">程序员的自我修养_俞甲子_石凡_潘爱民</a><time datetime="2022-08-19T09:02:42.000Z" title="发表于 2022-08-19 17:02:42">2022-08-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Pilipala276</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="7483684547" data-server="netease" data-type="playlist" data-fixed="true" data-autoplay="true"> </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>

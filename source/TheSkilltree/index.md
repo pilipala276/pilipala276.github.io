@@ -95,7 +95,9 @@ type: "TheSkilltree"
     - [x] 网课    
     https://www.bilibili.com/video/BV16t411N7RD?spm_id_from=333.999.0.0
   - [x] 电工实习
-- [ ] 数字电路
+- [x] 数字电路
+  - [x] 大三上数电课
+  - [x] 《数字电子技术基础》
 - [x] 模拟电路
   - [x] 大二下模电课
   - [x] 郑益慧模电课

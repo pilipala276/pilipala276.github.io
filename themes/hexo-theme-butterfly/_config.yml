@@ -38,7 +38,7 @@ copy:
 social:
   # fab fa-github: https://github.com/xxxxx || Github
   # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
-  fab fa-bilibili: https://space.bilibili.com/418392988 || Bilibili
+  # fab fa-bilibili: https://space.bilibili.com/418392988 || Bilibili
   fas fa-envelope: mailto:pilipala276@outlook.com || Email
 
 # search (搜索)

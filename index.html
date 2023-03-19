@@ -48,7 +48,7 @@
   isHome: true,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2023-03-18 11:58:55'
+  postUpdate: '2023-03-19 15:54:49'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -146,11 +146,10 @@
 原理图见原项目
 PCB见原项目
 复刻过程硬件硬件学习：主要参考半导小芯学习原理图电路板焊接拼装
-软件学习ing
+软件看了一部分，主要是ADC，OLED和UI的实现，整个工程量也不小看得出来要实现这么丝滑的UI还是蛮难的
 实物图
-遇到的问题电路板焊接：在焊接贴片元件时使用锡膏较少导致第一次烧录失败，之后又用电烙铁重新焊接了一遍烧录软件：第一次烧录的固件版本太低，导致风扇不转拼装：上下盖无法啮合，同时风扇按钮需要打磨
-Reference linking:http://www.semiee.com/https://blog.csdn.net/m0_47728632/article/details/123127863
-</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Daily_blog/2023-01-25/" title="2023-01-25's Blog"><img class="post_bg" src="/../image/Daily_blog/2023-01-25.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023-01-25's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/Daily_blog/2023-01-25/" title="2023-01-25's Blog">2023-01-25's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-25T09:43:42.000Z" title="发表于 2023-01-25 17:43:42">2023-01-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Daily-blog/">Daily_blog</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Hexo/">Hexo</a></span></div><div class="content">TODO
+遇到的问题电路板焊接：在焊接贴片元件时使用锡膏较少导致第一次烧录失败，之后又用电烙铁重新焊接了一遍烧录软件：第一次烧录的固件版本太低，导致风扇不转拼装：上下盖无法啮合，同时风扇按钮需要打磨Oled实现代码有的部分写的感觉有问题，比如Oled.cpp-Oled::OLED_ShowFont_1()721行就怪怪的,Oled_GRAM的第一个索引是行高&#x2F;8，所以不该是Oled_roll_x[2]&gt;&gt;8吗,只是这部分代码限制在了if (y &lt; Oled_roll_x[2])的条件下，所以相当于没有用上，对整个工程毫无影响
+Reference linking:http://www.semiee.com/https://blog.csd ...</div></div></div><div class="recent-post-item"><div class="post_cover left"><a href="/Daily_blog/2023-01-25/" title="2023-01-25's Blog"><img class="post_bg" src="/../image/Daily_blog/2023-01-25.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023-01-25's Blog"></a></div><div class="recent-post-info"><a class="article-title" href="/Daily_blog/2023-01-25/" title="2023-01-25's Blog">2023-01-25's Blog</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-01-25T09:43:42.000Z" title="发表于 2023-01-25 17:43:42">2023-01-25</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/Daily-blog/">Daily_blog</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Hexo/">Hexo</a></span></div><div class="content">TODO
  更改网站音乐播放器   早上发现博客的音乐不能正常播放了，找了一下，感觉是aplayer的问题   我使用的是butterfly主题，相应的做法是在主题的配置文件中的inject下的bottom加入以下代码   12- &quot;&lt;style&gt;div.musicplayer&#123;position: fixed;right: 0;bottom: 0;&#125;&lt;/style&gt;&quot;- &lt;div class=&quot;musicplayer&quot;&gt;&lt;音乐平台的外链播放器代码&gt;&lt;/div&gt;
    就是使用音乐平台提供的iframe插件，缺点是没法像aplayer那样有歌词   Reference linking:   https://butterfly.js.org/posts/507c070f/   https://juejin.cn/post/6844903688469741576
 

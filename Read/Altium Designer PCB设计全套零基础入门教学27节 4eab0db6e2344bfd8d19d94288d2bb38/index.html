@@ -1,0 +1,570 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Altium Designer PCB设计全套零基础入门教学27节 | Pilipala276's Blog</title><meta name="keywords" content="信号/电源完整性,Altium Designer"><meta name="author" content="Pilipala276"><meta name="copyright" content="Pilipala276"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Altium Designer PCB设计全套零基础入门教学27节Altium Designer PCB设计全套零基础入门教学27节|AD20教程|设计思路|元器件库创建管理|电源完整性|信号仿真信号完整性|直播回放_哔哩哔哩_bilibili 虽然画过几次板子，但是可能连入门水平都没有，主要想看看高速PCB的设计，尤其是信号完整性与电源完整性这部分， PCB设计标准IPC-2221 P1 新手们">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Altium Designer PCB设计全套零基础入门教学27节">
+<meta property="og:url" content="https://pilipala276.github.io/Read/Altium%20Designer%20PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82%204eab0db6e2344bfd8d19d94288d2bb38/index.html">
+<meta property="og:site_name" content="Pilipala276&#39;s Blog">
+<meta property="og:description" content="Altium Designer PCB设计全套零基础入门教学27节Altium Designer PCB设计全套零基础入门教学27节|AD20教程|设计思路|元器件库创建管理|电源完整性|信号仿真信号完整性|直播回放_哔哩哔哩_bilibili 虽然画过几次板子，但是可能连入门水平都没有，主要想看看高速PCB的设计，尤其是信号完整性与电源完整性这部分， PCB设计标准IPC-2221 P1 新手们">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pilipala276.github.io/image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82.png">
+<meta property="article:published_time" content="2023-04-19T07:18:32.000Z">
+<meta property="article:modified_time" content="2023-04-19T14:20:21.235Z">
+<meta property="article:author" content="Pilipala276">
+<meta property="article:tag" content="信号&#x2F;电源完整性">
+<meta property="article:tag" content="Altium Designer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pilipala276.github.io/image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pilipala276.github.io/Read/Altium%20Designer%20PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82%204eab0db6e2344bfd8d19d94288d2bb38/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Altium Designer PCB设计全套零基础入门教学27节',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-04-19 22:20:21'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/../img/deadcells.gif" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82.png')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Pilipala276's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Altium Designer PCB设计全套零基础入门教学27节</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-04-19T07:18:32.000Z" title="发表于 2023-04-19 15:18:32">2023-04-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-04-19T14:20:21.235Z" title="更新于 2023-04-19 22:20:21">2023-04-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Read/">Read</a></span></div><div class="meta-secondline"></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Altium-Designer-PCB设计全套零基础入门教学27节"><a href="#Altium-Designer-PCB设计全套零基础入门教学27节" class="headerlink" title="Altium Designer PCB设计全套零基础入门教学27节"></a>Altium Designer PCB设计全套零基础入门教学27节</h1><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1D7411T7Pr/">Altium Designer PCB设计全套零基础入门教学27节|AD20教程|设计思路|元器件库创建管理|电源完整性|信号仿真信号完整性|直播回放_哔哩哔哩_bilibili</a></p>
+<p>虽然画过几次板子，但是可能连入门水平都没有，主要想看看高速PCB的设计，尤其是信号完整性与电源完整性这部分，</p>
+<p>PCB设计标准IPC-2221</p>
+<h2 id="P1-新手们怎么学习PCB设计-李崇伟"><a href="#P1-新手们怎么学习PCB设计-李崇伟" class="headerlink" title="P1 新手们怎么学习PCB设计-李崇伟"></a>P1 新手们怎么学习PCB设计-李崇伟</h2><p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled.png" alt="Untitled"></p>
+<h2 id="P2-元器件库的创建-杨晓晨"><a href="#P2-元器件库的创建-杨晓晨" class="headerlink" title="P2 元器件库的创建-杨晓晨"></a>P2 元器件库的创建-杨晓晨</h2><p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%201.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%202.png" alt="Untitled"></p>
+<ul>
+<li><p>手动创建元件库</p>
+<p>  ID，位号，重要参数，描述，类型（）</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%203.png" alt="Untitled"></p>
+<p>  管脚封装，参数，链接（数据手册等），</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%204.png" alt="Untitled"></p>
+<p>  批量管理管脚：选择管脚后在panels打开SCHLIB List，可以复制粘贴到excle操作也可以从excel导入</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%205.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%206.png" alt="Untitled"></p>
+</li>
+<li><p>使用Symbol Wizard创建元件库</p>
+<p>  Tools中的Symbol Wizard能够帮你自动完成元件库的创建</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%207.png" alt="Untitled"></p>
+<p>  选择管脚布局样式</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%208.png" alt="Untitled"></p>
+<p>  管脚数量</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%209.png" alt="Untitled"></p>
+<p>  管脚参数，也支持从excel的智能粘贴</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2010.png" alt="Untitled"></p>
+<p>  放置模型</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2011.png" alt="Untitled"></p>
+</li>
+<li><p>手动创建PCB封装</p>
+<p>  网格设置</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2012.png" alt="Untitled"></p>
+<p>  选择mm&#x2F;mil</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2013.png" alt="Untitled"></p>
+<p>  画封装</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2014.png" alt="Untitled"></p>
+<p>  导入3D模型后的用Align Face With Board定向，再用Add Snap Points From Vertices添加定位点，添加定位点时有两种模式，一种是添加顶点，一种是选择两顶点的中点，可以用空格在这种种模式间切换</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2015.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2016.png" alt="Untitled"></p>
+</li>
+<li><p>使用IPC Compliant Footprint Wizard创建PCB封装</p>
+<p>  Tools中的IPC Compliant Footprint Wizard能够自动完成PCB封装的创建</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2017.png" alt="Untitled"></p>
+<p>  选择封装类型</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2018.png" alt="Untitled"></p>
+<p>  根据选择的参数生成pcb封装</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2019.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2020.png" alt="Untitled"></p>
+<p>  后面的大部分默认就可以了，他的参数是按照标准封装生成的</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2021.png" alt="Untitled"></p>
+</li>
+<li><p>使用IPC Compliant Footprint Batch generator批量创建PCB封装</p>
+<p>  Tools中的IPC Compliant Footprint Batch generator能够批量创建PCB封装</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2022.png" alt="Untitled"></p>
+<p>  打开对应封装的模板在excel填写参数后添加文件</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2023.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="P3-元器件库的管理及外部数据的连接-杨晓晨"><a href="#P3-元器件库的管理及外部数据的连接-杨晓晨" class="headerlink" title="P3 元器件库的管理及外部数据的连接-杨晓晨"></a>P3 元器件库的管理及外部数据的连接-杨晓晨</h2><p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2024.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2025.png" alt="Untitled"></p>
+<ul>
+<li><p>元器件集成库的建立</p>
+<p>  元件库添加封装</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2026.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2027.png" alt="Untitled"></p>
+<p>  元件库添加链接</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2028.png" alt="Untitled"></p>
+</li>
+<li><p>元器件集成库的编译</p>
+<p>  对元器件集成库进行编译</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2029.png" alt="Untitled"></p>
+<p>  看一看编译的提示信息（比如这里就是重复定义了两个pin1）</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2030.png" alt="Untitled"></p>
+<p>  编译成功会产生相应的文件夹</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2031.png" alt="Untitled"></p>
+</li>
+<li><p>元器件集成库的使用</p>
+<p>  元器件集成库创建后即可在Components里面调用</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2032.png" alt="Untitled"></p>
+</li>
+<li><p>数据库管理(这部分音画不同步都挺严重的，先放着看看后面的)</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2033.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="P4-3小时学会Altium-Designer（1）-梁文乐"><a href="#P4-3小时学会Altium-Designer（1）-梁文乐" class="headerlink" title="P4 3小时学会Altium Designer（1）-梁文乐"></a>P4 3小时学会Altium Designer（1）-梁文乐</h2><h2 id="P6-两层板、四层板与多层板叠层设计的区别-李崇伟"><a href="#P6-两层板、四层板与多层板叠层设计的区别-李崇伟" class="headerlink" title="P6 两层板、四层板与多层板叠层设计的区别-李崇伟"></a>P6 两层板、四层板与多层板叠层设计的区别-李崇伟</h2><p>正片与负片，正片走线，负片尽量不走线（一般是参考平面），参考平面一般是相邻层（多是GND层或电源层）</p>
+<p>阻抗计算，压合结构图</p>
+<p>BGA的pin间距是决定出层数的关键</p>
+<p>过孔塞油与过孔盖油</p>
+<p>添加层</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2034.png" alt="Untitled"></p>
+<p>叠层设计，阻抗设计，过孔类型</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2035.png" alt="Untitled"></p>
+<p>添加负片层</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2036.png" alt="Untitled"></p>
+<p>添加正片层</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2037.png" alt="Untitled"></p>
+<p>通孔，盲孔，埋孔</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2038.png" alt="Untitled"></p>
+<p>20H规则</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2039.png" alt="Untitled"></p>
+<p>叠层设计要点</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2040.png" alt="Untitled"></p>
+<h2 id="P7-PCB设计规则及查询语句-游晋"><a href="#P7-PCB设计规则及查询语句-游晋" class="headerlink" title="P7-PCB设计规则及查询语句-游晋"></a>P7-PCB设计规则及查询语句-游晋</h2><p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2041.png" alt="Untitled"></p>
+<p>规则的导入导出</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2042.png" alt="Untitled"></p>
+<p>规则的设置</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2043.png" alt="Untitled"></p>
+<p>定义规则时可以选择某个网络或者某个网络类或者某个层的网络等，在Design下的Classes可以更改网络所属的类，第一对象和第二的对象即该规则作用的对象，比如第一对象设为铜皮，第二对象也设为铜皮，那么该规则就是作用于铜皮和铜皮之间</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2044.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2045.png" alt="Untitled"></p>
+<p>使用Quary语句进行规则的语法设计</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2046.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2047.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2048.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2049.png" alt="Untitled"></p>
+<p>利用查询创建Quary语句</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2050.png" alt="Untitled"></p>
+<p>走线宽度与电流关系</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2051.png" alt="Untitled"></p>
+<p>创建差分对并通过向导设置规则</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2052.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2053.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2054.png" alt="Untitled"></p>
+<p>允许短路</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2055.png" alt="Untitled"></p>
+<p>负片规则设计</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2056.png" alt="Untitled"></p>
+<p>丝印规则设计</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2057.png" alt="Untitled"></p>
+<p>设置长度规则后，蛇形线会自己匹配</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2058.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2059.png" alt="Untitled"></p>
+<h2 id="P8-使用PDN进行电源完整性分析-游晋"><a href="#P8-使用PDN进行电源完整性分析-游晋" class="headerlink" title="P8 使用PDN进行电源完整性分析-游晋"></a>P8 使用PDN进行电源完整性分析-游晋</h2><p>PDN属于AD的扩展，需要购买，安装</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2060.png" alt="Untitled"></p>
+<p>安装后可以在tools这里打开</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2061.png" alt="Untitled"></p>
+<p>打开后先设置直流网络</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2062.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2063.png" alt="Untitled"></p>
+<p>设置源端</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2064.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2065.png" alt="Untitled"></p>
+<p>设置负载端</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2066.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2067.png" alt="Untitled"></p>
+<p>开始仿真</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2068.png" alt="Untitled"></p>
+<p>可视化过孔只有在3D模式下才能看</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2069.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2070.png" alt="Untitled"></p>
+<p>管脚与过孔数据</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2071.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2072.png" alt="Untitled"></p>
+<p>设置铜皮过孔铜皮等属性</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2073.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2074.png" alt="Untitled"></p>
+<p>电流限制设置</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2075.png" alt="Untitled"></p>
+<p>不满足设计要求时：</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2076.png" alt="Untitled"></p>
+<h2 id="P9-AD与Creo-amp-Solidworks的机电协同-张志俊"><a href="#P9-AD与Creo-amp-Solidworks的机电协同-张志俊" class="headerlink" title="P9 AD与Creo&amp;Solidworks的机电协同-张志俊"></a>P9 AD与Creo&amp;Solidworks的机电协同-张志俊</h2><ul>
+<li><p>传统的机电协同</p>
+<p>  封装设计时手动绘制3D模型</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2077.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2078.png" alt="Untitled"></p>
+<p>  执行更新操作</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2079.png" alt="Untitled"></p>
+<p>  导入外部3D模型，可以参考P2的手动创建PCB封装这部分</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2080.png" alt="Untitled"></p>
+<p>  PCB也支持上述操作，也可以导出3D模型</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2081.png" alt="Untitled"></p>
+</li>
+<li><p>IDX变化增量协同设计</p>
+<p>  大致是AD创建3D文件后能够实时更新到Solidworks,（暂时没有这方面的需求，以后再看吧</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2082.png" alt="Untitled"></p>
+</li>
+</ul>
+<h2 id="P10-如何判断高速PCB设计需要的层数-郑振宇"><a href="#P10-如何判断高速PCB设计需要的层数-郑振宇" class="headerlink" title="P10 如何判断高速PCB设计需要的层数-郑振宇"></a>P10 如何判断高速PCB设计需要的层数-郑振宇</h2><p>先布局再判断</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2083.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2084.png" alt="Untitled"></p>
+<p>负片内缩设置</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2085.png" alt="Untitled"></p>
+<p>在根据PCB板的布局走线密度判断时，将电源网络关掉判断，即只根据信号线网络判断</p>
+<p>根据BGA深度判断需要的层数，有BGA封装元件的板子基本是通过BGA来判断需要的层数</p>
+<p>对BGA元器件进行扇出操作</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2086.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2087.png" alt="Untitled"></p>
+<h2 id="P11-系统级设计（多PCB的互连）-任光虎"><a href="#P11-系统级设计（多PCB的互连）-任光虎" class="headerlink" title="P11 系统级设计（多PCB的互连）-任光虎"></a>P11 系统级设计（多PCB的互连）-任光虎</h2><p>创建多板工程</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2088.png" alt="Untitled"></p>
+<p>创建多板原理图与装配体</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2089.png" alt="Untitled"></p>
+<p>添加单元</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2090.png" alt="Untitled"></p>
+<p>为单元添加PCB工程与相应的PCB</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2091.png" alt="Untitled"></p>
+<p>放置entry</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2092.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2093.png" alt="Untitled"></p>
+<p>在原理图对应的接口元件添加如下参数后同步到单元中同样可以添加entry</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2094.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2095.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2096.png" alt="Untitled"></p>
+<p>四种线的区别，焊接，金手指，线缆（可以分线），线束（可以分线）</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2097.png" alt="Untitled"></p>
+<p>对单元分线</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2098.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%2099.png" alt="Untitled"></p>
+<p>进行总的链接管理</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20100.png" alt="Untitled"></p>
+<p>装配时的定位与连接</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20101.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20102.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20103.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20104.png" alt="Untitled"></p>
+<p>添加其他模型</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20105.png" alt="Untitled"></p>
+<p>检查3D干涉</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20106.png" alt="Untitled"></p>
+<p>生成多板BOM</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20107.png" alt="Untitled"></p>
+<h2 id="P12-X-Signal功能在AD20等长中的使用-郑振宇"><a href="#P12-X-Signal功能在AD20等长中的使用-郑振宇" class="headerlink" title="P12 X-Signal功能在AD20等长中的使用-郑振宇"></a>P12 X-Signal功能在AD20等长中的使用-郑振宇</h2><p>X-Signal主要解决长度匹配的问题，主要使用情况有：<br>信号路径种需要使用端接电阻，这会导致需要调制的现场包括端接电阻在内的不同网络<br>T点拓扑结构（星型结构）<br>菊花链（FLY-BY）拓扑结构</p>
+<p>在引入xSignal之前，AD的线长规则（Net Length）及匹配线长规则（Matched Net Length）只能针对同一网络，无法对同一网络中某一段路径进行调制，也无法对端接电阻进行处理。</p>
+<p>创建X-Signal</p>
+<p>先新建一个X-Signal分类</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20108.png" alt="Untitled"></p>
+<p>使用向导或手工创建X-Signal分类</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20109.png" alt="Untitled"></p>
+<p>手动创建：选择器件，网络，要添加到的X-Signal分类</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20110.png" alt="Untitled"></p>
+<p>对于两器件之间有端接电阻的需要将端接电阻的网络和器件添加到同一类，后在创建X-Signal时分类创建</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20111.png" alt="Untitled"></p>
+<p>打开X-Signal</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20112.png" alt="Untitled"></p>
+<p>高亮显示net</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20113.png" alt="Untitled"></p>
+<p>根据分好的X-Signal类来创建高速规则</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20114.png" alt="Untitled"></p>
+<p>不符合规则的长度会报错</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20115.png" alt="Untitled"></p>
+<p>对不符合长度规则的线进行网络等长调节（调节后可以联合打散也就是变成普通的线），同时蛇形走线要满足3W原则</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20116.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20117.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20118.png" alt="Untitled"></p>
+<h2 id="P13-需要特殊加工的PCB在AD当中的设置-刚柔板，拼板和背钻-梁文乐"><a href="#P13-需要特殊加工的PCB在AD当中的设置-刚柔板，拼板和背钻-梁文乐" class="headerlink" title="P13 需要特殊加工的PCB在AD当中的设置(刚柔板，拼板和背钻)-梁文乐"></a>P13 需要特殊加工的PCB在AD当中的设置(刚柔板，拼板和背钻)-梁文乐</h2><p>建立柔板叠层</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20119.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20120.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20121.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20122.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20123.png" alt="Untitled"></p>
+<p>按数字键1切换到1维进行分割</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20124.png" alt="Untitled"></p>
+<p>分割后选择软板还是硬板</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20125.png" alt="Untitled"></p>
+<p>定义弯曲线</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20126.png" alt="Untitled"></p>
+<p>设置Fold State进行弯曲</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20127.png" alt="Untitled"></p>
+<p>刚柔板设计的注意事项</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20128.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20129.png" alt="Untitled"></p>
+<p>PCB 3D Movie 可以制作3D视频（可以了解一下）</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20130.png" alt="Untitled"></p>
+<p>拼版创建pcb后先该层叠</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20131.png" alt="Untitled"></p>
+<p>背钻在层叠管理器这里设置</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20132.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20133.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20134.png" alt="Untitled"></p>
+<h2 id="P16-使用AD20进行混合信号仿真-SPICE-游晋"><a href="#P16-使用AD20进行混合信号仿真-SPICE-游晋" class="headerlink" title="P16 使用AD20进行混合信号仿真(SPICE)-游晋"></a>P16 使用AD20进行混合信号仿真(SPICE)-游晋</h2><p>完成电路仿真的功能，作用类似于Multisim</p>
+<h2 id="P17-使用AD20进行信号完整性仿真-SI-游晋"><a href="#P17-使用AD20进行信号完整性仿真-SI-游晋" class="headerlink" title="P17 使用AD20进行信号完整性仿真(SI)-游晋"></a>P17 使用AD20进行信号完整性仿真(SI)-游晋</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_24213087/article/details/113126002">AD(altium designer)15原理图与PCB设计教程（十）——信号完整性分析_ad15层叠管理_奋斗的蜗牛543464的博客-CSDN博客</a></p>
+<p>原理图器件添加SI模型</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20135.png" alt="Untitled"></p>
+<p>导入IBIS模型（IBIS模型主要就是对管脚信号特性进行定义）或者</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20136.png" alt="Untitled"></p>
+<p>阻抗设置</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20137.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20138.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20139.png" alt="Untitled"></p>
+<p>针对不同阻抗设置线宽</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20140.png" alt="Untitled"></p>
+<h2 id="P18-PCB设计中要掌握的十大技能-李崇伟"><a href="#P18-PCB设计中要掌握的十大技能-李崇伟" class="headerlink" title="P18 PCB设计中要掌握的十大技能-李崇伟"></a>P18 PCB设计中要掌握的十大技能-李崇伟</h2><p>手动制作和CAD文件导入制作板框,导入DXF文件需要合适的版本</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20141.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20142.png" alt="Untitled"></p>
+<p>添加差分线并设置差分规则</p>
+<p>先创建差分线类别</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20143.png" alt="Untitled"></p>
+<p>再在PCB panel里添加差分对线</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20144.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20145.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20146.png" alt="Untitled"></p>
+<p>原理图设置差分对</p>
+<p>差分对的网络名称的前缀必须是相同的，后缀则分别为_P和_N。</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20147.png" alt="Untitled"></p>
+<p>根据规则向导创建差分对规则</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20148.png" alt="Untitled"></p>
+<p>3W间距设置</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20149.png" alt="Untitled"></p>
+<p>元器件对齐排布</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20150.png" alt="Untitled"></p>
+<p>同时进行多根布线操作</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20151.png" alt="Untitled"></p>
+<p>更改网络颜色</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20152.png" alt="Untitled"></p>
+<p>异形板铺铜</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20153.png" alt="Untitled"></p>
+<p>输出PDF 3D</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20154.png" alt="Untitled"></p>
+<p>PCB开窗的作用：散热，载流，传导（露铜+导电海绵+屏蔽罩）</p>
+<p>在Solder层画即可实现开窗</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20155.png" alt="Untitled"></p>
+<p>过孔盖油（这个油指阻焊油，相对的说法是过孔开窗。指PCB工艺里印阻焊油是否把过孔当焊盘一样处理。过孔开窗过孔会多一次表面处理，比方镀金或者喷锡；而过孔盖油不会。所以需要过孔过大电流或者强调可靠性，最好大过孔并开窗。）</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20156.png" alt="Untitled"></p>
+<h2 id="P19-层次化原理图设计技巧"><a href="#P19-层次化原理图设计技巧" class="headerlink" title="P19 层次化原理图设计技巧"></a>P19 层次化原理图设计技巧</h2><p>放置Sheet Symbol</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20157.png" alt="Untitled"></p>
+<p>设置位号与对应的原理图文件名</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20158.png" alt="Untitled"></p>
+<p>如果先创建了原理图，想把port复制过来，可以用smart paste</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20159.png" alt="Untitled"></p>
+<p>根据Sheet Symbol创建原理图</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20160.png" alt="Untitled"></p>
+<p>根据已有原理图创建Sheet Symbol</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20161.png" alt="Untitled"></p>
+<p>用Harness来代替port，相当于总线的作用</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20162.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20163.png" alt="Untitled"></p>
+<p>小技巧</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20164.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20165.png" alt="Untitled"></p>
+<p>设计复用</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20166.png" alt="Untitled"></p>
+<p>原理图复用</p>
+<p>画好原理图后，设置Device Sheet的地址</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20167.png" alt="Untitled"></p>
+<p>用Device Sheet没法编辑，可以重构到当前文件夹</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20168.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20169.png" alt="Untitled"></p>
+<p>用Device Sheet没法编辑，更改只读，或者设置以解决位号命名问题</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20170.png" alt="Untitled"></p>
+<p>先设置图纸页码，再更改命名方式后自动命名</p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20171.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20172.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20173.png" alt="Untitled"></p>
+<p><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20174.png" alt="Untitled"></p>
+<p>Snippet复用</p>
+<h2 id="四层STM32开发板PCB设计实战演示-李崇伟"><a href="#四层STM32开发板PCB设计实战演示-李崇伟" class="headerlink" title="四层STM32开发板PCB设计实战演示-李崇伟"></a>四层STM32开发板PCB设计实战演示-李崇伟</h2><h2 id="零碎知识点"><a href="#零碎知识点" class="headerlink" title="零碎知识点"></a>零碎知识点</h2><p>高速信号打孔走线的时候可以在旁边打一个地过孔，形成回流路径</p>
+<ul>
+<li><p>添加缝合孔，使用tools</p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20175.png" alt="Untitled"></p>
+<p>  <img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Untitled%20176.png" alt="Untitled"></p>
+</li>
+</ul>
+<p>PCB高速信号过孔背转的原因是解决stub线</p>
+<p>snippets功能</p>
+<h2 id="P24-四层STM32开发板PCB设计实战演示-李崇伟"><a href="#P24-四层STM32开发板PCB设计实战演示-李崇伟" class="headerlink" title="P24 四层STM32开发板PCB设计实战演示-李崇伟"></a>P24 四层STM32开发板PCB设计实战演示-李崇伟</h2><p>看PCB小技巧：<code>alt+鼠标左键</code>，选定原理图某个网路</p>
+<h2 id="AD常用快捷键总结"><a href="#AD常用快捷键总结" class="headerlink" title="AD常用快捷键总结"></a><strong>AD常用快捷键总结</strong></h2><p><code>shift+s</code>切换单层显示</p>
+<p><code>ctrl+h</code>选择网络，选择网络后按<code>RS</code>可以测量网络长度</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io">Pilipala276</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io/Read/Altium%20Designer%20PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82%204eab0db6e2344bfd8d19d94288d2bb38/">https://pilipala276.github.io/Read/Altium%20Designer%20PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82%204eab0db6e2344bfd8d19d94288d2bb38/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pilipala276.github.io" target="_blank">Pilipala276's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E4%BF%A1%E5%8F%B7-%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7/">信号/电源完整性</a><a class="post-meta__tags" href="/tags/Altium-Designer/">Altium Designer</a></div><div class="post_share"><div class="social-share" data-image="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/Daily_blog/2023-04-14/"><img class="next-cover" src="/../image/Daily_blog/2023-04-14.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2023-04-14's Blog</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Read/%E4%BF%A1%E5%8F%B7-%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E8%B7%B5_%E9%82%B5%E9%B9%8F/" title="信号-电源完整性仿真分析与实践_邵鹏"><img class="cover" src="/../image/Read/%E4%BF%A1%E5%8F%B7-%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E8%B7%B5_%E9%82%B5%E9%B9%8F/%E4%BF%A1%E5%8F%B7-%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E8%B7%B5_%E9%82%B5%E9%B9%8F.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-04-08</div><div class="title">信号-电源完整性仿真分析与实践_邵鹏</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/../img/deadcells.gif" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pilipala276</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">41</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">43</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pilipala276"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:pilipala276@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82"><span class="toc-number">1.</span> <span class="toc-text">Altium Designer PCB设计全套零基础入门教学27节</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#P1-%E6%96%B0%E6%89%8B%E4%BB%AC%E6%80%8E%E4%B9%88%E5%AD%A6%E4%B9%A0PCB%E8%AE%BE%E8%AE%A1-%E6%9D%8E%E5%B4%87%E4%BC%9F"><span class="toc-number">1.1.</span> <span class="toc-text">P1 新手们怎么学习PCB设计-李崇伟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P2-%E5%85%83%E5%99%A8%E4%BB%B6%E5%BA%93%E7%9A%84%E5%88%9B%E5%BB%BA-%E6%9D%A8%E6%99%93%E6%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">P2 元器件库的创建-杨晓晨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P3-%E5%85%83%E5%99%A8%E4%BB%B6%E5%BA%93%E7%9A%84%E7%AE%A1%E7%90%86%E5%8F%8A%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E7%9A%84%E8%BF%9E%E6%8E%A5-%E6%9D%A8%E6%99%93%E6%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">P3 元器件库的管理及外部数据的连接-杨晓晨</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P4-3%E5%B0%8F%E6%97%B6%E5%AD%A6%E4%BC%9AAltium-Designer%EF%BC%881%EF%BC%89-%E6%A2%81%E6%96%87%E4%B9%90"><span class="toc-number">1.4.</span> <span class="toc-text">P4 3小时学会Altium Designer（1）-梁文乐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P6-%E4%B8%A4%E5%B1%82%E6%9D%BF%E3%80%81%E5%9B%9B%E5%B1%82%E6%9D%BF%E4%B8%8E%E5%A4%9A%E5%B1%82%E6%9D%BF%E5%8F%A0%E5%B1%82%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%8C%BA%E5%88%AB-%E6%9D%8E%E5%B4%87%E4%BC%9F"><span class="toc-number">1.5.</span> <span class="toc-text">P6 两层板、四层板与多层板叠层设计的区别-李崇伟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P7-PCB%E8%AE%BE%E8%AE%A1%E8%A7%84%E5%88%99%E5%8F%8A%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5-%E6%B8%B8%E6%99%8B"><span class="toc-number">1.6.</span> <span class="toc-text">P7-PCB设计规则及查询语句-游晋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P8-%E4%BD%BF%E7%94%A8PDN%E8%BF%9B%E8%A1%8C%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7%E5%88%86%E6%9E%90-%E6%B8%B8%E6%99%8B"><span class="toc-number">1.7.</span> <span class="toc-text">P8 使用PDN进行电源完整性分析-游晋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P9-AD%E4%B8%8ECreo-amp-Solidworks%E7%9A%84%E6%9C%BA%E7%94%B5%E5%8D%8F%E5%90%8C-%E5%BC%A0%E5%BF%97%E4%BF%8A"><span class="toc-number">1.8.</span> <span class="toc-text">P9 AD与Creo&amp;Solidworks的机电协同-张志俊</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P10-%E5%A6%82%E4%BD%95%E5%88%A4%E6%96%AD%E9%AB%98%E9%80%9FPCB%E8%AE%BE%E8%AE%A1%E9%9C%80%E8%A6%81%E7%9A%84%E5%B1%82%E6%95%B0-%E9%83%91%E6%8C%AF%E5%AE%87"><span class="toc-number">1.9.</span> <span class="toc-text">P10 如何判断高速PCB设计需要的层数-郑振宇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P11-%E7%B3%BB%E7%BB%9F%E7%BA%A7%E8%AE%BE%E8%AE%A1%EF%BC%88%E5%A4%9APCB%E7%9A%84%E4%BA%92%E8%BF%9E%EF%BC%89-%E4%BB%BB%E5%85%89%E8%99%8E"><span class="toc-number">1.10.</span> <span class="toc-text">P11 系统级设计（多PCB的互连）-任光虎</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P12-X-Signal%E5%8A%9F%E8%83%BD%E5%9C%A8AD20%E7%AD%89%E9%95%BF%E4%B8%AD%E7%9A%84%E4%BD%BF%E7%94%A8-%E9%83%91%E6%8C%AF%E5%AE%87"><span class="toc-number">1.11.</span> <span class="toc-text">P12 X-Signal功能在AD20等长中的使用-郑振宇</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P13-%E9%9C%80%E8%A6%81%E7%89%B9%E6%AE%8A%E5%8A%A0%E5%B7%A5%E7%9A%84PCB%E5%9C%A8AD%E5%BD%93%E4%B8%AD%E7%9A%84%E8%AE%BE%E7%BD%AE-%E5%88%9A%E6%9F%94%E6%9D%BF%EF%BC%8C%E6%8B%BC%E6%9D%BF%E5%92%8C%E8%83%8C%E9%92%BB-%E6%A2%81%E6%96%87%E4%B9%90"><span class="toc-number">1.12.</span> <span class="toc-text">P13 需要特殊加工的PCB在AD当中的设置(刚柔板，拼板和背钻)-梁文乐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P16-%E4%BD%BF%E7%94%A8AD20%E8%BF%9B%E8%A1%8C%E6%B7%B7%E5%90%88%E4%BF%A1%E5%8F%B7%E4%BB%BF%E7%9C%9F-SPICE-%E6%B8%B8%E6%99%8B"><span class="toc-number">1.13.</span> <span class="toc-text">P16 使用AD20进行混合信号仿真(SPICE)-游晋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P17-%E4%BD%BF%E7%94%A8AD20%E8%BF%9B%E8%A1%8C%E4%BF%A1%E5%8F%B7%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BB%BF%E7%9C%9F-SI-%E6%B8%B8%E6%99%8B"><span class="toc-number">1.14.</span> <span class="toc-text">P17 使用AD20进行信号完整性仿真(SI)-游晋</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P18-PCB%E8%AE%BE%E8%AE%A1%E4%B8%AD%E8%A6%81%E6%8E%8C%E6%8F%A1%E7%9A%84%E5%8D%81%E5%A4%A7%E6%8A%80%E8%83%BD-%E6%9D%8E%E5%B4%87%E4%BC%9F"><span class="toc-number">1.15.</span> <span class="toc-text">P18 PCB设计中要掌握的十大技能-李崇伟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P19-%E5%B1%82%E6%AC%A1%E5%8C%96%E5%8E%9F%E7%90%86%E5%9B%BE%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7"><span class="toc-number">1.16.</span> <span class="toc-text">P19 层次化原理图设计技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E5%B1%82STM32%E5%BC%80%E5%8F%91%E6%9D%BFPCB%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA-%E6%9D%8E%E5%B4%87%E4%BC%9F"><span class="toc-number">1.17.</span> <span class="toc-text">四层STM32开发板PCB设计实战演示-李崇伟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E7%A2%8E%E7%9F%A5%E8%AF%86%E7%82%B9"><span class="toc-number">1.18.</span> <span class="toc-text">零碎知识点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#P24-%E5%9B%9B%E5%B1%82STM32%E5%BC%80%E5%8F%91%E6%9D%BFPCB%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%BC%94%E7%A4%BA-%E6%9D%8E%E5%B4%87%E4%BC%9F"><span class="toc-number">1.19.</span> <span class="toc-text">P24 四层STM32开发板PCB设计实战演示-李崇伟</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AD%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93"><span class="toc-number">1.20.</span> <span class="toc-text">AD常用快捷键总结</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Read/Altium%20Designer%20PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82%204eab0db6e2344bfd8d19d94288d2bb38/" title="Altium Designer PCB设计全套零基础入门教学27节"><img src="/../image/Read/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82/Altium-Designer-PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Altium Designer PCB设计全套零基础入门教学27节"/></a><div class="content"><a class="title" href="/Read/Altium%20Designer%20PCB%E8%AE%BE%E8%AE%A1%E5%85%A8%E5%A5%97%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%85%A5%E9%97%A8%E6%95%99%E5%AD%A627%E8%8A%82%204eab0db6e2344bfd8d19d94288d2bb38/" title="Altium Designer PCB设计全套零基础入门教学27节">Altium Designer PCB设计全套零基础入门教学27节</a><time datetime="2023-04-19T07:18:32.000Z" title="发表于 2023-04-19 15:18:32">2023-04-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2023-04-14/" title="2023-04-14's Blog"><img src="/../image/Daily_blog/2023-04-14.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023-04-14's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2023-04-14/" title="2023-04-14's Blog">2023-04-14's Blog</a><time datetime="2023-04-14T08:33:42.000Z" title="发表于 2023-04-14 16:33:42">2023-04-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Read/%E4%BF%A1%E5%8F%B7-%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E8%B7%B5_%E9%82%B5%E9%B9%8F/" title="信号-电源完整性仿真分析与实践_邵鹏"><img src="/../image/Read/%E4%BF%A1%E5%8F%B7-%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E8%B7%B5_%E9%82%B5%E9%B9%8F/%E4%BF%A1%E5%8F%B7-%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E8%B7%B5_%E9%82%B5%E9%B9%8F.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="信号-电源完整性仿真分析与实践_邵鹏"/></a><div class="content"><a class="title" href="/Read/%E4%BF%A1%E5%8F%B7-%E7%94%B5%E6%BA%90%E5%AE%8C%E6%95%B4%E6%80%A7%E4%BB%BF%E7%9C%9F%E5%88%86%E6%9E%90%E4%B8%8E%E5%AE%9E%E8%B7%B5_%E9%82%B5%E9%B9%8F/" title="信号-电源完整性仿真分析与实践_邵鹏">信号-电源完整性仿真分析与实践_邵鹏</a><time datetime="2023-04-08T07:18:32.000Z" title="发表于 2023-04-08 15:18:32">2023-04-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86_%E9%99%88%E7%88%B1%E5%86%9B/" title="深入浅出通信原理_陈爱军"><img src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86_%E9%99%88%E7%88%B1%E5%86%9B/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86_%E9%99%88%E7%88%B1%E5%86%9B.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深入浅出通信原理_陈爱军"/></a><div class="content"><a class="title" href="/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E9%80%9A%E4%BF%A1%E5%8E%9F%E7%90%86_%E9%99%88%E7%88%B1%E5%86%9B/" title="深入浅出通信原理_陈爱军">深入浅出通信原理_陈爱军</a><time datetime="2023-03-21T13:33:32.000Z" title="发表于 2023-03-21 21:33:32">2023-03-21</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2023-03-18/" title="2023-03-18's Blog"><img src="/../image/Daily_blog/2023-03-18.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023-03-18's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2023-03-18/" title="2023-03-18's Blog">2023-03-18's Blog</a><time datetime="2023-03-18T05:07:42.000Z" title="发表于 2023-03-18 13:07:42">2023-03-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Pilipala276</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><style>div.musicplayer{position: fixed;right: 0;bottom: 120px;transform: translateX(90%);transition: all .5s;}  div.musicplayer:hover {transform: translateX(0px);transition-delay: .1s;}</style><div class="musicplayer"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/2Rd1uHiqdGCJmqkIk2aIxa?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>

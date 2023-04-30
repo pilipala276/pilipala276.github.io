@@ -38,7 +38,9 @@ type: "TheSkilltree"
 - [ ] 计算概论
 - [ ] 算法
 - [ ] 博弈论
-- [ ] 微机原理
+- [x] 微机原理
+  - [x] 大三上微机课《单片机原理及应用教程》
+  - [x] 微机原理课程设计
 - [X] CPU学习
   - [x] 理论学习：https://www.bilibili.com/video/BV19T4y1u7bY
   - [x] 仿真操作：https://www.bilibili.com/video/BV1aP4y1s7Vf   
@@ -48,7 +50,11 @@ type: "TheSkilltree"
   - [x] 《计算机组成原理》-艾伦·克莱门茨
   - [x] 《计算机组成原理》-唐朔飞
 - [x] 《程序员的自我修养》-俞甲子-石凡-潘爱民 
-
+- [x] 通信原理
+  - [x] 《深入浅出通信原理》-陈爱军
+- [ ] 自动控制原理 
+- [ ] 《模拟CMOS集成电路设计》-拉扎维
+- [ ] 集成电路版图设计技术：https://www.bilibili.com/video/BV1dL411n7c2/
 
 
 
@@ -72,9 +78,9 @@ type: "TheSkilltree"
   - [x] b站网课   
   https://www.bilibili.com/video/BV1vR4y1u77h?spm_id_from=333.999.0.0
 - [x] ROS
-  - [x] https://www.bilibili.com/video/BV1Ci4y1L7ZZ  
-  http://www.autolabor.com.cn/book/ROSTutorials/  
-  网课+看文档+写笔记
+  - [x] b站网课
+  https://www.bilibili.com/video/BV1Ci4y1L7ZZ  
+  http://www.autolabor.com.cn/book/ROSTutorials/   
 - [ ] manimlib
 - [ ] Unity
 
@@ -93,7 +99,8 @@ type: "TheSkilltree"
 - [x] 电路板
   - [x] AD学习
     - [x] 网课    
-    https://www.bilibili.com/video/BV16t411N7RD?spm_id_from=333.999.0.0
+    https://www.bilibili.com/video/BV16t411N7RD/
+    https://www.bilibili.com/video/BV1D7411T7Pr/
   - [x] 电工实习
 - [x] 数字电路
   - [x] 大三上数电课
@@ -102,23 +109,29 @@ type: "TheSkilltree"
   - [x] 大二下模电课
   - [x] 郑益慧模电课
   - [x] 《模拟电子技术基础》
+- [ ]  信号/电源完整性
+  - [ ] 《信号/电源完整性仿真分析与实践》-邵鹏
 
 ## 小项目
-- [x] OpenCV
+- [x] OpenCV练习项目
   - [x] OPenCV_python  
   https://www.bilibili.com/video/BV16K411W7x9?spm_id_from=333.999.0.0
   - [x] OpenCV_C++  
   https://www.bilibili.com/video/BV11A411T7rL?spm_id_from=333.999.0.0
-- [x] 深度学习/机器学习
-  - [x] Pytorch
-    - [x] 官网短时教学  
+- [x] Pytorch练习项目
+  - [x] 官网短时教学  
     https://pytorch.org/tutorials/beginner/deep_learning_60min_blitz.html
-  - [ ] TensorFlow  
-    - [ ] 慕课  
-    https://www.icourse163.org/learn/youdao-1460578162?tid=1461280442#/learn/announce
+- [ ] TensorFlow练习项目
+  - [ ] 慕课实操  
+  https://www.icourse163.org/learn/youdao-1460578162?tid=1461280442#/learn/announce
 - [ ] 复现HoloCubic小电视
 - [x] 搭建个人网站
       https://pilipala276.github.io/
+- [x] 加热台
+      https://oshwhub.com/sheep_finder/pcb-heng-wen-jia-re-tai
+
+
+
 
   
   

@@ -16,3 +16,7 @@ banner_img: ../image/test.webp
 This is new test_page.
 
 
+
+{% pdf ../pdf/newpage.pdf %}
+
+

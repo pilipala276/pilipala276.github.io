@@ -1,0 +1,291 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>深入浅出玩转FPGA_吴厚航 | Pilipala276's Blog</title><meta name="keywords" content="FPGA"><meta name="author" content="Pilipala276"><meta name="copyright" content="Pilipala276"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="深入浅出玩转FPGA感觉不够深入浅出，像比较零碎的笔记的汇总我的进度是有一定的Verilog基础，感觉现在应该多做一些实验，再到项目，再到时序约束这些东西看书时序约束这部分完全看不懂，应该是需要前置知识的，不过前面的知识普及，设计技巧，仿真测试部分都很值得一看 基础普及初识FPGA经典FPGA结构  FPGA和CPLD：CPLD是基于ROM结构，下电后代码不丢失，FPGA是基于RAM结构，下电后代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入浅出玩转FPGA_吴厚航">
+<meta property="og:url" content="https://pilipala276.github.io/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/index.html">
+<meta property="og:site_name" content="Pilipala276&#39;s Blog">
+<meta property="og:description" content="深入浅出玩转FPGA感觉不够深入浅出，像比较零碎的笔记的汇总我的进度是有一定的Verilog基础，感觉现在应该多做一些实验，再到项目，再到时序约束这些东西看书时序约束这部分完全看不懂，应该是需要前置知识的，不过前面的知识普及，设计技巧，仿真测试部分都很值得一看 基础普及初识FPGA经典FPGA结构  FPGA和CPLD：CPLD是基于ROM结构，下电后代码不丢失，FPGA是基于RAM结构，下电后代">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pilipala276.github.io/image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA.png">
+<meta property="article:published_time" content="2023-09-30T15:18:00.000Z">
+<meta property="article:modified_time" content="2023-09-30T15:23:25.861Z">
+<meta property="article:author" content="Pilipala276">
+<meta property="article:tag" content="FPGA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pilipala276.github.io/image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pilipala276.github.io/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '深入浅出玩转FPGA_吴厚航',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-30 23:23:25'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/../img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Pilipala276's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">深入浅出玩转FPGA_吴厚航</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-30T15:18:00.000Z" title="发表于 2023-09-30 23:18:00">2023-09-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-30T15:23:25.861Z" title="更新于 2023-09-30 23:23:25">2023-09-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Read/">Read</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><h1 id="深入浅出玩转FPGA"><a href="#深入浅出玩转FPGA" class="headerlink" title="深入浅出玩转FPGA"></a>深入浅出玩转FPGA</h1><p>感觉不够深入浅出，像比较零碎的笔记的汇总<br>我的进度是有一定的Verilog基础，感觉现在应该多做一些实验，再到项目，再到时序约束这些东西<br>看书时序约束这部分完全看不懂，应该是需要前置知识的，不过前面的知识普及，设计技巧，仿真测试部分都很值得一看</p>
+<h1 id="基础普及"><a href="#基础普及" class="headerlink" title="基础普及"></a>基础普及</h1><h2 id="初识FPGA"><a href="#初识FPGA" class="headerlink" title="初识FPGA"></a>初识FPGA</h2><p>经典FPGA结构</p>
+<p><img src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/Untitled.png" alt="Untitled"></p>
+<p>FPGA和CPLD：CPLD是基于ROM结构，下电后代码不丢失，FPGA是基于RAM结构，下电后代码丢失，所以需要有一个配置ROM。二者执照工艺上的差别也导致了他们内部结构的不同，CPLD的逻辑资源不可太大，FPGA却能够做到数万乃至数百万逻辑门。</p>
+<h2 id="应用领域"><a href="#应用领域" class="headerlink" title="应用领域"></a>应用领域</h2><h3 id="逻辑粘合（胶合逻辑）"><a href="#逻辑粘合（胶合逻辑）" class="headerlink" title="逻辑粘合（胶合逻辑）"></a>逻辑粘合（胶合逻辑）</h3><p>胶合逻辑是数字电路的特殊形式，它作为中间接口，允许不同类型的逻辑芯片或电路一起工作。<br>早期FPGA主要完成一些简单的纯组合逻辑粘合（但现在FPGA再做逻辑粘合有些大材小用，逻辑粘合由CPLD取代）</p>
+<h3 id="实时控制"><a href="#实时控制" class="headerlink" title="实时控制"></a>实时控制</h3><p>相较于CPU,FPGA的并行性可满足实时控制的要求，例如对液晶屏的驱动，不过如果只是简单的驱动和数据搬运CPLD也足够了</p>
+<h3 id="信号处理"><a href="#信号处理" class="headerlink" title="信号处理"></a>信号处理</h3><p>在软件无线电领域，专用集成电路(ASIC)、现场可编程逻辑器件(FPGA)和数字信号处理器(DSP)三足鼎立</p>
+<p>DSP和ASIC都是顺序处理，FPGA在并行处理上有得天独厚的优势，比较常用的方案是DSP+FPGA</p>
+<h3 id="协议实现"><a href="#协议实现" class="headerlink" title="协议实现"></a>协议实现</h3><p>虽然现成的协议芯片不少，但是对于一些标准协议的非标准应用还是应该选者FPGA，优势只要选择一个合适的IP核(IP核是指芯片中具有独立功能的电路模块的成熟设计)在经过简单的配置后即可灵活使用</p>
+<h3 id="片上系统"><a href="#片上系统" class="headerlink" title="片上系统"></a>片上系统</h3><p>片上系统(SoC)指在单个芯片上集成一个完整的系统，一般包括系统级芯片控制逻辑模块，微处理器&#x2F;微处理器内核模块，数字信号处理模块，存储器或存储器控制模块，接口协议模块，含有ADC&#x2F;DAC的模拟前端模块，电源及功耗管理模块等</p>
+<p>传统的片上系统和基于FPGA的片上系统</p>
+<p><img src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/Untitled%201.png" alt="Untitled"></p>
+<h2 id="开发流程"><a href="#开发流程" class="headerlink" title="开发流程"></a>开发流程</h2><p>FPGA开发流程</p>
+<p><img src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/Untitled%202.png" alt="Untitled"></p>
+<h3 id="设计输入"><a href="#设计输入" class="headerlink" title="设计输入"></a>设计输入</h3><p>设计输入可以是原理图输入，代码输入，或者搭建SOPC平台。原理图设计有太多的局限性，对于复杂应用基本不予考虑，SOPC应用越来越广泛，不过使用代码设计依然是主流</p>
+<p>FPGA的代码设计很强调代码风格，不可以像C语言一样片面地追求简洁，它需要具体到内部的每一个逻辑，每一条连线.后面的时序问题，功能问题的优化都只能是修改代码</p>
+<h3 id="时序收敛"><a href="#时序收敛" class="headerlink" title="时序收敛"></a>时序收敛</h3><p>功能仿真过后进行一次全编译，然后就进行<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/560103525">时序约束</a>(时序约束就是我们高速软件从哪个pin输入信号，输入信号要延迟多长时间，时钟周期是多少，让软件布局布线后的电路能满足我们的需求)</p>
+<h3 id="仿真测试和板级调试"><a href="#仿真测试和板级调试" class="headerlink" title="仿真测试和板级调试"></a>仿真测试和板级调试</h3><p>设计验证过程</p>
+<p><img src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/Untitled%203.png" alt="Untitled"></p>
+<h1 id="设计技巧"><a href="#设计技巧" class="headerlink" title="设计技巧"></a>设计技巧</h1><h2 id="Verilog基本语法"><a href="#Verilog基本语法" class="headerlink" title="Verilog基本语法"></a>Verilog基本语法</h2><p>可以先看一下菜鸟教程再来看这部分</p>
+<p><a target="_blank" rel="noopener" href="https://www.runoob.com/w3cnote/verilog-tutorial.html">1.1 Verilog 教程 | 菜鸟教程</a></p>
+<p><strong>FPGA逻辑资源</strong><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/508454394">FPGA底层讲解之 – 资源综述 - 知乎 (zhihu.com)</a></p>
+<p>if…else和case分别是优先级结构与并行结构</p>
+<p>for循环很占逻辑资源，时序逻辑多用非阻塞逻辑</p>
+<p>inout端口在作输入端口使用需要置为高阻态，其典型用法：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">inout</span> io_data;</span><br><span class="line"><span class="keyword">reg</span> out_data;</span><br><span class="line"><span class="keyword">reg</span> io_link;</span><br><span class="line"><span class="keyword">assign</span> io_data = io_link?out_data:<span class="number">1</span>b&#x27;z;</span><br></pre></td></tr></table></figure>
+
+<p>大多数FPGA基于4输入的LUT结构，让输入条件满足4个是个不错的选择</p>
+<p>解读Verilog代码可以从端口入手</p>
+<h2 id="状态机设计"><a href="#状态机设计" class="headerlink" title="状态机设计"></a>状态机设计</h2><p>可以结合菜鸟教程的状态机部分</p>
+<p>always语句能够一定程度上区分几段状态机</p>
+<p>二段式状态机是一种常用的写法，把时序逻辑和组合逻辑分开来，三段式状态机能解决两段式写法中组合逻辑的毛刺问题</p>
+<p>该书举例的二段式状态机改为三段式状态机能够及时纠正毛刺错误（应该是这样），但是输出会延时一个时钟周期</p>
+<p>不同段式状态机逻辑资源消耗区别</p>
+<h2 id="复位设计"><a href="#复位设计" class="headerlink" title="复位设计"></a>复位设计</h2><p>复位分为异步复位与同步复位，异步复位相对更常用一些，异步复位不用额外的硬件资源，但更可能出现<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/425156276">亚稳态问题</a>，可以看一下书中举的亚稳态具体例子<br>直观理解：如果时钟信号在复位撤销状态时触发，会跳出复位</p>
+<p>异步复位+同步释放：</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">input</span> clk;</span><br><span class="line"><span class="keyword">input</span> rst_n;</span><br><span class="line"><span class="keyword">output</span> rst_nr2;</span><br><span class="line"><span class="keyword">reg</span> rst_nr1,rst_nr2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(posedeg clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!rst_n) rst_nr1&lt;=<span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> rst_nr1&lt;=<span class="number">1&#x27;b1</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(posedeg clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n)</span><br><span class="line">	<span class="keyword">if</span>(!rst_n) rst_nr2&lt;=<span class="number">1&#x27;b0</span>;</span><br><span class="line">	<span class="keyword">else</span> rst_nr2&lt;=rst_nr1;</span><br></pre></td></tr></table></figure>
+
+<p>对于PLL的复位，书中的做法是在异步复位+同步释放PLL后等到PLL输出有效后在进行系统的异步复位+同步释放</p>
+<p>可以看一下书中PLL复位的工程代码</p>
+<h2 id="FPGA重要设计思想及工程应用"><a href="#FPGA重要设计思想及工程应用" class="headerlink" title="FPGA重要设计思想及工程应用"></a>FPGA重要设计思想及工程应用</h2><p>速度和面积是FPGA永恒的话题<br>速度与FPGA内部寄存器的建立时间保持时间，逻辑延时走线延时有关<br>面积可以通过工程运行消耗的触发器，查找表，或等效门数量来衡量</p>
+<p>速度与面积的优化往往是矛盾的，也是可以互换的，更深层次的是串行与并行的转换</p>
+<p>乒乓操作，是一个主要用于数据流控制的处理技巧，一个常见的例子是图像实时显示：SDRAM1缓存图像数据时，液晶显示SDRAM2的内容；SDRAM2缓存图像数据时，液晶显示SDRAM1的内容</p>
+<p>流水线设计，如果某个设计可以分为若干步骤进行处理，而且整个数据处理过程是单向的，就可以考虑采用流水线的方法来提高系统工作频率<br>流水线也可以看看菜鸟教程的实例</p>
+<p>逻辑复制不仅是一种面积换速度的方式，也可以解决扇出问题（如果某个信号需要驱动的后级逻辑信号较多，也是扇出较大，为了增强这个信号的驱动能力，可以加Buffer但会增加路径延时，也可以复制该信号的逻辑用多路同频同相的信号驱动后续电路）<br>相对的模块复用则是速度换面积的方式</p>
+<p>模块化设计，一般是自顶向下的设计方式，一般设计的顶层只做例化，不做逻辑<br>模块划分的基本原则是子模块功能相对独立，模块内部联系尽量紧密，模块间的连接尽量简单。<br>模块例化也可以看看菜鸟教程的实例</p>
+<p>时钟设计技巧<br>尽量避免使用FPGA内部逻辑产生的时钟，容易出现毛刺。但如果必须采用内部逻辑作时钟或者复位信号的应用，好的做法是在输出时钟或者复位信号之前用系统时钟打一拍，达到同步处理的效果（与异步复位+同步释放类似）<br>对于内嵌有PLL或者DLL的FPGA，尽量利用PLL或者DLL资源完成时钟设计<br>对于没有PLL或者DLL的FPGA，推荐使用“使能时钟”，即将系统的时钟信号分频后的信号作为使能信号使用</p>
+<p>使用简单的门控时钟不符合<a target="_blank" rel="noopener" href="https://blog.csdn.net/cllovexyh/article/details/78601121">同步设计</a>的思想（为什么？是因为这个门控信号是异步的？）<br>可以看一看书中的门控时钟方案，它限制了门控信号的作用时间</p>
+<h2 id="基于FPGA的跨时钟域信号处理"><a href="#基于FPGA的跨时钟域信号处理" class="headerlink" title="基于FPGA的跨时钟域信号处理"></a>基于FPGA的跨时钟域信号处理</h2><p>对于异步时钟域通信，设计者需要作特殊的处理以确保数据可靠的传输，常用的设计方法有单向控制信号检测，专用握手信号和借助于存储器</p>
+<p>这部分书中有额外的推荐书籍：《跨越鸿沟：同步世界中的异步信号》，《CPU与FPGA跨时钟域数据交换的是西安问题》</p>
+<p>看看书中举的同步设计的实例，</p>
+<p>单向控制信号检测，通常用在一方速度比较慢的通信场合</p>
+<p>专用握手信号</p>
+<p>关于亚稳态可以看看图2.50，为了尽可能减少异步信号传输中由于亚稳态引发的问题，设计者通常在目的时钟域使用一串连续的寄存器将信号同步到新的时钟域中（握手信号的实例代码就是这样），后面带时间参数的看不懂？</p>
+<p>也可以借助于存储芯片内部的同步处理机制，把更多的时间花在数据流以及存储器接口的控制上</p>
+<h2 id="经验点滴"><a href="#经验点滴" class="headerlink" title="经验点滴"></a>经验点滴</h2><p>这部分主要是作者日常学习或板子调试发现问题的一些总结和分析，可以稍稍了解一下</p>
+<h1 id="仿真测试"><a href="#仿真测试" class="headerlink" title="仿真测试"></a>仿真测试</h1><h2 id="简单的Testbench设计"><a href="#简单的Testbench设计" class="headerlink" title="简单的Testbench设计"></a>简单的Testbench设计</h2><p>Testbench的的语法是很随意的，不像RTL级设计代码那么多讲究，很多高级的语法都可以在脚本中使用，因为它只是在PC机上运行的一段脚本，所以相对RTL级可以做的灵活</p>
+<p>Testbench文件的编写大致可以分为3个步骤：对被测试设计的顶层接口进行例化；对被测试设计的输入接口添加激励；判断被测试设计的输出响应是否满足设计要求；</p>
+<h2 id="Testbench书写技巧"><a href="#Testbench书写技巧" class="headerlink" title="Testbench书写技巧"></a>Testbench书写技巧</h2><p>在Testbench中可以使用task进行代码的封装</p>
+<p>灵活应用全局变量与语句块变量</p>
+<p>结构化设计Testbench</p>
+<p>采用非阻塞赋值语句或者延时能够解决测试时的读&#x2F;写紊乱问题</p>
+<p>同时调用任务是需要避免的，可以在任务中加入检错机制</p>
+<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">task</span> task1;</span><br><span class="line"><span class="comment">//input</span></span><br><span class="line"><span class="keyword">reg</span> in_use;</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"><span class="keyword">if</span> (in_use==<span class="number">1&#x27;b1</span>) <span class="built_in">$stop</span>;</span><br><span class="line">in_use = <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="comment">//task code</span></span><br><span class="line">in_use = <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">endtask</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="测试用例设计"><a href="#测试用例设计" class="headerlink" title="测试用例设计"></a>测试用例设计</h2><p>遍历测试+随机测试</p>
+<p>可以看看书中的具体例子</p>
+<h1 id="时序分析"><a href="#时序分析" class="headerlink" title="时序分析"></a>时序分析</h1><h2 id="静态时序分析"><a href="#静态时序分析" class="headerlink" title="静态时序分析"></a>静态时序分析</h2><p>FPGA内部的逻辑门会有延时，信号线会有延时，这些都会造成对应的时序问题</p>
+<p>设计者提出一些特定的时序要求，套用特定的时序模型，针对特定的电路进行分析，使系统时序满足设计者提出的要求</p>
+<p>时序约束是什么，怎么做？（我暂时的理解是执行工具并不会试图寻找最快速的布局布线路径，而是寻炸满足时序约束的布局布线路径，找到即为时序收敛）</p>
+<p>先看看书中两个寄存器的例子</p>
+<p>时钟相关概念：建立时间，保持时间，时钟偏斜，时钟网络延时，路径延时</p>
+<p>建立时间公式，保持时间公式（没看懂保持时间公式，应该是看deta_1的保持时间得到的？）</p>
+<h2 id="基于ISE的时序约束"><a href="#基于ISE的时序约束" class="headerlink" title="基于ISE的时序约束"></a>基于ISE的时序约束</h2><p>这部分看不懂，只能了解一下，可能具体地做过时序约束才能看得懂</p>
+<p>时序约束应该符合设计的性能要求，过紧的时序约束将会延长编译时间，不现实的时序约束可能导致执行工具罢工，为了节约时间，设计者可以先查看综合报告或者映射后的<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1044175">静态时序报告</a>以决定约束是否符合显示</p>
+<p>全局约束，周期约束，时钟抖动，端口约束，OFFSET约束（没看懂）</p>
+<h2 id="基于TimeQuest地时序分析"><a href="#基于TimeQuest地时序分析" class="headerlink" title="基于TimeQuest地时序分析"></a>基于TimeQuest地时序分析</h2><p>这部分也看不懂，哈哈，等回头有些基础了再来看吧</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io">Pilipala276</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/">https://pilipala276.github.io/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pilipala276.github.io" target="_blank">Pilipala276's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/FPGA/">FPGA</a></div><div class="post_share"><div class="social-share" data-image="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/Project/%E3%80%90%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90%E3%80%91%E5%8A%A0%E7%83%AD%E5%8F%B0%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/"><img class="next-cover" src="/../image/Project/%E3%80%90%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90%E3%80%91%E5%8A%A0%E7%83%AD%E5%8F%B0%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/%E5%AE%9E%E7%89%A9%E5%9B%BE1.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">【项目解析】加热台硬件设计分析</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/../img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pilipala276</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">56</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pilipala276"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:pilipala276@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA"><span class="toc-number">1.</span> <span class="toc-text">深入浅出玩转FPGA</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E6%99%AE%E5%8F%8A"><span class="toc-number">2.</span> <span class="toc-text">基础普及</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86FPGA"><span class="toc-number">2.1.</span> <span class="toc-text">初识FPGA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E9%A2%86%E5%9F%9F"><span class="toc-number">2.2.</span> <span class="toc-text">应用领域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%BB%E8%BE%91%E7%B2%98%E5%90%88%EF%BC%88%E8%83%B6%E5%90%88%E9%80%BB%E8%BE%91%EF%BC%89"><span class="toc-number">2.2.1.</span> <span class="toc-text">逻辑粘合（胶合逻辑）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%97%B6%E6%8E%A7%E5%88%B6"><span class="toc-number">2.2.2.</span> <span class="toc-text">实时控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="toc-number">2.2.3.</span> <span class="toc-text">信号处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8F%E8%AE%AE%E5%AE%9E%E7%8E%B0"><span class="toc-number">2.2.4.</span> <span class="toc-text">协议实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%87%E4%B8%8A%E7%B3%BB%E7%BB%9F"><span class="toc-number">2.2.5.</span> <span class="toc-text">片上系统</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B"><span class="toc-number">2.3.</span> <span class="toc-text">开发流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%BE%93%E5%85%A5"><span class="toc-number">2.3.1.</span> <span class="toc-text">设计输入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E6%94%B6%E6%95%9B"><span class="toc-number">2.3.2.</span> <span class="toc-text">时序收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%B5%8B%E8%AF%95%E5%92%8C%E6%9D%BF%E7%BA%A7%E8%B0%83%E8%AF%95"><span class="toc-number">2.3.3.</span> <span class="toc-text">仿真测试和板级调试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7"><span class="toc-number">3.</span> <span class="toc-text">设计技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Verilog%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="toc-number">3.1.</span> <span class="toc-text">Verilog基本语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8A%B6%E6%80%81%E6%9C%BA%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.2.</span> <span class="toc-text">状态机设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E4%BD%8D%E8%AE%BE%E8%AE%A1"><span class="toc-number">3.3.</span> <span class="toc-text">复位设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FPGA%E9%87%8D%E8%A6%81%E8%AE%BE%E8%AE%A1%E6%80%9D%E6%83%B3%E5%8F%8A%E5%B7%A5%E7%A8%8B%E5%BA%94%E7%94%A8"><span class="toc-number">3.4.</span> <span class="toc-text">FPGA重要设计思想及工程应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EFPGA%E7%9A%84%E8%B7%A8%E6%97%B6%E9%92%9F%E5%9F%9F%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="toc-number">3.5.</span> <span class="toc-text">基于FPGA的跨时钟域信号处理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%8F%E9%AA%8C%E7%82%B9%E6%BB%B4"><span class="toc-number">3.6.</span> <span class="toc-text">经验点滴</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%B5%8B%E8%AF%95"><span class="toc-number">4.</span> <span class="toc-text">仿真测试</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84Testbench%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.1.</span> <span class="toc-text">简单的Testbench设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Testbench%E4%B9%A6%E5%86%99%E6%8A%80%E5%B7%A7"><span class="toc-number">4.2.</span> <span class="toc-text">Testbench书写技巧</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.3.</span> <span class="toc-text">测试用例设计</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90"><span class="toc-number">5.</span> <span class="toc-text">时序分析</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90"><span class="toc-number">5.1.</span> <span class="toc-text">静态时序分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EISE%E7%9A%84%E6%97%B6%E5%BA%8F%E7%BA%A6%E6%9D%9F"><span class="toc-number">5.2.</span> <span class="toc-text">基于ISE的时序约束</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8ETimeQuest%E5%9C%B0%E6%97%B6%E5%BA%8F%E5%88%86%E6%9E%90"><span class="toc-number">5.3.</span> <span class="toc-text">基于TimeQuest地时序分析</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/" title="深入浅出玩转FPGA_吴厚航"><img src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深入浅出玩转FPGA_吴厚航"/></a><div class="content"><a class="title" href="/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/" title="深入浅出玩转FPGA_吴厚航">深入浅出玩转FPGA_吴厚航</a><time datetime="2023-09-30T15:18:00.000Z" title="发表于 2023-09-30 23:18:00">2023-09-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Project/%E3%80%90%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90%E3%80%91%E5%8A%A0%E7%83%AD%E5%8F%B0%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" title="【项目解析】加热台硬件设计分析"><img src="/../image/Project/%E3%80%90%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90%E3%80%91%E5%8A%A0%E7%83%AD%E5%8F%B0%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/%E5%AE%9E%E7%89%A9%E5%9B%BE1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【项目解析】加热台硬件设计分析"/></a><div class="content"><a class="title" href="/Project/%E3%80%90%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90%E3%80%91%E5%8A%A0%E7%83%AD%E5%8F%B0%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" title="【项目解析】加热台硬件设计分析">【项目解析】加热台硬件设计分析</a><time datetime="2023-09-10T14:56:00.000Z" title="发表于 2023-09-10 22:56:00">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2023-08-13/" title="Verilog 菜鸟教程"><img src="/../image/Daily_blog/2023-08-13.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Verilog 菜鸟教程"/></a><div class="content"><a class="title" href="/Daily_blog/2023-08-13/" title="Verilog 菜鸟教程">Verilog 菜鸟教程</a><time datetime="2023-08-13T12:20:00.000Z" title="发表于 2023-08-13 20:20:00">2023-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Hardware/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/" title="GPIO的八种工作模式"><img src="/../image/Hardware/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GPIO的八种工作模式"/></a><div class="content"><a class="title" href="/Hardware/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/" title="GPIO的八种工作模式">GPIO的八种工作模式</a><time datetime="2023-07-27T04:00:00.000Z" title="发表于 2023-07-27 12:00:00">2023-07-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Hardware/UART%E3%80%81I2C%E3%80%81SPI%E5%92%8C8080/" title="UART、I2C、SPI和8080"><img src="/../image/Hardware/UART%E3%80%81I2C%E3%80%81SPI%E5%92%8C8080/UART%E3%80%81I2C%E3%80%81SPI%E5%92%8C8080.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="UART、I2C、SPI和8080"/></a><div class="content"><a class="title" href="/Hardware/UART%E3%80%81I2C%E3%80%81SPI%E5%92%8C8080/" title="UART、I2C、SPI和8080">UART、I2C、SPI和8080</a><time datetime="2023-07-22T04:00:00.000Z" title="发表于 2023-07-22 12:00:00">2023-07-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Pilipala276</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>

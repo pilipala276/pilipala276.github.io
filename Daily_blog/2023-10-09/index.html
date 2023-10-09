@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>规范化的方案设计方法及器件选型_硬禾学堂 | Pilipala276's Blog</title><meta name="keywords" content="硬件"><meta name="author" content="Pilipala276"><meta name="copyright" content="Pilipala276"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="FastBond2直播2：规范化的方案设计方法及器件选型 - 电子森林 (eetree.cn) 电子产品是如何设计的？有哪些参考资源？助力电子人少走弯路 - 直播回放2_哔哩哔哩_bilibili 了解电子系统构成，掌握设计工具，助你的设计事半功倍-直播回放1_哔哩哔哩_bilibili">
+<meta property="og:type" content="article">
+<meta property="og:title" content="规范化的方案设计方法及器件选型_硬禾学堂">
+<meta property="og:url" content="https://pilipala276.github.io/Daily_blog/2023-10-09/index.html">
+<meta property="og:site_name" content="Pilipala276&#39;s Blog">
+<meta property="og:description" content="FastBond2直播2：规范化的方案设计方法及器件选型 - 电子森林 (eetree.cn) 电子产品是如何设计的？有哪些参考资源？助力电子人少走弯路 - 直播回放2_哔哩哔哩_bilibili 了解电子系统构成，掌握设计工具，助你的设计事半功倍-直播回放1_哔哩哔哩_bilibili">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pilipala276.github.io/image/Daily_blog/2023-10-09.png">
+<meta property="article:published_time" content="2023-10-09T12:20:00.000Z">
+<meta property="article:modified_time" content="2023-10-09T04:44:22.064Z">
+<meta property="article:author" content="Pilipala276">
+<meta property="article:tag" content="硬件">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pilipala276.github.io/image/Daily_blog/2023-10-09.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pilipala276.github.io/Daily_blog/2023-10-09/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '规范化的方案设计方法及器件选型_硬禾学堂',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-10-09 12:44:22'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/../img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Pilipala276's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">规范化的方案设计方法及器件选型_硬禾学堂</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-09T12:20:00.000Z" title="发表于 2023-10-09 20:20:00">2023-10-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-09T04:44:22.064Z" title="更新于 2023-10-09 12:44:22">2023-10-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Daily-blog/">Daily_blog</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><p><a target="_blank" rel="noopener" href="https://www.eetree.cn/doc/detail/2600">FastBond2直播2：规范化的方案设计方法及器件选型 - 电子森林 (eetree.cn)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Qj41167zF/">电子产品是如何设计的？有哪些参考资源？助力电子人少走弯路 - 直播回放2_哔哩哔哩_bilibili</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1CV4y1v7DY/">了解电子系统构成，掌握设计工具，助你的设计事半功倍-直播回放1_哔哩哔哩_bilibili</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io">Pilipala276</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io/Daily_blog/2023-10-09/">https://pilipala276.github.io/Daily_blog/2023-10-09/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pilipala276.github.io" target="_blank">Pilipala276's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%A1%AC%E4%BB%B6/">硬件</a></div><div class="post_share"><div class="social-share" data-image="/../image/Daily_blog/2023-10-09.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/"><img class="next-cover" src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">深入浅出玩转FPGA_吴厚航</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Hardware/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/" title="GPIO的八种工作模式"><img class="cover" src="/../image/Hardware/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-27</div><div class="title">GPIO的八种工作模式</div></div></a></div><div><a href="/Hardware/UART%E3%80%81I2C%E3%80%81SPI%E5%92%8C8080/" title="UART、I2C、SPI和8080"><img class="cover" src="/../image/Hardware/UART%E3%80%81I2C%E3%80%81SPI%E5%92%8C8080/UART%E3%80%81I2C%E3%80%81SPI%E5%92%8C8080.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-22</div><div class="title">UART、I2C、SPI和8080</div></div></a></div><div><a href="/Hardware/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%B3%BB%E7%BB%9F%E6%A1%86%E5%9B%BE/" title="硬件设计系统框图"><img class="cover" src="/../image/Hardware/%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E7%B3%BB%E7%BB%9F%E6%A1%86%E5%9B%BE.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-16</div><div class="title">硬件设计系统框图</div></div></a></div><div><a href="/Hardware/%E9%94%81%E7%9B%B8%E7%8E%AF%E7%94%B5%E8%B7%AF/" title="锁相环电路"><img class="cover" src="/../image/Hardware/%E9%94%81%E7%9B%B8%E7%8E%AF%E7%94%B5%E8%B7%AF/%E9%94%81%E7%9B%B8%E7%8E%AF%E7%94%B5%E8%B7%AF.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-12</div><div class="title">锁相环电路</div></div></a></div><div><a href="/Hardware/%E7%AE%80%E5%8D%95%E5%8F%8C%E5%90%91%E7%94%B5%E5%B9%B3%E8%BD%AC%E6%8D%A2%E7%94%B5%E8%B7%AF/" title="简单双向电平转换电路"><img class="cover" src="/../image/Hardware/%E7%AE%80%E5%8D%95%E5%8F%8C%E5%90%91%E7%94%B5%E5%B9%B3%E8%BD%AC%E6%8D%A2%E7%94%B5%E8%B7%AF/%E7%AE%80%E5%8D%95%E5%8F%8C%E5%90%91%E7%94%B5%E5%B9%B3%E8%BD%AC%E6%8D%A2%E7%94%B5%E8%B7%AF.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-18</div><div class="title">简单双向电平转换电路</div></div></a></div><div><a href="/Hardware/%E9%BC%A0%E6%A0%87%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/" title="鼠标电路分析"><img class="cover" src="/../image/Hardware/%E9%BC%A0%E6%A0%87%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90/%E9%BC%A0%E6%A0%87%E7%94%B5%E8%B7%AF%E5%88%86%E6%9E%90.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-17</div><div class="title">鼠标电路分析</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/../img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pilipala276</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">57</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">50</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pilipala276"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:pilipala276@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2023-10-09/" title="规范化的方案设计方法及器件选型_硬禾学堂"><img src="/../image/Daily_blog/2023-10-09.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="规范化的方案设计方法及器件选型_硬禾学堂"/></a><div class="content"><a class="title" href="/Daily_blog/2023-10-09/" title="规范化的方案设计方法及器件选型_硬禾学堂">规范化的方案设计方法及器件选型_硬禾学堂</a><time datetime="2023-10-09T12:20:00.000Z" title="发表于 2023-10-09 20:20:00">2023-10-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/" title="深入浅出玩转FPGA_吴厚航"><img src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="深入浅出玩转FPGA_吴厚航"/></a><div class="content"><a class="title" href="/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/" title="深入浅出玩转FPGA_吴厚航">深入浅出玩转FPGA_吴厚航</a><time datetime="2023-09-30T15:18:00.000Z" title="发表于 2023-09-30 23:18:00">2023-09-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Project/%E3%80%90%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90%E3%80%91%E5%8A%A0%E7%83%AD%E5%8F%B0%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" title="【项目解析】加热台硬件设计分析"><img src="/../image/Project/%E3%80%90%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90%E3%80%91%E5%8A%A0%E7%83%AD%E5%8F%B0%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/%E5%AE%9E%E7%89%A9%E5%9B%BE1.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【项目解析】加热台硬件设计分析"/></a><div class="content"><a class="title" href="/Project/%E3%80%90%E9%A1%B9%E7%9B%AE%E8%A7%A3%E6%9E%90%E3%80%91%E5%8A%A0%E7%83%AD%E5%8F%B0%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%88%86%E6%9E%90/" title="【项目解析】加热台硬件设计分析">【项目解析】加热台硬件设计分析</a><time datetime="2023-09-10T14:56:00.000Z" title="发表于 2023-09-10 22:56:00">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2023-08-13/" title="Verilog 菜鸟教程"><img src="/../image/Daily_blog/2023-08-13.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Verilog 菜鸟教程"/></a><div class="content"><a class="title" href="/Daily_blog/2023-08-13/" title="Verilog 菜鸟教程">Verilog 菜鸟教程</a><time datetime="2023-08-13T12:20:00.000Z" title="发表于 2023-08-13 20:20:00">2023-08-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Hardware/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/" title="GPIO的八种工作模式"><img src="/../image/Hardware/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="GPIO的八种工作模式"/></a><div class="content"><a class="title" href="/Hardware/GPIO%E7%9A%84%E5%85%AB%E7%A7%8D%E5%B7%A5%E4%BD%9C%E6%A8%A1%E5%BC%8F/" title="GPIO的八种工作模式">GPIO的八种工作模式</a><time datetime="2023-07-27T04:00:00.000Z" title="发表于 2023-07-27 12:00:00">2023-07-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Pilipala276</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.2
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container:not\([display]\)').forEach(node => {
+            const target = node.parentNode
+            if (target.nodeName.toLowerCase() === 'li') {
+              target.parentNode.classList.add('has-jax')
+            } else {
+              target.classList.add('has-jax')
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>

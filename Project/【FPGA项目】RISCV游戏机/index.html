@@ -1,0 +1,270 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>【FPGA项目】RISCV游戏机 | Pilipala276's Blog</title><meta name="keywords" content="FPGA,RISCV"><meta name="author" content="Pilipala276"><meta name="copyright" content="Pilipala276"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="这个项目用于参加2023大学生FPGA创新设计竞赛—紫光同创赛道秋招抽空整的，没眼看😢 比赛相关比赛链接 FPGA竞赛首页_FPGA竞赛_全国大学生fpga创新设计竞赛官网 (fpgachina.cn) fpgachina.cn&#x2F;file&#x2F;cacheFile&#x2F;200d5cb862094256a70e1f99856a02c5.pdf 学习相关参考链接 手把手教你移植">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【FPGA项目】RISCV游戏机">
+<meta property="og:url" content="https://pilipala276.github.io/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/index.html">
+<meta property="og:site_name" content="Pilipala276&#39;s Blog">
+<meta property="og:description" content="这个项目用于参加2023大学生FPGA创新设计竞赛—紫光同创赛道秋招抽空整的，没眼看😢 比赛相关比赛链接 FPGA竞赛首页_FPGA竞赛_全国大学生fpga创新设计竞赛官网 (fpgachina.cn) fpgachina.cn&#x2F;file&#x2F;cacheFile&#x2F;200d5cb862094256a70e1f99856a02c5.pdf 学习相关参考链接 手把手教你移植">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pilipala276.github.io/image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Happy_Mac.png">
+<meta property="article:published_time" content="2023-11-09T12:00:00.000Z">
+<meta property="article:modified_time" content="2023-11-25T11:47:30.183Z">
+<meta property="article:author" content="Pilipala276">
+<meta property="article:tag" content="FPGA">
+<meta property="article:tag" content="RISCV">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pilipala276.github.io/image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Happy_Mac.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://pilipala276.github.io/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '【FPGA项目】RISCV游戏机',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-25 19:47:30'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/../img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Pilipala276's Blog</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/TheSkilltree/"><i class="fa-fw fas fa-window-close"></i><span> TheSkilltree</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">【FPGA项目】RISCV游戏机</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-09T12:00:00.000Z" title="发表于 2023-11-09 20:00:00">2023-11-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-25T11:47:30.183Z" title="更新于 2023-11-25 19:47:30">2023-11-25</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Project/">Project</a></span></div><div class="meta-secondline"></div></div></div><article class="post-content" id="article-container"><p>这个项目用于参加2023大学生FPGA创新设计竞赛—紫光同创赛道<br><del>秋招抽空整的，没眼看😢</del></p>
+<h1 id="比赛相关"><a href="#比赛相关" class="headerlink" title="比赛相关"></a>比赛相关</h1><p>比赛链接</p>
+<p><a target="_blank" rel="noopener" href="http://www.fpgachina.cn/">FPGA竞赛首页_FPGA竞赛_全国大学生fpga创新设计竞赛官网 (fpgachina.cn)</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.fpgachina.cn/file/cacheFile/200d5cb862094256a70e1f99856a02c5.pdf">fpgachina.cn&#x2F;file&#x2F;cacheFile&#x2F;200d5cb862094256a70e1f99856a02c5.pdf</a></p>
+<h1 id="学习相关"><a href="#学习相关" class="headerlink" title="学习相关"></a>学习相关</h1><p>参考链接</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_44447544/article/details/123251073">手把手教你移植 tinyriscv 到FPGA上_tinyriscv 移植fpga_雪天鱼的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/423332071">优秀的 Verilog&#x2F;FPGA开源项目介绍（二）-RISC-V - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/liangkangnan/tinyriscv/tree/master/">tinyriscv: 一个从零开始写的极简、非常易懂的RISC-V处理器核。 - Gitee.com</a></p>
+<p><a target="_blank" rel="noopener" href="https://gitee.com/liangkangnan/tinyriscv/tree/3ea48ec9f281a56ec58a1327220e38c1f3511046">tinyriscv: 一个从零开始写的极简、非常易懂的RISC-V处理器核【移植到PGL22G开发板】。 - Gitee.com</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1w5411W72W/">FPGA内嵌riscv软核处理器实现网络通信_哔哩哔哩_bilibili</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1sL41137Ft/">RISC-V会是我们的未来吗？_哔哩哔哩_bilibili</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/JerryYin777/FPGA_Competition-RISC-V_Processor-in-PGL22G">https://github.com/JerryYin777/FPGA_Competition-RISC-V_Processor-in-PGL22G</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/346194063">ALINX紫光同创国产FPGA原创连载教程总目录 - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/zongzi10010/p/10023535.html">OpenOCD-JTAG调试 - zongzi10010 - 博客园 (cnblogs.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_52347246/article/details/128293343">.bin转.dat_在线bin转dat_柠檬树下你和我₰的博客-CSDN博客</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/554939764">RISC-V学习笔记(tinyriscv) - 知乎 (zhihu.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://bbs.elecfans.com/jishu_2335992_1_1.html">【正点原子DFPGL22G开发板体验】tinyrisc-v移植-第一篇之创建工程与仿真 - 正点原子学习小组 - 电子技术论坛 - 广受欢迎的专业电子论坛! (elecfans.com)</a></p>
+<h1 id="进度，问题与解决"><a href="#进度，问题与解决" class="headerlink" title="进度，问题与解决"></a>进度，问题与解决</h1><h2 id="移植tinyriscv"><a href="#移植tinyriscv" class="headerlink" title="移植tinyriscv"></a>移植tinyriscv</h2><p>运行指令测试程序没反应？<br>下载tinyriscv代码时，<strong>使用gitshi clone命令下载，不要使用zip方式下载</strong>，否则有些文件会有格式问题</p>
+<p>移植TinyRISCV后，验证gpio程序，并没有点亮GPIO?<br>应该是没有取巧的方法了，只能先看一看汇编语言，看看编译的文件有没有问题再看一看CPU是怎么写的了<br>老师建议换板子，可以了，不过是按下复位键才可以的，也许原来的板子也是？还没验证</p>
+<p>验证定时器程序，LED没有亮灭现象?</p>
+<p>程序跑飞了？还没解决，先不用定时器吧</p>
+<p>有了LCD用LCD做测试是没问题的</p>
+<p>大概是因为标志位没有置零？</p>
+<p>验证串口发送程序，改成一直发送Hello world，没反应？</p>
+<p>改成发送一次Hello world，可以</p>
+<p><del>以前用的是baram分支别人移植的，没有spi，改的话有点麻烦，决定移植master分支的TinyRISCV</del></p>
+<p><del>增加ROM和RAM的IP</del></p>
+<p><del>JTAG_TCK换专用时钟引脚？<br><a target="_blank" rel="noopener" href="https://bbs.elecfans.com/jishu_2336705_1_1.html">【正点原子DFPGL22G开发板体验】tinyrisc-v移植-第二篇之引脚和时序约束 - 正点原子学习小组 - 电子技术论坛 - 广受欢迎的专业电子论坛! (elecfans.com)</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/600194150">《ATK-DFPGL22G之FPGA开发指南》第三章 硬件资源详解 - 知乎 (zhihu.com)</a></del></p>
+<p><del>程序烧进去是错的，应该是ROM那里改的有问题<br>阻塞赋值和非阻塞赋值不要混用<br>master用的是LUTRAM(DRAM)，而bram分支用的BRAM，IP生成的ROM也是BRAM<br>坏，不知道怎么改</del></p>
+<h2 id="添加外设"><a href="#添加外设" class="headerlink" title="添加外设"></a>添加外设</h2><p>没有spi，添加spi到串口那里</p>
+<p>增加GPIO口</p>
+<h2 id="硬件驱动"><a href="#硬件驱动" class="headerlink" title="硬件驱动"></a>硬件驱动</h2><p>驱动屏幕</p>
+<p>手柄驱动，卡在这了</p>
+<p>一直返回高电平，通信速率问题？<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_52791568/article/details/122125289">HAL库控制PS2手柄_BeaG的博客-CSDN博客</a></p>
+<p>确实是通信速率问题，要是能多理性思考一些应该能省不少时间</p>
+<h2 id="游戏移植"><a href="#游戏移植" class="headerlink" title="游戏移植"></a>游戏移植</h2><p>跑个贪吃蛇</p>
+<p>调用malloc报错，添加**_sbrk**函数</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/riscv-collab/riscv-gnu-toolchain/issues/571">https://github.com/riscv-collab/riscv-gnu-toolchain/issues/571</a></p>
+<p><img src="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/971f41783a4368985a798465239ebdf.png" alt="971f41783a4368985a798465239ebdf.png"></p>
+<p>今天openocd.exe -f tinyriscv.cfg执行报错，很怪，板子重新上电后可以了</p>
+<p><img src="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Untitled.png" alt="Untitled"></p>
+<p>移植的差不多了</p>
+<p>程序流程图</p>
+<p><img src="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Untitled%201.png" alt="Untitled"></p>
+<p>代码调试</p>
+<p>跑贪吃蛇总是死机?定时器的锅，定时器确实是会跑飞的；</p>
+<p>2048代码<a target="_blank" rel="noopener" href="https://blog.csdn.net/qwm8777411/article/details/41322995">C语言实现2048_2048c语言-CSDN博客</a></p>
+<h2 id="FPGA固化"><a href="#FPGA固化" class="headerlink" title="FPGA固化"></a>FPGA固化</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/601403824#:~:text=%E5%AE%9E%E9%AA%8C%E6%95%88%E6%9E%9C%E5%9B%BE-,4.3.7%20%E5%9B%BA%E5%8C%96%E7%A8%8B%E5%BA%8F,-%E8%BF%99%E9%87%8C%E4%B8%8B%E8%BD%BD%E7%9A%84">https://zhuanlan.zhihu.com/p/601403824#:~:text&#x3D;4.3.7 固化程序</a></p>
+<p><img src="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Untitled%202.png" alt="Untitled"></p>
+<h1 id="开源"><a href="#开源" class="headerlink" title="开源"></a>开源</h1><p>首先将tinyriscv代码fork到自己仓库，不要只fork master分支，因为我用的是bram分支的内容<br><a target="_blank" rel="noopener" href="https://github.com/liangkangnan/tinyriscv/tree/master">liangkangnan&#x2F;tinyriscv: A very simple and easy to understand RISC-V core. (github.com)</a></p>
+<p><code>git clone -b bram xxx</code>clone bram分支到本地<br><img src="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Pastedimage20231109201036.png" alt="Pasted"></p>
+<p><code>git checkout -b xxx</code>创建另一个分支<br><img src="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Pastedimage20231109202245.png" alt="Pasted"></p>
+<p>修改代码<br><code>git diff</code>查看更改的部分</p>
+<p><code>git add xxx</code>，<code>git commit -m &quot;xxx&quot;</code>, <code>git push origin xxx</code><br>上传代码<br><img src="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Pastedimage20231109204828.png" alt="Pasted"></p>
+<p>项目链接：<a target="_blank" rel="noopener" href="https://github.com/pilipala276/tinyriscv/tree/pango-bram-withspi">pilipala276&#x2F;tinyriscv at pango-bram-withspi (github.com)</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io">Pilipala276</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://pilipala276.github.io/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/">https://pilipala276.github.io/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://pilipala276.github.io" target="_blank">Pilipala276's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/FPGA/">FPGA</a><a class="post-meta__tags" href="/tags/RISCV/">RISCV</a></div><div class="post_share"><div class="social-share" data-image="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Happy_Mac.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/gh/overtrue/share.js@master/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/Read/%E3%80%8A%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84%E3%80%8B%E7%AC%94%E8%AE%B0/"><img class="prev-cover" src="/../image/Read/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">《网络是怎样连接的》笔记</div></div></a></div><div class="next-post pull-right"><a href="/Daily_blog/2023-11-08/"><img class="next-cover" src="/../image/Daily_blog/2023-11-08/2023-11-08.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Obsidian+华为云</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/" title="深入浅出玩转FPGA_吴厚航"><img class="cover" src="/../image/Read/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA/%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BA%E7%8E%A9%E8%BD%ACFPGA_%E5%90%B4%E5%8E%9A%E8%88%AA.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-30</div><div class="title">深入浅出玩转FPGA_吴厚航</div></div></a></div><div><a href="/FPGA/HDLBits/" title="HDLBits"><img class="cover" src="/../image/FPGA/HDLBits.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-11-23</div><div class="title">HDLBits</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/../img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Pilipala276</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">62</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">53</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pilipala276"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:pilipala276@outlook.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%AF%94%E8%B5%9B%E7%9B%B8%E5%85%B3"><span class="toc-number">1.</span> <span class="toc-text">比赛相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AD%A6%E4%B9%A0%E7%9B%B8%E5%85%B3"><span class="toc-number">2.</span> <span class="toc-text">学习相关</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%BA%A6%EF%BC%8C%E9%97%AE%E9%A2%98%E4%B8%8E%E8%A7%A3%E5%86%B3"><span class="toc-number">3.</span> <span class="toc-text">进度，问题与解决</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E6%A4%8Dtinyriscv"><span class="toc-number">3.1.</span> <span class="toc-text">移植tinyriscv</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%A4%96%E8%AE%BE"><span class="toc-number">3.2.</span> <span class="toc-text">添加外设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A1%AC%E4%BB%B6%E9%A9%B1%E5%8A%A8"><span class="toc-number">3.3.</span> <span class="toc-text">硬件驱动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%B8%E6%88%8F%E7%A7%BB%E6%A4%8D"><span class="toc-number">3.4.</span> <span class="toc-text">游戏移植</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FPGA%E5%9B%BA%E5%8C%96"><span class="toc-number">3.5.</span> <span class="toc-text">FPGA固化</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E6%BA%90"><span class="toc-number">4.</span> <span class="toc-text">开源</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/FPGA/HDLBits/" title="HDLBits"><img src="/../image/FPGA/HDLBits.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HDLBits"/></a><div class="content"><a class="title" href="/FPGA/HDLBits/" title="HDLBits">HDLBits</a><time datetime="2023-11-23T13:00:00.000Z" title="发表于 2023-11-23 21:00:00">2023-11-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Read/%E3%80%8A%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84%E3%80%8B%E7%AC%94%E8%AE%B0/" title="《网络是怎样连接的》笔记"><img src="/../image/Read/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84/%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="《网络是怎样连接的》笔记"/></a><div class="content"><a class="title" href="/Read/%E3%80%8A%E7%BD%91%E7%BB%9C%E6%98%AF%E6%80%8E%E6%A0%B7%E8%BF%9E%E6%8E%A5%E7%9A%84%E3%80%8B%E7%AC%94%E8%AE%B0/" title="《网络是怎样连接的》笔记">《网络是怎样连接的》笔记</a><time datetime="2023-11-19T03:00:00.000Z" title="发表于 2023-11-19 11:00:00">2023-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/" title="【FPGA项目】RISCV游戏机"><img src="/../image/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/Happy_Mac.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="【FPGA项目】RISCV游戏机"/></a><div class="content"><a class="title" href="/Project/%E3%80%90FPGA%E9%A1%B9%E7%9B%AE%E3%80%91RISCV%E6%B8%B8%E6%88%8F%E6%9C%BA/" title="【FPGA项目】RISCV游戏机">【FPGA项目】RISCV游戏机</a><time datetime="2023-11-09T12:00:00.000Z" title="发表于 2023-11-09 20:00:00">2023-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2023-11-08/" title="Obsidian+华为云"><img src="/../image/Daily_blog/2023-11-08/2023-11-08.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Obsidian+华为云"/></a><div class="content"><a class="title" href="/Daily_blog/2023-11-08/" title="Obsidian+华为云">Obsidian+华为云</a><time datetime="2023-11-08T11:00:00.000Z" title="发表于 2023-11-08 19:00:00">2023-11-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/Daily_blog/2023-10-22/" title="2023-10-22's Blog"><img src="/../image/Daily_blog/2023-10-22.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2023-10-22's Blog"/></a><div class="content"><a class="title" href="/Daily_blog/2023-10-22/" title="2023-10-22's Blog">2023-10-22's Blog</a><time datetime="2023-10-22T03:20:00.000Z" title="发表于 2023-10-22 11:20:00">2023-10-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Pilipala276</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script></div></body></html>
